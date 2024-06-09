@@ -1,0 +1,45 @@
+
+										<div class="tt-cart-content">
+                                        <input type="hidden" value="{{cart_count}}" id="tt-badge-cart">
+											<div class="tt-cart-list">							
+											{% for item in  context.cart_items %}
+												<div class="tt-item">
+													<a href="product.html">
+														<div class="tt-item-img">																											
+														  <img src="images/loader.svg" data-src="{{ item.product.mainThumb }}" alt="">														
+														</div>
+														<div class="tt-item-descriptions">
+															<h2 class="tt-title">{{item.product.product_name}}</h2>
+															{% comment %} <ul class="tt-add-info">
+																<li>Yellow, Material 2, Size 58,</li>
+																<li>Vendor: Addidas</li>
+															</ul> {% endcomment %}
+															<div class="tt-quantity">{{item.quantity}} X</div> <div class="tt-price">₹{{item.product.sale_price}}</div>
+														</div>
+													</a>
+													<div class="tt-item-close">
+														<a href="javascript:void(0)" onclick="deleteCartItem({{item.product.id}})" class="tt-btn-close"></a>
+													</div>
+												</div>
+											{% empty %}	
+											<!-- layout emty cart -->
+											<a href="{% url 'home' %}" class="tt-cart-empty">
+												<i class="icon-f-39"></i>
+												<p>No Products in the Cart</p>
+											</a> 									
+											{% endfor %}
+											</div>
+											<div class="tt-cart-total-row">
+												<div class="tt-cart-total-title">SUBTOTAL:</div>
+												<div class="tt-cart-total-price">₹{{context.total}}</div>
+											</div>
+											<div class="tt-cart-btn">
+												<div class="tt-item">
+													<a href="{% url 'checkout' %}" class="btn">PROCEED TO CHECKOUT</a>
+												</div>
+												<div class="tt-item">
+													<a href="{% url 'cart.product' %}" class="btn-link-02 tt-hidden-mobile">View Cart</a>
+													{% comment %} <a href="{% url 'cart.product' %}" class="btn btn-border tt-hidden-desctope">VIEW CART</a> {% endcomment %}
+												</div>
+											</div>
+										</div>

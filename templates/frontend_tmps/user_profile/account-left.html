@@ -1,0 +1,8 @@
+<h2 class="tt-title-border">My Account</h2>
+<ul class="tt-list-row">
+	<li {% if '/account/' == request.path %} class="active" {% endif %}><a href="{% url 'dashboard' %}">Account Dashboard</a></li>
+	<li {% if '/my-orders/' in request.path %} class="active" {% endif %}><a href="{% url 'my_order' %}">My Orders</a></li>
+	{% comment %} <li {% if '/my-reviews/' in request.path %} class="active" {% endif %}><a href="{% url 'my_review' %}">My Product Reviews</a></li> {% endcomment %}
+	<li {% if '/my-wishlist/' in request.path %} class="active" {% endif %}><a href="{% url 'wishlist.product' %}">My Wishlist</a></li>
+	<li {% if '/my-compare/' in request.path %} class="active" {% endif %}><a href="{% url 'compare.product' %}">My Compare</a></li>
+</ul>

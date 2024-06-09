@@ -1,0 +1,103 @@
+{% extends 'frontend_base.html' %}
+{% load static %}
+{% block main_content %}
+    <div id="tt-pageContent">
+	<div class="container-indent">
+		<div class="container">
+			<div class="contact-map">
+				<!-- <div id="map"></div> -->
+				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d746.7860800517699!2d77.66912510793459!3d28.933344019345!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c63f6f0d1cceb%3A0xaec8fa9a7c8278d1!2sHornbill+Mart!5e1!3m2!1sen!2sin!4v1538837784425" width="100%" height="360" frameborder="0" style="border:0" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-indent">
+		<div class="container container-fluid-custom-mobile-padding">
+			<div class="tt-contact02-col-list">
+				<div class="row">
+					<div class="col-sm-12 col-md-4 ml-sm-auto mr-sm-auto">
+						<div class="tt-contact-info">
+							<i class="tt-icon icon-f-93"></i>
+							<h6 class="tt-title">LET’S HAVE A CHAT!</h6>
+							<address>
+								+91 9259403045:<br>
+								+91 9557000873<br>
+								<a class="link" href="mailto:info@hornbillmart.com">info@hornbillmart.com</a>
+							</address>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4">
+						<div class="tt-contact-info">
+							<i class="tt-icon icon-f-24"></i>
+							<h6 class="tt-title">VISIT OUR LOCATION</h6>
+							<address>
+								B-54, Sector-1, Shatabdi Nagar, Meerut,<br>
+								Uttar Pradesh 250103,<br>
+								India.
+								
+							</address>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4">
+						<div class="tt-contact-info">
+							<i class="tt-icon icon-f-92"></i>
+							<h6 class="tt-title">WORK TIME</h6>
+							<address>
+								7 Days a week<br>
+								from 10 AM to 6 PM
+							</address>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-indent">
+		<div class="container container-fluid-custom-mobile-padding">
+			<form id="contactForm" class="contact-form form-default f1" novalidate="novalidate" action="{% url 'contact.us' %}" method="POST" enctype="multipart/form-data">
+				{% csrf_token %}
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+                            {{form.name}}
+							{% comment %} <input type="text" name="name" class="form-control" id="name" placeholder="Your Name (required)"> {% endcomment %}
+							<span id="error_name" class="invalid-feedback"></span>
+						</div>
+						<div class="form-group">
+                        {{form.mobile}}
+							{% comment %} <input name="mobile" type="text" id="mobile" class="form-control" id="name" placeholder="Your Mobile (required)"> {% endcomment %}
+							<span id="error_mobile" class="invalid-feedback"></span>
+						</div>
+
+						<div class="form-group">
+                        {{form.email}}
+							{% comment %} <input type="text" name="email" class="form-control" id="email" placeholder="Your Email (required)"> {% endcomment %}
+							<span id="error_email" class="invalid-feedback"></span>
+						</div>
+						
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+                            {{form.message}}
+							{% comment %} <textarea  name="message" class="form-control" rows="7" placeholder="Your Message"  id="message"></textarea> {% endcomment %}
+							<span id="error_message" class="invalid-feedback"></span>	
+						</div>
+						<div class="form-group">
+							{{form.captcha}}
+						<span id="error_captcha" class="invalid-feedback"></span>						
+					</div>
+				</div>
+
+			</div>
+			<div class="text-center">
+				<button type="button" class="btn" onclick="contactUs('contactForm')">SEND MESSAGE</button>
+			</div>
+		</form>
+	</div>
+</div>
+</div>
+{% endblock %}
+
+{% block ex_js %}
+<script src='https://www.google.com/recaptcha/api.js'></script>
+{% endblock ex_js %}

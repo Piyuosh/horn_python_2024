@@ -1,0 +1,360 @@
+{% extends 'frontend_base.html' %}
+{% load static %}
+{% block main_content %}
+	<div id="tt-pageContent">
+	<!-- <div class="tt-offset-35 container-indent">
+		<div class="container">
+			<div class="row tt-services-listing">
+				<div class="col-xs-12 col-md-6 col-lg-4">
+					<a href="faq.html" class="tt-services-block">
+						<div class="tt-col-icon">
+							<i class="icon-f-48"></i>
+						</div>
+						<div class="tt-col-description">
+							<h4 class="tt-title">FREE SHIPPING</h4>
+							<p>Free shipping on all US order or order above $99</p>
+						</div>
+					</a>
+				</div>
+				<div class="col-xs-12 col-md-6 col-lg-4">
+					<a href="faq.html" class="tt-services-block">
+						<div class="tt-col-icon">
+							<i class="icon-f-35"></i>
+						</div>
+						<div class="tt-col-description">
+							<h4 class="tt-title">SUPPORT 24/7</h4>
+							<p>Contact us 24 hours a day, 7 days a week</p>
+						</div>
+					</a>
+				</div>
+				<div class="col-xs-12 col-md-6 col-lg-4">
+					<a href="faq.html" class="tt-services-block">
+						<div class="tt-col-icon">
+							<i class="icon-e-09"></i>
+						</div>
+						<div class="tt-col-description">
+							<h4 class="tt-title">30 DAYS RETURN</h4>
+							<p>Simply return it within 24 days for an exchange.</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div> -->
+	<div class="container-indent nomargin">
+		<div class="container-fluid">
+			{% include 'frontend_tmps/includes/home-banners.html'  %}
+		</div>
+	</div>
+	
+	<div class="container-indent1">
+		<div class="container-fluid-custom container-fluid-custom-mobile-padding">
+			<div class="tt-block-title text-left">
+				<h2 class="tt-title">Kundan Necklaces</h2>
+			</div>
+			<div class="tt-tab-wrapper tt-ajax-tabs">
+				<div class="tab-content">
+					<div class="tab-pane active" id="tt-tab01-01">
+						<div class="tt-carousel-products row arrow-location-tab tt-alignment-img tt-layout-product-item slick-animated-show-js"  data-item="6">
+							{% for product in products %}
+						<div class="col-2 col-md-4 col-lg-3">
+							
+								<div class="tt-product thumbprod-center">
+									<div class="tt-image-box">
+										<a href="javascript:void(0)" onclick="quickView('{{ product.uuid }}')" class="tt-btn-quickview" data-tooltip="Quick View" data-tposition="left"></a>
+										<a href="javascript:void(0)" onclick="addToWishlist('{{ product.uuid }}')" class="tt-btn-wishlist" data-tooltip="Add to Wishlist" data-tposition="left"></a>
+										<a href="javascript:void(0)" onclick="addToCompare('{{ product.uuid }}')" class="tt-btn-compare" data-tooltip="Add to Compare" data-tposition="left"></a>
+										<a href="{{product.get_absolute_url}}">
+											<span class="tt-img"><img src="{% static '/front_assets/images/loader.svg' %}" data-lazy="{{ product.mainThumb }}" alt="{{product.product_name}}"> </span>
+											<span class="tt-img-roll-over"><img src=" {% static '/front_assets/images/loader.svg' %}" data-lazy="{{ product.mainThumb }}" alt="{{product.product_name}}"></span>
+										</a>
+									</div>
+									<div class="tt-description">
+										<div class="tt-row">
+											<ul class="tt-add-info">
+												<li><a href="#">{{ product.category }}</a></li>
+											</ul>
+											<div class="tt-rating">
+											{% if product.averageReview  >= 4%}
+												<input name="rating" value="{{ product.averageReview }}" readonly class="rating rating-loading" data-min="0" data-max="5" data-step="0.5">
+											{% endif %}
+											</div>
+										</div>
+										<h2 class="tt-title"><a href="{{product.get_absolute_url}}" title="{{ product.product_name }}">{{ product.product_name }}</a></h2>
+										<div class="tt-price">
+											<span class="new-price">₹{{ product.sale_price }}</span>
+											<span class="old-price">₹{{ product.regular_price }}</span>
+										</div>
+										<div class="tt-product-inside-hover">
+											<div class="tt-row-btn">
+												{% if product.quantity <= 0 %}
+												Out of Stock
+												{% else %}
+												<a href="javascript:void(0)" onclick="addToCartOther({{product.id}})" class="tt-btn-addtocart thumbprod-button-bg">ADD TO CART</a>
+												{% endif %}
+												
+											</div>
+											<div class="tt-row-btn">
+												<a href="javascript:void(0)" onclick="quickView('{{ product.uuid }}')" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"></a>
+												<a href="javascript:void(0)" onclick="addToWishlist('{{ product.uuid }}')" class="tt-btn-wishlist"></a>
+												<a href="javascript:void(0)" onclick="addToCompare('{{ product.uuid }}')" class="tt-btn-compare"></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="tab-pane" id="tt-tab01-02"></div>
+					<div class="tab-pane" id="tt-tab01-03"></div>
+					<div class="tab-pane" id="tt-tab01-04"></div>
+					<div class="tab-pane" id="tt-tab01-05"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-indent1">
+		<div class="container-fluid-custom container-fluid-custom-mobile-padding">
+			<div class="tt-block-title text-left">
+				<h2 class="tt-title">Kundan Choker Set</h2>
+			</div>
+			<div class="tt-tab-wrapper tt-ajax-tabs">
+				<div class="tab-content">
+					<div class="tab-pane active" id="tt-tab01-01">
+						<div class="tt-carousel-products row arrow-location-tab tt-alignment-img tt-layout-product-item slick-animated-show-js"  data-item="6">
+							{% for product in products %}
+						<div class="col-2 col-md-4 col-lg-3">
+								<div class="tt-product thumbprod-center">
+									<div class="tt-image-box">
+										<a href="javascript:void(0)" onclick="quickView('{{ product.uuid }}')" class="tt-btn-quickview" data-tooltip="Quick View" data-tposition="left"></a>
+										<a href="javascript:void(0)" onclick="addToWishlist('{{ product.uuid }}')" class="tt-btn-wishlist" data-tooltip="Add to Wishlist" data-tposition="left"></a>
+										<a href="javascript:void(0)" onclick="addToCompare('{{ product.uuid }}')" class="tt-btn-compare" data-tooltip="Add to Compare" data-tposition="left"></a>
+										<a href="{{product.get_absolute_url}}">
+											<span class="tt-img"><img src="{% static '/front_assets/images/loader.svg' %}" data-lazy="{{ product.mainThumb }}" alt="{{product.product_name}}"></span>
+											<span class="tt-img-roll-over"><img src=" {% static '/front_assets/images/loader.svg' %}" data-lazy="{{ product.mainThumb }}" alt="{{product.product_name}}"></span>
+										</a>
+									</div>
+									<div class="tt-description">
+										<div class="tt-row">
+											<ul class="tt-add-info">
+												<li><a href="#">{{ product.category }}</a></li>
+											</ul>
+											<div class="tt-rating">
+											{% if product.averageReview  >= 4%}
+												<input name="rating" value="{{ product.averageReview }}" readonly class="rating rating-loading" data-min="0" data-max="5" data-step="0.5">
+											{% endif %}
+											</div>
+										</div>
+										<h2 class="tt-title"><a href="{{product.get_absolute_url}}" title="{{ product.product_name }}">{{ product.product_name }}</a></h2>
+										<div class="tt-price">
+											<span class="new-price">₹{{ product.sale_price }}</span>
+											<span class="old-price">₹{{ product.regular_price }}</span>
+										</div>
+										<div class="tt-product-inside-hover">
+											<div class="tt-row-btn">
+												{% if product.quantity <= 0 %}
+												Out of Stock
+												{% else %}
+												<a href="javascript:void(0)" onclick="addToCartOther({{product.id}})" class="tt-btn-addtocart thumbprod-button-bg">ADD TO CART</a>
+												{% endif %}
+												
+											</div>
+											<div class="tt-row-btn">
+												<a href="javascript:void(0)" onclick="quickView('{{ product.uuid }}')" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"></a>
+												<a href="javascript:void(0)" onclick="addToWishlist('{{ product.uuid }}')" class="tt-btn-wishlist"></a>
+												<a href="javascript:void(0)" onclick="addToCompare('{{ product.uuid }}')" class="tt-btn-compare"></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="tab-pane" id="tt-tab01-02"></div>
+					<div class="tab-pane" id="tt-tab01-03"></div>
+					<div class="tab-pane" id="tt-tab01-04"></div>
+					<div class="tab-pane" id="tt-tab01-05"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-indent">
+		<div class="container-fluid">
+			<div class="row tt-layout-promo-box">
+				<div class="col-md-4">
+					<a href="listing-left-column.html" class="tt-promo-box tt-one-child">
+						<img src="{% static '/front_assets/images/promo/index04-promo-img-05.jpg' %}" data-src="{% static '/front_assets/images/promo/index04-promo-img-05.jpg' %}" alt="" class="loaded" data-was-processed="true">
+						<div class="tt-description">
+							<div class="tt-description-wrapper">
+								<div class="tt-background"></div>
+								<div class="tt-title-small">NEW IN:</div>
+								<div class="tt-title-large">CLOTHING</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4">
+					<a href="listing-left-column.html" class="tt-promo-box tt-one-child">
+						<img src="{% static '/front_assets/images/promo/index04-promo-img-06.jpg' %}" data-src="{% static '/front_assets/images/promo/index04-promo-img-06.jpg' %}" alt="" class="loaded" data-was-processed="true">
+						<div class="tt-description">
+							<div class="tt-description-wrapper">
+								<div class="tt-background"></div>
+								<div class="tt-title-small">CLEARANCE SALES</div>
+								<div class="tt-title-large">GET UP TO <span class="tt-base-color">20% OFF</span></div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4">
+					<a href="listing-left-column.html" class="tt-promo-box tt-one-child">
+						<img src="{% static '/front_assets/images/promo/index04-promo-img-05.jpg' %}" data-src="{% static '/front_assets/images/promo/index04-promo-img-05.jpg' %}" alt="" class="loaded" data-was-processed="true">
+						<div class="tt-description">
+							<div class="tt-description-wrapper">
+								<div class="tt-background"></div>
+								<div class="tt-title-small">CLEARANCE SALES</div>
+								<div class="tt-title-large">GET UP TO <span class="tt-base-color">20% OFF</span></div>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-indent1">
+		<div class="container-fluid-custom container-fluid-custom-mobile-padding">
+			<div class="tt-block-title text-left">
+				<h2 class="tt-title">Kundan Mangalsutra Collection</h2>
+			</div>
+			<div class="tt-tab-wrapper tt-ajax-tabs">
+				<div class="tab-content">
+					<div class="tab-pane active" id="tt-tab01-01">
+						<div class="tt-carousel-products row arrow-location-tab tt-alignment-img tt-layout-product-item slick-animated-show-js"  data-item="6">
+							{% for product in products %}
+						<div class="col-2 col-md-4 col-lg-3">
+								<div class="tt-product thumbprod-center">
+									<div class="tt-image-box">
+										<a href="javascript:void(0)" onclick="quickView('{{ product.uuid }}')" class="tt-btn-quickview" data-tooltip="Quick View" data-tposition="left"></a>
+										<a href="javascript:void(0)" onclick="addToWishlist('{{ product.uuid }}')" class="tt-btn-wishlist" data-tooltip="Add to Wishlist" data-tposition="left"></a>
+										<a href="javascript:void(0)" onclick="addToCompare('{{ product.uuid }}')" class="tt-btn-compare" data-tooltip="Add to Compare" data-tposition="left"></a>
+										<a href="{{product.get_absolute_url}}">
+											<span class="tt-img"><img src="{% static '/front_assets/images/loader.svg' %}" data-lazy="{{ product.mainThumb }}" alt="{{product.product_name}}"></span>
+											<span class="tt-img-roll-over"><img src=" {% static '/front_assets/images/loader.svg' %}" data-lazy="{{ product.mainThumb }}" alt="{{product.product_name}}"></span>
+										</a>
+									</div>
+									<div class="tt-description">
+										<div class="tt-row">
+											<ul class="tt-add-info">
+												<li><a href="#">{{ product.category }}</a></li>
+											</ul>
+											<div class="tt-rating">
+											{% if product.averageReview  >= 4%}
+												<input name="rating" value="{{ product.averageReview }}" readonly class="rating rating-loading" data-min="0" data-max="5" data-step="0.5">
+											{% endif %}
+											</div>
+										</div>
+										<h2 class="tt-title"><a href="{{product.get_absolute_url}}" title="{{ product.product_name }}">{{ product.product_name }}</a></h2>
+										<div class="tt-price">
+											<span class="new-price">₹{{ product.sale_price }}</span>
+											<span class="old-price">₹{{ product.regular_price }}</span>
+										</div>
+										<div class="tt-product-inside-hover">
+											<div class="tt-row-btn">
+												{% if product.quantity <= 0 %}
+												Out of Stock
+												{% else %}
+												<a href="javascript:void(0)" onclick="addToCartOther({{product.id}})" class="tt-btn-addtocart thumbprod-button-bg">ADD TO CART</a>
+												{% endif %}
+												
+											</div>
+											<div class="tt-row-btn">
+												<a href="javascript:void(0)" onclick="quickView('{{ product.uuid }}')" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"></a>
+												<a href="javascript:void(0)" onclick="addToWishlist('{{ product.uuid }}')" class="tt-btn-wishlist"></a>
+												<a href="javascript:void(0)" onclick="addToCompare('{{ product.uuid }}')" class="tt-btn-compare"></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="tab-pane" id="tt-tab01-02"></div>
+					<div class="tab-pane" id="tt-tab01-03"></div>
+					<div class="tab-pane" id="tt-tab01-04"></div>
+					<div class="tab-pane" id="tt-tab01-05"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-indent1">
+		<div class="container-fluid-custom container-fluid-custom-mobile-padding">
+			<div class="tt-block-title text-left">
+				<h2 class="tt-title">Kundan Earrings Collection</h2>
+			</div>
+			<div class="tt-tab-wrapper tt-ajax-tabs">
+				<div class="tab-content">
+					<div class="tab-pane active" id="tt-tab01-01">
+						<div class="tt-carousel-products row arrow-location-tab tt-alignment-img tt-layout-product-item slick-animated-show-js"  data-item="6">
+							{% for product in products %}
+						<div class="col-2 col-md-4 col-lg-3">
+								<div class="tt-product thumbprod-center">
+									<div class="tt-image-box">
+										<a href="javascript:void(0)" onclick="quickView('{{ product.uuid }}')" class="tt-btn-quickview" data-tooltip="Quick View" data-tposition="left"></a>
+										<a href="javascript:void(0)" onclick="addToWishlist('{{ product.uuid }}')" class="tt-btn-wishlist" data-tooltip="Add to Wishlist" data-tposition="left"></a>
+										<a href="javascript:void(0)" onclick="addToCompare('{{ product.uuid }}')" class="tt-btn-compare" data-tooltip="Add to Compare" data-tposition="left"></a>
+										<a href="{{product.get_absolute_url}}">
+											<span class="tt-img"><img src="{% static '/front_assets/images/loader.svg' %}" data-lazy="{{ product.mainThumb }}" alt="{{product.product_name}}"></span>
+											<span class="tt-img-roll-over"><img src=" {% static '/front_assets/images/loader.svg' %}" data-lazy="{{ product.mainThumb }}" alt="{{product.product_name}}"></span>
+										</a>
+									</div>
+									<div class="tt-description">
+										<div class="tt-row">
+											<ul class="tt-add-info">
+												<li><a href="#">{{ product.category }}</a></li>
+											</ul>
+											<div class="tt-rating">
+											{% if product.averageReview  >= 4%}
+												<input name="rating" value="{{ product.averageReview }}" readonly class="rating rating-loading" data-min="0" data-max="5" data-step="0.5">
+											{% endif %}
+											</div>
+										</div>
+										<h2 class="tt-title"><a href="{{product.get_absolute_url}}" title="{{ product.product_name }}">{{ product.product_name }}</a></h2>
+										<div class="tt-price">
+											<span class="new-price">₹{{ product.sale_price }}</span>
+											<span class="old-price">₹{{ product.regular_price }}</span>
+										</div>
+										<div class="tt-product-inside-hover">
+											<div class="tt-row-btn">
+												{% if product.quantity <= 0 %}
+												Out of Stock
+												{% else %}
+												<a href="javascript:void(0)" onclick="addToCartOther({{product.id}})" class="tt-btn-addtocart thumbprod-button-bg">ADD TO CART</a>
+												{% endif %}
+												
+											</div>
+											<div class="tt-row-btn">
+												<a href="javascript:void(0)" onclick="quickView('{{ product.uuid }}')" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"></a>
+												<a href="javascript:void(0)" onclick="addToWishlist('{{ product.uuid }}')" class="tt-btn-wishlist"></a>
+												<a href="javascript:void(0)" onclick="addToCompare('{{ product.uuid }}')" class="tt-btn-compare"></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="tab-pane" id="tt-tab01-02"></div>
+					<div class="tab-pane" id="tt-tab01-03"></div>
+					<div class="tab-pane" id="tt-tab01-04"></div>
+					<div class="tab-pane" id="tt-tab01-05"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

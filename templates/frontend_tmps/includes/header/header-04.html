@@ -1,0 +1,146 @@
+{% load static %}
+<header id="tt-header">
+	{% comment %} <div class="tt-color-scheme-01">
+		<div class="container">
+			<div class="tt-header-row tt-top-row">
+				<div class="tt-col-left">
+					<div class="tt-box-info">
+						<ul>
+							<li><i class="icon-f-44"></i>FREE 2-DAYS STANDARD SHIPPING ON ORDERS $255+ <a href="#" class="tt-link-underline">MORE DETAILS</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="tt-col-right ml-auto">
+					<ul class="tt-social-icon">
+						<li><a class="icon-g-64" target="_blank" href="http://www.facebook.com/"></a></li>
+						<li><a class="icon-h-58" target="_blank" href="http://www.twitter.com/"></a></li>
+						<li><a class="icon-g-66" target="_blank" href="http://www.google.com/"></a></li>
+						<li><a class="icon-g-67" target="_blank" href="http://www.instagram.com/"></a></li>
+						<li><a class="icon-g-70" target="_blank" href="#"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div> {% endcomment %}
+	<!-- tt-mobile menu -->
+	{% include 'frontend_tmps/includes/header/objects/mobile-menu.html'  %}
+	{% include 'frontend_tmps/includes/header/objects/mobile-menu-caterories.html'  %}
+	<!-- tt-mobile-header -->
+	<div class="tt-mobile-header">
+		<!-- <div class="container-fluid">
+			<div class="header-tel-info">
+				<i class="icon-f-93"></i> 777 2345 7885; +777 2345 7886
+			</div>
+		</div> -->
+		<div class="container-fluid tt-top-line">
+			<div class="tt-header-row">
+				<div class="tt-mobile-parent-menu">
+					{% include 'frontend_tmps/includes/header/objects/btn-menu-toggle02.html'  %}
+				</div>
+				<div class="tt-mobile-parent-menu-categories tt-parent-box">
+					<button class="tt-categories-toggle">
+						<i class="icon-categories"></i>
+					</button>
+				</div>
+				<!-- search -->
+				<div class="tt-mobile-parent-search tt-parent-box"></div>
+				<!-- /search -->
+				<!-- cart -->
+				<div class="tt-mobile-parent-cart tt-parent-box"></div>
+				<!-- /cart -->
+				<!-- account -->
+				<div class="tt-mobile-parent-account tt-parent-box"></div>
+				<!-- /account -->
+				<!-- currency -->
+				<div class="tt-mobile-parent-multi tt-parent-box"></div>
+				<!-- /currency -->
+			</div>
+		</div>
+		<div class="container-fluid tt-top-line">
+			<div class="row">
+				<div class="tt-logo-container">
+					<!-- mobile logo -->
+					{% include 'frontend_tmps/includes/header/objects/logo.html'  %}
+					<!-- /mobile logo -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- tt-desktop-header -->
+	<div class="tt-desktop-header">
+		<div class="container">
+			<div class="tt-header-holder">
+				<div class="tt-col-obj tt-obj-logo">
+					<!-- logo -->
+					<a class="tt-logo tt-logo-alignment" href="/"><img src="{% static '/front_assets/images/bat_design_New3_07.jpg' %}" alt="" class="loading" data-was-processed="true"></a>
+					<!-- /logo -->
+				</div>
+				<div class="tt-col-obj tt-obj-menu">
+					<div class="tt-desctop-parent-menu tt-parent-box">
+						<div class="tt-desctop-menu" id="js-include-desktop-menu">
+							{% include 'frontend_tmps/includes/header/objects/desktop-menu.html'  %}
+						</div>
+					</div>
+				</div>
+				<div class="tt-col-obj tt-obj-options obj-move-right">
+					<!-- tt-search -->
+					<div class="tt-desctop-parent-search tt-parent-box">
+						<div class="tt-search tt-dropdown-obj">
+								<button class="tt-dropdown-toggle" data-tooltip="Search" data-tposition="bottom">
+									<i class="icon-f-85"></i>
+								</button>
+								<div class="tt-dropdown-menu">
+									<div class="container">
+										<form>
+											<div class="tt-col">
+												<input type="text" class="tt-search-input" placeholder="Search Products...">
+												<button class="tt-btn-search" type="submit"></button>
+											</div>
+											<div class="tt-col">
+												<button class="tt-btn-close icon-g-80"></button>
+											</div>
+											<div class="tt-info-text">
+												What are you Looking for?
+											</div>
+											<div class="search-results"></div>
+										</form>
+									</div>
+								</div>
+						</div>
+					</div>
+					<!-- /tt-search -->
+					<!-- tt-cart -->
+					<div class="tt-desctop-parent-cart tt-parent-box">
+						{% include 'frontend_tmps/includes/header/objects/cart-obj.html'  %}
+					</div>
+					<!-- /tt-cart -->
+					<!-- tt-account -->
+					<div class="tt-desctop-parent-account tt-parent-box">
+						{% include 'frontend_tmps/includes/header/objects/account-obj.html'  %}
+					</div>
+					<!-- /tt-account -->
+					<!-- tt-langue and tt-currency -->
+					<div class="tt-desctop-parent-multi tt-parent-box">
+						{% include 'frontend_tmps/includes/header/objects/multi-obj.html'  %}
+					</div>
+					<!-- /tt-langue and tt-currency -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /tt-desktop-header -->
+	<!-- stuck nav -->
+	<div class="tt-stuck-nav" id="js-tt-stuck-nav">
+		<div class="container">
+			<div class="tt-header-row ">
+				<div class="tt-stuck-desctop-menu-categories"></div>
+				<div class="tt-stuck-parent-menu"></div>
+				<div class="tt-stuck-mobile-menu-categories"></div>
+				<div class="tt-stuck-parent-search tt-parent-box"></div>
+				<div class="tt-stuck-parent-cart tt-parent-box"></div>
+				<div class="tt-stuck-parent-account tt-parent-box"></div>
+				<div class="tt-stuck-parent-multi tt-parent-box"></div>
+			</div>
+		</div>
+	</div>
+</header>

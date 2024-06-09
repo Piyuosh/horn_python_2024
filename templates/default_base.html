@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <title>CORK Admin Template - Login Page</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico"/>
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
+    <link href="{% static 'super_admin_assets/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'super_admin_assets/assets/css/plugins.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'super_admin_assets/assets/css/authentication/form-2.css' %}" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <link rel="stylesheet" type="text/css" href="{% static 'super_admin_assets/assets/css/forms/theme-checkbox-radio.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'super_admin_assets/assets/css/forms/switches.css' %}">
+    {% block ex_css %}{% endblock ex_css %}
+  </head>
+  <body>
+
+   {% block seller_container %}{% endblock seller_container %}
+
+  
+    <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+    <script src="{% static 'super_admin_assets/assets/js/libs/jquery-3.1.1.min.js' %}"></script>
+    <script src="{% static 'super_admin_assets/bootstrap/js/popper.min.js' %}"></script>
+    <script src="{% static 'super_admin_assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    
+    <!-- END GLOBAL MANDATORY SCRIPTS -->
+    <script src="{% static 'super_admin_assets/assets/js/authentication/form-2.js' %}"></script>
+    <script src="{% static 'super_admin_assets/assets/js/register-admin.js' %}"></script>
+    {% block ex_js %}{% endblock ex_js %}
+  </body>
+</html>

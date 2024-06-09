@@ -1,0 +1,36 @@
+{% for j in shipping %}
+										<div class="col-md-6">
+										<label class="radio">
+								<input type="radio" value="{{j.id}}" name="address_book" {% if forloop.first %} checked {% endif %}>
+								<span class="outer"><span class="inner"></span></span><b>{{j.shipping_title|capfirst}} Shipping Address</b></label>										
+											
+											<address>
+												<b>Full Name </b>: {{j.first_name}}  {{j.last_name}}<br>
+												<b>Email </b> : {{j.email}}<br> 
+												<b>Contact Mobile </b> : {% if j.contact_mobile1 %} {{j.contact_mobile1}} {% else %} --- {% endif %}<br>
+												<b>Alternate Mobile </b> : {% if j.contact_mobile2 %} {{j.contact_mobile2}} {% else %} --- {% endif %}<br>
+												<b>Address</b> : {{j.address_line1}},{{j.address_line2}}, {{j.city.name}}, {{j.state.name}}, {{j.country.name}}, PIN: {{j.zip_code}}<br>
+												<a href="javascript:void(0)"  onclick="editAddBook({{j.id}},'shipping')" class="address_book" data-type="shipping"><b>Edit</b></a>&nbsp;&nbsp;&nbsp;
+												{% comment %} <a href="javascript:void(0)"  onclick="deleteAddBook({{j.id}})" class="delete_address" data-type="shipping"><b>Delete</b></a><br><br> {% endcomment %}
+											</address>
+										</div>
+									{% empty %}
+										<div class="col-md-12">
+											<h6 class="">Default Shipping Address</h6>
+											<address>
+												You have not set a default shipping address.<br>
+												<a href="javascript:void(0)" onclick="addressBookForm('shipping')" class="address_book"><b>Add Shipping Address</b></a>
+											</address>
+											<span class="invalid-feedback" id="error_address_book" role="alert"></span>
+										</div>
+									{% endfor %}									
+								
+									{% if shipping %}
+										<div class="col-md-12 text-right">
+											<address>
+												<a href="javascript:void(0)" onclick="addressBookForm('shipping')" class="address_book"><b>Add Shipping Address</b></a>
+											</address>
+											<span class="invalid-feedback" id="error_address_book" role="alert"></span>
+										</div>
+									{% endif %}
+						

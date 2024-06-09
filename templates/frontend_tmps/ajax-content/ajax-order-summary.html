@@ -1,0 +1,22 @@
+<tbody>
+    <tr>
+        <th>SUBTOTAL</th>
+        <td>₹{{total}}</td>
+    </tr>
+    <tr>
+        <th>TAX</th>
+        <td>₹{{tax}}</td>
+    </tr>
+    {% if discount %}
+        <tr>
+            <th>Discount {{discount_type}}</th>
+            <td>-₹{{discount}}</td>
+        </tr>
+    {% endif %}
+</tbody>
+<tfoot>
+    <tr>
+        <th>GRAND TOTAL</th>
+        <td>₹{{grand_total}}</td>
+    </tr>
+</tfoot>

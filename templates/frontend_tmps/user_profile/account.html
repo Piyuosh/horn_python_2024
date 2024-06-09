@@ -1,0 +1,333 @@
+{% extends 'frontend_base.html' %}
+{% load static %}
+
+{% block main_content %}
+<div class="tt-breadcrumb">
+	<div class="container">
+		<ul>
+			<li><a href="{% url 'home' %}">Home</a></li>
+			<li>Shopping Cart</li>
+		</ul>
+	</div>
+</div>
+
+<div id="tt-pageContent">
+	<div class="container-indent">
+		<div class="container container-fluid-custom-mobile-padding">
+			<div class="row">
+				<div class="col-md-4 col-lg-3 col-xl-3 leftColumn aside">
+					{% include 'frontend_tmps/user_profile/account-left.html' %}
+				</div>
+				<div class="col-xl-9 col-lg-9 col-md-12">
+					<h1 class="tt-title-subpages noborder">My Dashboard</h1>
+					<div class="row">
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					{% include 'frontend_tmps/includes/alert.html' %}
+					</div>
+						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title">Account Information</h5>
+									<a href="javascript:void(0)" class="card-edit" data-toggle="modal" data-target="#updateProfile">Edit</a>
+								</div>
+								<div class="card-body" id="profileData">	
+									<b>Full Name </b>: {{ user.first_name}}  {{ user.last_name }}<br>
+									<b>Email </b> : {{ user.email}}<br> 
+									<b>Mobile </b> : {% if user.mobile_no  %} {{ user.mobile_no  }} {% else %} --- {% endif %}
+								</div>	
+							</div>
+						</div>
+
+						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title">Password</h5>
+								</div>
+								<div class="card-body">									
+									<b>Password</b> : **********									
+									<br>
+									<br>
+									<a href="javascript:void(0)" class="card-edit" data-toggle="modal" data-target="#changePass">Change Password</a>
+								</div>	
+
+							</div>
+						</div>
+
+
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title">Address Book</h5>
+									<!-- <a href="dashboard.html#" class="card-edit">Edit</a> -->
+								</div>
+								<div class="card-body">									
+									<div class="row" id="addressBookList">
+									{% for i in billing %}
+										<div class="col-md-6">
+											<h6 class="">Default Billing Address</h6>
+											<address>
+												<b>Full Name </b>: {{i.first_name}}  {{i.last_name}}<br>
+												<b>Email </b> : {{i.email}}<br> 
+												<b>Contact Mobile </b> : {% if j.contact_mobile1 %} {{j.contact_mobile1}} {% else %} --- {% endif %}<br>
+												<b>Alternate Mobile </b> : {% if j.contact_mobile2 %} {{j.contact_mobile2}} {% else %} --- {% endif %}<br>
+												<b>Company </b> :  {% if i.company %} {{i.company}} {% else %} --- {% endif %}<br> 
+												<b>PAN Number </b> : {% if i.pan_number %} {{i.pan_number}} {% else %} --- {% endif %}<br> 
+												<b>GSTIN </b> : {% if i.gstin %} {{i.gstin}} {% else %} --- {% endif %}<br> 
+												<b>Address</b> : {{i.address_line1}},{{i.address_line2}} {{i.city_set.name}}, {{i.state.name}}, {{i.country.name}}, PIN: {{i.zip_code}}<br>
+												<a href="javascript:void(0)"  onclick="editAddBook({{i.id}},'billing')" class="address_book"><b>Edit</b></a>&nbsp;&nbsp;&nbsp;
+											</address>
+										</div>
+									{% empty %}
+										<div class="col-md-12">
+											<h6 class="">Default Billing Address</h6>
+											<address>
+												You have not set a default billing address.<br>
+												<a href="javascript:void(0)" onclick="addressBookForm('billing')" class="address_book"><b>Add Billing Address</b></a>
+											</address>
+										</div>
+									{% endfor %}
+
+									{% for j in shipping %}
+										<div class="col-md-6">
+											<h6>{{j.shipping_title|capfirst}} Shipping Address</h6>
+											<address>
+												<b>Full Name </b>: {{j.first_name}}  {{j.last_name}}<br>
+												<b>Email </b> : {{j.email}}<br> 
+												<b>Contact Mobile </b> : {% if j.contact_mobile1 %} {{j.contact_mobile1}} {% else %} --- {% endif %}<br>
+												<b>Alternate Mobile </b> : {% if j.contact_mobile2 %} {{j.contact_mobile2}} {% else %} --- {% endif %}<br>
+												<b>Address</b> : {{j.address_line1}},{{j.address_line2}}, {{j.city.name}}, {{j.state.name}}, {{j.country.name}}, PIN: {{j.zip_code}}<br>
+												<a href="javascript:void(0)"  onclick="editAddBook({{j.id}},'shipping')" class="address_book" data-type="shipping"><b>Edit</b></a>&nbsp;&nbsp;&nbsp;
+												<a href="javascript:void(0)"  onclick="deleteAddBook({{j.id}})" class="delete_address" data-type="shipping"><b>Delete</b></a><br><br>
+											</address>
+										</div>
+									{% empty %}
+										<div class="col-md-12">
+											<h6 class="">Default Shipping Address</h6>
+											<address>
+												You have not set a default shipping address.<br>
+												<a href="javascript:void(0)" onclick="addressBookForm('shipping')" class="address_book"><b>Add Shipping Address</b></a>
+											</address>
+										</div>
+									{% endfor %}									
+
+									{% if shipping %}
+										<div class="col-md-12 text-right">
+											<address>
+												<a href="javascript:void(0)" onclick="addressBookForm('shipping')" class="address_book"><b>Add Shipping Address</b></a>
+											</address>
+										</div>
+									{% endif %}
+
+									</div>
+
+								</div>	
+								<!-- <div class="card-footer text-muted">
+									<a href="account.html#">Edit</a>
+								</div>	 -->							
+							</div>
+						</div>					
+
+						<div class="col-auto mr-auto">
+							<div class="form-group">
+								<!-- <button class="btn btn-border" type="submit">LOGIN</button> -->
+							</div>
+						</div>
+						<div class="col-auto align-self-end">
+							<div class="form-group">
+								<a href="#" class="tt-link-back">
+									<i class="icon-h-46"></i> RETURN TO BACK PAGE
+								</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<div class="modal  fade" id="updateProfile" tabindex="-1" role="dialog" aria-label="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content ">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="icon icon-clear"></span></button>
+			</div>
+			<div class="modal-body update-modal">
+				<h5 class="modal-title">Update Profile</h5>
+				<div class="text-danger" role="alert" id="errorMessage"></div>
+				<form method="POST" action="{% url 'edit.profile' %}" id="profileForm" enctype="multipart/form-data">
+				{% comment %} {% csrf_token %}			 {% endcomment %}
+					<div class="row">
+
+					<div class="col-sm-3 imgUp">
+						<div class="imagePreview">
+						{% if user_profile.avatar %}
+							<img src="{{ user_profile.avatar.url }}" alt="Profile Picture" data-name="cat_sample_img" width="100">
+						{% else %}
+							<img src="" alt="" data-name="cat_sample_img">
+						{% endif %}
+							{{ profile_form.avatar }}	
+						</div>
+						<label class="btn btn-primary">
+							Upload<input type="file"  id="cat_sample_img" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;">
+						</label>
+													
+						<span class="invalid-feedback" id="error_avatar" role="alert"></span>
+						
+					</div><!-- col-2 -->
+					<!-- <i class="fa fa-plus imgAdd"></i> -->
+
+												
+						<div class="col-md-3">
+							<div class="form-group required-field">
+								<label for="first_name">First Name *</label>
+								{{ user_form.first_name }}								
+								<span class="invalid-feedback" id="error_first_name" role="alert"></span>
+							</div><!-- End .form-group -->
+						</div><!-- End .col-md-3 -->
+
+						<div class="col-md-3">
+							<div class="form-group">
+								<label for="last_name">Last Name *</label>
+								{{ user_form.last_name }}								
+								<span class="invalid-feedback" id="error_last_name" role="alert"> </span>
+							</div><!-- End .form-group -->
+						</div><!-- End .col-md-3 -->
+
+						<div class="col-md-3">
+							<div class="form-group required-field">
+								<label for="mobile">Mobile</label>
+								{{ user_form.mobile_no }}								
+								<span class="invalid-feedback" id="error_mobile" role="alert">
+
+								</span>
+							</div><!-- End .form-group -->
+						</div><!-- End .col-md-3 -->
+
+						<div class="col-md-3">
+							<div class="form-group required-field">
+								<label for="email">Email *</label>
+									{{ user_form.email }}								
+								<span class="invalid-feedback" id="error_email" role="alert">
+								</span>
+							</div><!-- End .form-group -->
+						</div><!-- End .col-md-6 -->
+
+						<div class="col-md-3">
+							<div class="form-group">
+								<label for="country">Country</label>
+								{{ profile_form.country }}								
+								<span class="invalid-feedback" id="error_country" role="alert"> </span>
+							</div><!-- End .form-group -->
+						</div><!-- End .col-md-3 -->
+
+						<div class="col-md-3">
+							<div class="form-group">
+								<label for="state">State</label>
+								{{ profile_form.state}}								
+								<span class="invalid-feedback" id="error_state" role="alert"> </span>
+							</div><!-- End .form-group -->
+						</div><!-- End .col-md-3 -->
+
+						<div class="col-md-3">
+							<div class="form-group">
+								<label for="city">City</label>
+									{{ profile_form.city }}								
+								<span class="invalid-feedback" id="error_city" role="alert"> </span>
+							</div><!-- End .form-group -->
+						</div><!-- End .col-md-3 -->
+
+						<div class="col-md-12">
+							<div class="form-group required-field">
+								<label for="address_line1">Address line 1 </label>
+									{{ profile_form.address_line1 }}								
+								<span class="invalid-feedback" id="error_address_line1" role="alert">
+								</span>
+							</div><!-- End .form-group -->
+						</div><!-- End .col-md-12 -->
+						<div class="col-md-12">
+							<div class="form-group required-field">
+								<label for="address_line2">Address line 2</label>
+									{{ profile_form.address_line2 }}								
+								<span class="invalid-feedback" id="error_address_line2" role="alert">
+								</span>
+							</div><!-- End .form-group -->
+						</div><!-- End .col-md-12 -->
+
+					</div><!-- End .row -->
+					<div class="row">
+						<div class="col-xl-12 text-right">
+							<button type="button" onclick="profileFormSubmit('profileForm')" class="btn btn-primary">Save</button>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal  fade"  id="changePass" tabindex="-1" role="dialog" aria-label="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content ">
+			<div class="modal-header">
+				<h5 class="modal-title">Change Password</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="icon icon-clear"></span></button>
+			</div>
+			<div class="modal-body update-modal">
+				<h5 class="modal-title">Change Password</h5>
+				<div class="text-success" role="alert" id="successMessage2"></div>
+				<div class="text-danger" role="alert" id="errorMessage2"></div>
+				<form action="{% url 'change.password' %}" id="changePassForm" method="POST">
+				{% csrf_token %}
+					<div class="row">	
+						<div class="col-md-12">
+							<div class="form-group required-field">
+								<label for="password">Current Password *</label>
+								{{reset_form.current_password}}								
+								<span class="invalid-feedback" id="error_current_password" role="alert"></span>
+							</div><!-- End .form-group -->
+						</div><!-- End .col-md-6 -->					
+						<div class="col-md-12">
+							<div class="form-group required-field">
+								<label for="new_password">New Password *</label>
+								{{reset_form.new_password}}								
+								<span class="invalid-feedback" id="error_new_password" role="alert"></span>
+							</div><!-- End .form-group -->
+						</div><!-- End .col-md-6 -->
+						<div class="col-md-12">
+							<div class="form-group">
+								<label for="c_pass">Confirm Password *</label>
+								{{reset_form.confirm_password}}								
+								<span class="invalid-feedback" id="error_confirm_password" role="alert"></span>						
+							</div><!-- End .form-group -->
+						</div><!-- End .col-md-6 -->
+					</div>
+					<div class="row">
+						<div class="col-xl-12 text-right">
+							<button type="button" onclick="changePassword()" class="btn btn-primary">Save</button>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</form>
+			</div>			
+		</div>
+	</div>
+</div>
+
+<div class="modal  fade"  id="billingModal" tabindex="-1" role="dialog" aria-label="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content ">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="icon icon-clear"></span></button>
+			</div>
+			<div class="modal-body update-modal" id="addressBook">
+				
+			</div>			
+		</div>
+	</div>
+</div>
+
+{% endblock  %}
+

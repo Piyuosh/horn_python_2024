@@ -1,0 +1,184 @@
+<h5 class="modal-title">@if($addType == 'shipping') Shipping Address @else Billing Address @endif </h5>
+<div class="text-success" role="alert" id="successMessage2"></div>
+<div class="text-danger" role="alert" id="errorMessage2"></div>
+<form action="{{route('address.book')}}" id="addressForm">
+	<div class="row">
+		<input type="hidden" name="addIdd" value="{{$addressBook->id}}">
+		<input type="hidden" name="addType" value="{{$addType}}">
+		@if($addType == 'shipping')
+		<div class="col-sm-12 col-md-12 col-lg-12">
+			<div class="form-group required-field">
+				<label class="control-label">Shipping Address Title *</label>
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-3 col-lg-3">
+			<div class="form-group checkbox-group required-field">
+				<input type="checkbox" id="checkBox11" @if($addressBook->shipping_title == 'Default') checked="" @endif  name="shipping_title" value="Default" class="ship_title">
+				<label for="checkBox11">
+					<span class="check"></span>
+					<span class="box"></span>
+					Default
+				</label>
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-3 col-lg-3">
+			<div class="form-group checkbox-group required-field">
+				<input type="checkbox" id="checkBox12" @if($addressBook->shipping_title == 'Home') checked="" @endif name="shipping_title" value="Home" class="ship_title">
+				<label for="checkBox12">
+					<span class="check"></span>
+					<span class="box"></span>
+					Home
+				</label>
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-3 col-lg-3">
+			<div class="form-group checkbox-group required-field">
+				<input type="checkbox" id="checkBox13" @if($addressBook->shipping_title == 'Work') checked="" @endif name="shipping_title" value="Work" class="ship_title">
+				<label for="checkBox13">
+					<span class="check"></span>
+					<span class="box"></span>
+					Work
+				</label>
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-3 col-lg-3">
+			<div class="form-group checkbox-group required-field">
+				<input type="checkbox" id="checkBox14" @if($addressBook->shipping_title == 'Other') checked="" @endif name="shipping_title" value="Other" class="ship_title">
+				<label for="checkBox14">
+					<span class="check"></span>
+					<span class="box"></span>
+					Other
+				</label>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-12 col-lg-12">
+			<span class="invalid-feedback" id="error_shipping_title" role="alert"></span>	
+		</div>
+
+		@else
+
+		@endif
+		<div class="col-sm-12 col-md-6 col-lg-6">
+			<div class="form-group required-field">
+				<label for="first_name" class="control-label">FIRST NAME *</label>
+				<input type="text" class="form-control" value="{{$addressBook->first_name}}" name="first_name" id="first_name">
+				<span class="invalid-feedback" id="error_first_name" role="alert"></span>	
+			</div>
+		</div>						
+		<div class="col-sm-12 col-md-6 col-lg-6">
+			<div class="form-group required-field">
+				<label for="last_name" class="control-label">LAST NAME *</label>
+				<input type="text" class="form-control" value="{{$addressBook->last_name}}" name="last_name" id="last_name">
+				<span class="invalid-feedback" id="error_last_name" role="alert"></span>	
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-6">
+			<div class="form-group required-field">
+				<label for="phone" class="control-label">PHONE</label>
+				<input type="text" class="form-control" value="{{$addressBook->phone}}" name="phone" id="phone">
+				<span class="invalid-feedback" id="error_phone" role="alert"></span>	
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-6">
+			<div class="form-group required-field">
+				<label for="email" class="control-label">EMAIL ADDRESS *</label>
+				<input type="text" class="form-control" value="{{$addressBook->email}}" name="email" id="email">
+				<span class="invalid-feedback" id="error_email" role="alert"></span>	
+			</div>
+		</div>
+		@if($addType == 'billing')
+		<div class="col-sm-12 col-md-12 col-lg-12">
+			<div class="form-group required-field">
+				<label for="companyName" class="control-label">COMPANY NAME</label>
+				<input type="text" class="form-control" name="companyName" value="{{$addressBook->company}}" id="companyName">
+				<span class="invalid-feedback" id="error_companyName" role="alert"></span>	
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-6">
+			<div class="form-group required-field">
+				<label for="pan" class="control-label">PAN NUMBER</label>
+				<input type="text" class="form-control" name="pan" value="{{$addressBook->pan_number}}" id="pan">
+				<span class="invalid-feedback" id="error_pan" role="alert"></span>	
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-6">
+			<div class="form-group required-field">
+				<label for="gstin" class="control-label">GSTIN</label>
+				<input type="text" class="form-control" name="gstin" value="{{$addressBook->gstin}}" id="gstin">
+				<span class="invalid-feedback" id="error_gstin" role="alert"></span>	
+			</div>
+		</div>
+		@endif
+		<div class="col-sm-12 col-md-6 col-lg-6">
+			<div class="form-group required-field">
+				<label for="country" class="control-label">COUNTRY *</label>
+				<select name="country" id="country" class="form-control" onchange="getState(this.value);">
+					<option>Country</option>
+					@forelse($countries as $country)
+					<option value="{{$country->id}}" @if($country->id == $addressBook->country) selected @endif>{{$country->name}}</option>
+					@empty
+					@endforelse
+				</select>
+				<span class="invalid-feedback" id="error_country" role="alert"></span>	
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-6">
+			<div class="form-group required-field">
+				<label for="state" class="control-label">STATE / COUNTY *</label>
+				<select name="state" id="state" class="form-control" onchange="getCity(this.value);">
+					<option>State</option>	
+					@forelse($states as $state)
+					<option value="{{$state->id}}" @if($state->id == $addressBook->state) selected @endif>{{$state->name}}</option>
+					@empty
+					@endforelse				
+				</select>
+				<span class="invalid-feedback" id="error_state" role="alert"></span>	
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-6">
+			<div class="form-group required-field">
+				<label for="city" class="control-label">TOWN / CITY *</label>
+				<select name="city" id="city" class="form-control">
+					<option>City</option>	
+					@forelse($cities as $city)
+					<option value="{{$city->id}}" @if($city->id == $addressBook->city) selected @endif>{{$city->name}}</option>
+					@empty
+					@endforelse					
+				</select>
+				<span class="invalid-feedback" id="error_city" role="alert"></span>	
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-6">
+			<div class="form-group required-field">
+				<label for="postCode" class="control-label">POSTCODE / ZIP *</label>
+				<input type="text" class="form-control" value="{{$addressBook->zip_code}}" name="postCode" id="postCode">
+				<span class="invalid-feedback" id="error_postCode" role="alert"></span>	
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-12 col-lg-12">
+			<div class="form-group required-field">
+				<label for="address" class="control-label">ADDRESS *</label>
+				<textarea name="address" class="form-control" id="address">{{$addressBook->address}}</textarea>
+				<span class="invalid-feedback" id="error_address" role="alert"></span>	
+			</div>
+		</div>
+		@if($addType == 'billing')
+<!-- 		<div class="col-sm-12 col-md-6 col-lg-6">
+			<div class="form-group checkbox-group required-field">
+				<input type="checkbox" id="checkBox11" checked value="1" name="sameAsShipping">
+				<label for="checkBox11">
+					<span class="check"></span>
+					<span class="box"></span>
+					Set as shipping default address?
+				</label>
+			</div>
+		</div> -->
+		@endif
+	</div>
+	<div class="row tt-offset-21 text-right">
+		<div class="col-md-12 col-offset-md-6">
+			<button type="button" class="btn" id="addressFormSubmit">SAVE  ADDRESS</button>
+			<button type="button" class="btn" data-dismiss="modal">CLOSE</button>			
+		</div>							
+	</div>
+</form>

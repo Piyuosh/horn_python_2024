@@ -1,0 +1,76 @@
+{% load static %}
+<div class="row">
+    <div class="col-md-6">
+        <input type="hidden" name="last_row_no_modal" id="last_row_no_modal" value="0">
+            <div class="row">
+                {% for i in img_range %}                                                    
+                <div class="col-sm-3 imgUp">
+                    {% if i == 0 %}
+                        <span>Main Thumb</span>
+                    {% endif %}
+                        <div class="imagePreview">
+                            <img src=" {% static 'cover_images/400x400.jpg' %}" alt="image_{{i}}" data-name="cat_sample_img">
+                            <input type="hidden" name="product_images[]" id="catSampleImg">
+                        </div>
+                        <label class="btn btn-primary">
+                                Upload<input type="file" id="cat_sample_img" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;">
+                        </label>
+                        <div class="help-block" id="error-create-cat_sample_img"></div>
+                </div><!-- col-2 -->
+                {% endfor %}
+            </div>
+    </div>        
+    {% comment %} <div class="col-md-6">
+        {% load static %}
+        <div class="table-responsive">
+            <input type="hidden" name="detail_row_no_modal" id="detail_row_no_modal" value="0">
+            <table class="table table-bordered item-table" id="detail_set_modal-group">
+        <thead>
+                <tr> 
+                    {% for attr in theme_attributes.pro_attr.all %}
+                        {% if  attr.slug != 'color' %} 
+                            <th class="">{{attr.name}}</th>  
+                        {% endif %}                     
+                    {% endfor %}                                                               
+                    <th class="">Price</th>
+                    <th class="">Qty</th>
+                    <th class="">Action</th>
+                    
+                </tr>
+            </thead>
+            <tbody id="variation-attr-row">
+                <tr id="variant_attr_set-0"> 
+                    {% for attr in theme_attributes.pro_attr.all %}
+                        {% if attr.input_type == 'dropdown' and attr.slug != 'color' %} 
+                            <td class="field-{{attr.slug}} td-md">                                                                                                                               
+                                <select name="{{attr.slug}}[]" id="id_productvariant_set-0-{{attr.slug}}" class="form-control form-control-sm">
+                                    <option value="0" selected>Size</option>
+                                    {% for values in attr.attr_values.all %}
+                                        <option value="{{values.id}}">{{values.name}}</option>
+                                    {% endfor %} 
+                                </select>                                               
+                            </td>
+                        {% endif %}   
+                    {% endfor %}
+                    <td class="field-price">
+                        <input type="hidden" value="{{theme_attributes.id}}" name="variation_theme[]">
+                        <input type="hidden" value="{{attr.id}}" name="attr_name[]">
+                        <input type="number" min="99" max="99999" name="price[]" value="{{product.sale_price}}" id="id_productvariant_set-0-price" class="form-control form-control-sm" placeholder="Price">
+                    </td>
+                    <td class="field-qty"><input type="number" min="0" max="9999" value="{{product.quantity}}" name="qty[]" id="id_productvariant_set-0-qty" class="form-control form-control-sm" placeholder="Quantity"></td>                                                              
+                    <td class="delete_row_set-0" class="field-variation">
+                        <ul class="table-controls">
+                            <li><a href="javascript:void(0);" onclick="deleteAttr(0)" class="delete-item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg></a></li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="form-group">
+            <div class="text-right">
+                <button type="button" class="btn btn-secondary additem btn-sm" onclick="addMoreVariation({{theme_attributes.id}})">Add Item</button>
+            </div> 
+        </div>
+    </div> 
+</div>{% endcomment %}
+</div>

@@ -1,0 +1,16 @@
+{% extends 'frontend_base.html' %}
+{% load static %}
+
+{% block main_content %}
+
+<div class="tt-breadcrumb">
+	<div class="container">
+		<ul>
+			<li><a href="{% url 'home' %}">Home</a></li>
+			<li>Payment Failed</li>
+		</ul>
+	</div>
+</div>
+<h2>transaction {{status}}</h2>
+
+{% endblock %}

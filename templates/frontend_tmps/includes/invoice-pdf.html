@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<title>Invoice-{{ Carbon\Carbon::parse($invoice->created_at)->format('d-M-Y / h:i A') }}</title>
+	<!-- REQUIRED STYLES -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<style>
+		body{font-size:14px}.panel-body>.invoice-header{margin:-15px -15px 15px;padding:20px 15px 25px;border-bottom:1px solid #f1f2f2}.panel-body>.invoice-header .invoice-header-left h1{margin-bottom:18px;color:#889BA5}.panel-body>.invoice-header .invoice-header-left address{line-height:24px;margin-bottom:0}@media (min-width:768px){.panel-body>.invoice-header .invoice-header-right{text-align:right}}.panel-body>.invoice-header .invoice-header-right h1{font-weight:600;color:#E5E5E5}.panel-body>.invoice-header .invoice-header-right span{line-height:24px}.panel-body>.invoice-header .invoice-header-right .label{margin-top:35px;padding:12px 30px;font-size:13px;border-color:#d6d6d6}@media (max-width:767px){.panel-body>.invoice-header .invoice-header-right .label{margin-top:20px}}.panel-body>.invoice-header .invoice-header-right .label strong{font-size:14px}.panel-body>.invoice-body .table td+td{text-align:right}.panel-body>.invoice-body .table td em{color:#999}.panel-body>.invoice-body .table tfoot>tr>td h1{margin-top:-13px;margin-bottom:18px;color:#889BA5}.panel-body>.invoice-body .table tfoot>tr>td .table tr:last-child>td{border-top-color:#999}
+
+		.page-break {
+			page-break-after: always;
+		}
+
+		.rounded{
+			border: 1px solid #d6d6d6;
+			border-radius: 4px;
+
+			margin: 35px 0px 0px 0px;
+			padding: 12px 30px;
+			font-size: 13px;
+			float: right;
+			width: 20%;
+			text-align: center;
+		}
+		table{
+			width: 100%;
+		}
+		.col-sm-6 {
+			width: 50%;
+		}
+		.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+			padding: 12px 15px;
+			vertical-align: middle;
+			border-top-color: #eceded;
+		}
+		.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+			padding: 8px;
+			line-height: 1.42857143;
+			vertical-align: top;
+			/*border-top: 1px solid #ddd;*/
+		}
+		table > tbody > tr > td.tdLeft{text-align: left;width: 50%;}
+		table > tbody > tr > td.tdRight{text-align: right;width: 50%;}
+		.block{display: block;}
+		.panel-body>.invoice-header {
+			margin: -15px -15px 15px;
+			padding: 20px 15px 25px;
+			border-bottom: 1px solid #f1f2f2;
+		}
+		.row {
+			margin-right: -15px;
+			margin-left: -15px;
+		}
+		.col-sm-12 {
+			width: 100%;
+		}
+		.invoice-header-left{float: left;}
+		.panel-body>.invoice-body .table td+td {
+			text-align: right;
+		}
+
+		.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+			padding: 12px 15px;
+			vertical-align: middle;
+			border-top-color: #eceded;
+		}
+
+		.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+			padding: 12px 15px;
+			line-height: 1.42857143;
+			vertical-align: middle;
+			border-top: 1px solid #ddd;
+		}
+		table {
+			border-spacing: 0;
+			border-collapse: collapse;
+		}
+		.table>caption+thead>tr:first-child>td, .table>caption+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>th, .table>thead:first-child>tr:first-child>td, .table>thead:first-child>tr:first-child>th {
+			border-top: 0;
+			font-size: 16px;
+			font-weight: bold;
+			border-bottom: 1px solid #ddd;
+		}
+		.table>tbody:first-child>tr:first-child>td, .table>tbody:first-child>tr:first-child>th {
+			border-top: 0;
+		}
+
+	</style>	
+</head>
+<body>
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="invoice-header clearfix">						
+						<div class="invoice-body">
+							<div class="table-responsive">
+								<table class="table">
+									<tbody>									
+										<tr>
+											<td class="tdLeft">
+												<address>
+													<img src="{{asset('/media/images/bat_design_New3_07.jpg')}}" alt="Hornbill Mart" height="70"><br>
+													<strong>Hornbill Mart</strong><br>
+													<strong>Add:</strong> B-54, Sector-1, Shatabdi Nagar<br>
+													Meerut-250103, Uttar Pradesh, India<br>
+													<strong>Mobile:</strong> +91-9259403040, +91-9557000873<br>
+												</address>
+											</td>
+											<td class="tdRight"><span class="block"><strong>Invoice N:</strong> {{ $invoice->order_id }}</span>
+												<span class="block"><strong>Invoice Date:</strong> {{ Carbon\Carbon::parse($invoice->created_at)->format('d-M-Y / h:i A') }}</span>
+												<br>
+												<div class="label rounded">
+													<strong>Total Amount:</strong> <strong class="block m-top-10"><img src="{{asset('/theme/assets/img/indian-rupee.png')}}" height="11" alt="Rupee"/> {{$invoice->grand_total}}</strong>
+												</div></td>
+											</tr>
+											
+
+										</tbody>
+									</table>
+								</div>						
+							</div><!-- /.invoice-body -->
+
+
+						</div><!-- /.invoice-header -->
+						<div class="invoice-header clearfix">
+							<div class="invoice-body">
+								<div class="table-responsive">
+									<table class="table">
+										<tbody>											
+											<tr>
+												<td class="tdLeft">
+													<em class="block m-top-5"><strong>EmaiL:</strong> info@hornbillmart.com
+													</em>
+													<em class="block m-top-5"><strong>Web:</strong> www.hornbillmart.com<br>
+													</em>
+												</td>
+												<td class="tdRight">
+													<em class="block m-top-5"><strong>GSTIN:</strong> 09AAJFH7214G1ZC</em>
+													<em class="block m-top-5"><strong>PAN:</strong> AAJFH7214G</em></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>						
+								</div><!-- /.invoice-body -->
+							</div><!-- /.invoice-header -->
+
+							<div class="invoice-header clearfix">
+
+
+								<div class="invoice-body">
+									<div class="table-responsive">
+										<table class="table">
+											<tbody>											
+												<tr>
+													<td class="tdLeft">
+														<strong>Billing Address</strong>
+														@if($invoice->shipping_address)
+														@if($invoice->shipping_address->ship_first_name) 
+														<em class="block m-top-5">{{$invoice->shipping_address->ship_first_name}} {{$invoice->shipping_address->ship_last_name}}
+														</em>
+														@endif	
+														@if($invoice->shipping_address->email) 
+														<em class="block m-top-5">
+															{{$invoice->shipping_address->email}}
+														</em>
+														@endif	
+														@if($invoice->shipping_address->phone) 
+														<em class="block m-top-5">
+															{{$invoice->shipping_address->phone}}
+														</em>
+														@endif	
+														@if($invoice->shipping_address->company) 
+														<em class="block m-top-5">
+															{{$invoice->shipping_address->company}}
+														</em>
+														@endif	
+
+														@if($invoice->shipping_address->gstin ) 
+														<em class="block m-top-5">
+															{{$invoice->shipping_address->gstin}}
+														</em>
+														@endif
+														@if($invoice->shipping_address->pan_number ) 
+														<em class="block m-top-5">
+															{{$invoice->shipping_address->pan_number}}
+														</em>
+														@endif										
+														<em class="block m-top-5">
+															{{$invoice->shipping_address->ship_street_address}}, <br>{{$invoice->shipping_address->city_name}},  {{$invoice->shipping_address->ship_zip_code}},  {{$invoice->shipping_address->state_name}},  {{$invoice->shipping_address->country_name}}
+														</em>
+														@endif
+													</td>
+													<td class="tdRight">
+														<strong>Shipping Address</strong>
+														@if($invoice->shipping_address)
+														@if($invoice->shipping_address->ship_first_name) 
+														<em class="block m-top-5">{{$invoice->shipping_address->ship_first_name}} {{$invoice->shipping_address->ship_last_name}}
+														</em>
+														@endif	
+														@if($invoice->shipping_address->email) 
+														<em class="block m-top-5">
+															{{$invoice->shipping_address->email}}
+														</em>
+														@endif	
+														@if($invoice->shipping_address->phone) 
+														<em class="block m-top-5">
+															{{$invoice->shipping_address->phone}}
+														</em>
+														@endif	
+														@if($invoice->shipping_address->company) 
+														<em class="block m-top-5">
+															{{$invoice->shipping_address->company}}
+														</em>
+														@endif
+														@if($invoice->shipping_address->gstin ) 
+														<em class="block m-top-5">
+															{{$invoice->shipping_address->gstin}}
+														</em>
+														@endif		
+														@if($invoice->shipping_address->pan_number ) 
+														<em class="block m-top-5">
+															{{$invoice->shipping_address->pan_number}}
+														</em>
+														@endif	
+
+														<em class="block m-top-5">
+															{{$invoice->shipping_address->ship_street_address}}, <br>{{$invoice->shipping_address->city_name}},  {{$invoice->shipping_address->ship_zip_code}},  {{$invoice->shipping_address->state_name}},  {{$invoice->shipping_address->country_name}} 
+														</em>
+														@endif
+													</div><!-- /.col-sm-6 --></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>						
+								</div><!-- /.invoice-body -->
+							</div><!-- /.invoice-header -->
+
+							<div class="invoice-body">
+								<div class="table-responsive">
+									<table class="table">
+										<thead>
+											<tr>												
+												<td style="width: 35%;">Item</td>
+												<td>HSN</td>
+												<td>Qty</td>
+												<td style="width: 10%;">Price</td>
+												@if($invoice->shipping_address->ship_state == 38)
+												<td style="width: 5%;">CGST</td>
+												<td style="width: 5%;">SGST</td>
+												@else
+												<td style="width: 5%;">IGST</td>
+												@endif
+												<td>Tax Amt.</td>
+												<td>Amount</td>
+											</tr>
+										</thead>
+										<tbody>
+											@forelse($invoice->order_item as $item)
+											<tr>
+												<td>
+													<strong>{{$item->product->product_name}}</strong>
+													
+												</td>
+												<td>{{$item->product->hsn_code}}</td>
+												<td>{{ $item->qty }}</td>
+												<td><img src="{{asset('/theme/assets/img/indian-rupee.png')}}" height="11" alt="Rupee"/>{{ $item->product->sale_price }}</td>
+												@if($invoice->shipping_address->ship_state == 38)
+												<td style="text-align: center;">{{$item->product->gst_rate/2}}%</td>
+												<td style="text-align: center;">{{$item->product->gst_rate/2}}%</td>
+												@else
+												<td style="text-align: center;">{{$item->product->gst_rate}}%</td>
+												@endif											
+												<td><img src="{{asset('/theme/assets/img/indian-rupee.png')}}" height="11" alt="Rupee"/>{{ $item->totalTax }}</td>
+
+												<td><img src="{{asset('/theme/assets/img/indian-rupee.png')}}" height="11" alt="Rupee"/>{{ $item->grandTotal }}</td>
+											</tr>
+											@empty
+											@endforelse
+
+										</tbody>
+
+										<tfoot>
+											<tr>
+												@if($invoice->shipping_address->ship_state == 38)
+												<td colspan="5">
+													@else
+													<td colspan="4">
+														@endif
+														<h1>Hornbill Mart</h1>										
+														<em class="block m-top-5">Authorized Signature</em>
+													</td>
+													<td colspan="3">
+														<table class="table m-left-15">
+															<tbody>
+																<tr>
+																	<td>Subtotal:</td>
+																	<td><img src="{{asset('/theme/assets/img/indian-rupee.png')}}" height="11" alt="Rupee"/>{{ number_format((float)$invoice->total, 2, '.', '') }}</td>
+																</tr>
+																<tr>
+																	<td>Total Tax:</td>
+																	<td><img src="{{asset('/theme/assets/img/indian-rupee.png')}}" height="11" alt="Rupee"/>{{  number_format((float)$invoice->taxable_value, 2, '.', '') }}</td>
+																</tr>
+																<tr>
+																	<td><strong>Grand Total:</strong></td>
+																	<td><img src="{{asset('/theme/assets/img/indian-rupee.png')}}" height="11" alt="Rupee"/><strong>{{ number_format((float)$invoice->grand_total, 2, '.', '') }}</strong></td>
+																</tr>
+															</tbody>
+														</table>
+													</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>						
+								</div><!-- /.invoice-body -->
+							</div><!-- /.panel-body -->
+						</div><!--/.panel-->
+					</div><!-- /.col-sm-12 -->
+				</div><!-- /.row -->
+

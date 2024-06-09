@@ -1,0 +1,5 @@
+ {% autoescape off %}
+  Hi {{user.first_name}}
+  Please click blow the link to confirm to verify email
+  <a href="http://{{domain}}{% url 'activate' uidb64=uid token=token %}">
+ {% endautoescape %}

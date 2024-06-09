@@ -1,0 +1,39 @@
+{% load static %}
+                                {% for child in child_cat.all %}
+                                    <div class="card">
+                                        <div class="card-header" id="...">
+                                            <section class="mb-0 mt-0">
+                                                <div role="menu" class="collapsed" data-toggle="collapse" data-target="#iconAccordionSub{{child.id}}" aria-expanded="true" aria-controls="iconsAccordion">
+                                                    <div class="accordion-icon"><svg> ... </svg></div>
+                                                    {{child.category_name}}  <div class="icons"><svg> ... </svg></div>
+                                                </div>
+                                            </section>
+                                        </div>
+                                        {% if child.children.all %}
+                                            <div id="iconAccordionSub{{child.id}}" class="collapse" aria-labelledby="...">
+                                                <div class="card-body">
+                                                    <!--  BEGIN child category  -->
+                                                        {% include 'seller_tmps/includes/child-cat.html' with child_cat=child.children %}
+                                                    <!--  END child category  -->
+                                                </div>
+                                            </div>
+                                        {% else %}
+                                            <div id="iconAccordionSub{{child.id}}" class="collapse" aria-labelledby="..." data-parent="#iconsAccordion">
+                                                 <div class="card-body text-center">
+                                                    <div class="avatar avatar-xl">
+                                                        {% if  child.cat_img %} 
+                                                            <img alt="avatar" src="{{ child.cat_img.url}}" width="100" class="rounded" />
+                                                        {% else %}
+                                                           <img alt="avatar" src="{% static 'super_admin_assets/assets/img/90x90.jpg' %}" class="rounded" />
+                                                        {% endif %}                                                           
+                                                        <p><b>{{child.category_name}}</b></p>
+                                                        <p>{{child.short_desc|slice:":50"}}</p>
+                                                    </div>                                                    
+                                                    <a href="{% url 'seller:product.create' child.uuid %}" class="btn btn-primary mb-2">Select</a>
+                                                </div>
+                                            </div>
+
+                                        {% endif %}	
+                                    </div>
+                                {% endfor %}
+                 

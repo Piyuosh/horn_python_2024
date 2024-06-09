@@ -1,0 +1,328 @@
+{% extends 'frontend_base.html' %}
+{% load static %}
+
+{% block main_content %}
+
+<div class="tt-breadcrumb">
+	<div class="container">
+		<ul>
+			<li><a href="{% url 'home' %}">Home</a></li>
+			<li><a href="/cart/">Cart</a></li>
+			<li>Checkout</li>
+		</ul>
+	</div>
+</div>
+	{% if error %}
+	
+      <span style="color:red">Please fill all mandatory fields.</span>
+
+      {% endif %}
+
+	 <div id="tt-pageContent" class="checkout_info_main">
+	 {% if quantity == 0 %}
+	 	<div class="container-indent nomargin">
+			<div class="tt-empty-cart">
+				<span class="tt-icon icon-f-39"></span>
+				<h1 class="tt-title">SHOPPING CART IS EMPTY</h1>
+				<p>You have no items in your shopping cart.</p>
+				<a href="{% url 'home' %}" class="btn">CONTINUE SHOPPING</a>
+			</div>
+		</div> 
+	 {% else %}
+
+	<div class="container-indent">
+		<div class="container">
+					<div class="row">
+						<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+							<div id="accordion" class="myaccordion">
+							{% if not user.is_authenticated %} 
+								<div class="card">
+								<div class="card-header" id="headingOne">
+								<b> Login & Register</b>
+								</div>
+								<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+								<div class="card-body">
+									Returning customer? <a href="{% url 'login' %}" title="Login" >Login</a> Or <a href="{% url 'register' %}" title="Register" >Register</a>
+								</div>
+								</div>
+							</div> {% endif %}
+							
+							<div class="card">
+								<div class="card-header" id="headingTwo">
+								<b>Shipping Address</b>
+								</div>
+								<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+								<div class="card-body">
+								<form id="addressBookForm">
+									<div class="row" id="addressBookListCheckout"> 
+										{% for j in shipping %}
+											<div class="col-md-6">
+											<label class="radio">
+											<input type="radio" name="address_book" value="{{j.id}}" {% if forloop.first %} checked {% endif %}>
+											<span class="outer"><span class="inner"></span></span><b>{{j.shipping_title|capfirst}} Shipping Address</b></label>										
+												
+												<address>
+													<b>Full Name </b>: {{j.first_name}}  {{j.last_name}}<br>
+													<b>Email </b> : {{j.email}}<br> 
+													<b>Contact Mobile </b> : {% if j.contact_mobile1 %} {{j.contact_mobile1}} {% else %} --- {% endif %}<br>
+													<b>Alternate Mobile </b> : {% if j.contact_mobile2 %} {{j.contact_mobile2}} {% else %} --- {% endif %}<br>
+													<b>Address</b> : {{j.address_line1}},{{j.address_line2}}, {{j.city.name}}, {{j.state.name}}, {{j.country.name}}, PIN: {{j.zip_code}}<br>
+													<a href="javascript:void(0)"  onclick="editAddBook({{j.id}},'shipping')" class="address_book" data-type="shipping"><b>Edit</b></a>&nbsp;&nbsp;&nbsp;
+													{% comment %} <a href="javascript:void(0)"  onclick="deleteAddBook({{j.id}})" class="delete_address" data-type="shipping"><b>Delete</b></a><br><br> {% endcomment %}
+												</address>
+											</div>
+										{% empty %}
+											<div class="col-md-12">
+												<h6 class="">Default Shipping Address</h6>
+												<address>
+													You have not set a default shipping address.<br>
+													<a href="javascript:void(0)" onclick="addressBookForm('shipping')" class="address_book"><b>Add Shipping Address</b></a>
+												</address>
+												<span class="invalid-feedback" id="error_address_book" role="alert"></span>
+											</div>
+										{% endfor %}									
+									
+										{% if shipping %}
+											<div class="col-md-12 text-right">
+												<address>
+													<a href="javascript:void(0)" onclick="addressBookForm('shipping')" class="address_book"><b>Add Shipping Address</b></a>
+												</address>
+												<span class="invalid-feedback" id="error_address_book" role="alert"></span>
+											</div>
+										{% endif %}							
+									</div>
+								</form>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <b>Review Product</b>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        <div class="tt-table-01">                      
+            <table>
+              <thead>
+                <tr>                                   
+                    <th>Image</th>
+					<th>Description</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+              </thead>
+				<tbody>
+							{% for cart_item in cart_items %}
+								<tr>									
+									<td>
+										<div class="tt-product-img">
+											<img src="{% static 'front_assets/images/loader.svg' %}" class="rounded" data-src="{{ cart_item.product.mainThumb }}" alt="{{cart_item.product.product_name}}">
+										</div>                                        
+									</td>
+									<td>
+										<a href="{{ cart_item.product.get_absolute_url }}">{{ cart_item.product.product_name }}</a>
+									</td>
+									<td>
+										<div class="tt-price subtotal">
+											{{ cart_item.quantity }}
+										</div>
+									</td>
+									<td>
+										<div class="tt-price subtotal">
+											₹{{ cart_item.sub_total }}
+										</div>
+									</td>
+								</tr>
+							{% endfor %}
+							</tbody>
+						</table>
+                        </div>
+      </div>
+    </div>
+  </div>   
+</div>
+			</div>
+			<div class="col-md-4 col-lg-4">
+				<div class="tt-shopcart-box tt-boredr-large">
+					<div class="cart-subtotal tt-shopcart-table01" id="checkoutInfo">						
+						<h4 class="tt-title" style="margin-top: 0px;">Order Summary</h4>
+						<hr>						
+						<table class="tt-shopcart-table01">
+							{% include "./ajax-content/ajax-order-summary.html" %}
+						</table>
+						<hr>
+						<h4 class="tt-title">Payment Type</h4>
+						<hr>
+						 <ul style="list-style:none;padding: 0px;">
+							<form id="paymentTypeForm">
+								<li>
+								
+									    <label class="radio">
+										<input id="radio11" type="radio" name="payment_type" value="razorpay" checked>
+										<span class="outer"><span class="inner"></span></span><b>Credit / Debit Card / Net Banking / UPI's / Wallets</b></label>
+										<div data-method="radio11" class="payment-text">
+											
+										{% comment %} <form action={{ data.action }} method="post" name="payuForm">
+											<input type="hidden" name="key" value="{{ data.key }}" />
+										<input type="hidden" name="hash_string" value="{{ data.hash_string }}" />
+										<input type="hidden" name="hash" value="{{ data.hash }}"/>
+										<input type="hidden" name="posted" value="{{ data.data }}"/>
+										<input type="hidden" name="txnid" value="{{ data.txnid }}" />									
+									
+										<input type="hidden" name="amount" value="{{ data.amount|default:'' }}" />
+										
+										<input type="hidden" name="firstname" id="firstname" value="{{ data.firstname|default:'' }}" />										
+										
+										<input type="hidden" name="email" id="email" value="{{ data.email|default:'' }}" />
+										<input type="hidden" name="productinfo" value="{{ data.productinfo|default:'' }}" />										
+										<input type="hidden" name="phone" value="{{ data.phone|default:'' }}" />										
+										
+										<input type="hidden" name="surl" value="{{ data.surl }}" size="64" />
+										
+										<input type="hidden" name="furl" value="{{ data.furl }}" size="64" />
+										
+										<input type="hidden" name="service_provider" value="{{data.service_provider}}" size="64" />										
+										
+										<input type="hidden" name="curl" value="{{ data.curl }}" /> {% endcomment %}
+
+										
+										{% comment %} <input type="hidden" id="udf5" name="udf5" value="BOLT_KIT_PHP7" />
+										<input type="hidden" id="surl" name="surl" value="{{ data.surl }}" />
+										<input type="hidden" id="key" name="key" value="{{ data.key }}" />
+										<input type="hidden" id="salt" name="salt" value="{{ data.salt }}" />
+										<input type="hidden" id="txnid" name="txnid" value="{{ data.txnid }}" />										
+										<input type="hidden" id="amount" name="amount" value="{{ data.amount|default:'' }}" />
+										<input type="hidden" id="pinfo" name="pinfo" value="Offers" />
+										<input type="hidden" id="fname" name="fname" value="{{ data.firstname|default:'' }}" />
+										<input type="hidden" id="email" name="email" value="{{ data.email|default:'' }}" />
+										<input type="hidden" id="mobile" name="mobile" value="{{ data.phone|default:'' }}" />
+										<input type="hidden" id="hash" name="hash" value="" />														
+										 {% endcomment %}
+
+
+										<button type="button" onclick="placeOrder('razorpay')" class="btn btn-lg"><span class="icon icon-check_circle"></span>PROCEED TO CHECKOUT</button>
+									
+									
+								</div>
+								</li> 	
+								{% comment %} <li>
+									<label class="radio">
+										<input id="radio12" type="radio" name="payment_type" value="paypal">
+										<span class="outer"><span class="inner"></span></span><b>Paypal</b></label>
+										<div data-method="radio12" class="payment-text"> <div id="paypal-button-container"></div> </div>
+								</li> 							 {% endcomment %}
+								<li>
+										<label class="radio">
+										<input id="radio13" type="radio" name="payment_type" value="cod">
+										<span class="outer"><span class="inner"></span></span><b>Cash On Delivary (COD)</b></label>
+										<div data-method="radio13" class="payment-text"><button type="button" onclick="placeOrder('cod')" class="btn btn-lg"><span class="icon icon-check_circle"></span>PROCEED TO CHECKOUT</button></div>
+								</li>
+							</form>
+							</ul>                             
+                        </div>
+                    </div>
+						<!-- Set up a container element for the button -->
+    					
+						{% comment %} <button type="submit" class="btn btn-lg"><span class="icon icon-check_circle"></span>PROCEED TO CHECKOUT</button> {% endcomment %}
+					</div>
+				</div>
+			</div>	
+		</div>
+	   </form>
+	</div>
+ </div>
+ {% endif %}
+</div>
+<div class="modal  fade"  id="billingModal" tabindex="-1" role="dialog" aria-label="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content ">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="icon icon-clear"></span></button>
+			</div>
+			<div class="modal-body update-modal" id="addressBook">
+				
+			</div>			
+		</div>
+	</div>
+</div>
+{% endblock  %}
+
+{% block ex_js %}
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<!-- Include the PayPal JavaScript SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=ATBM78D7Hc3e6C0gzSZqppfjzsTbff3oxCbL8sWNuknSFHy4tlAvr1InH4V-lQZTdP70r_EsptEGF_zc&currency=USD"></script>
+	
+	<script>  
+
+	var grant_total = "{{ grant_total }}";	
+	var url = "{% url 'payment' %}";
+    var orderId = "{{ order.order_number }}";
+    var payment_method = "PayPal";	
+
+	// Example POST method implementation:
+	async function postData(url = '', data = {}) {
+	// Default options are marked with *
+	const response = await fetch(url, {
+		method: 'POST', // *GET, POST, PUT, DELETE, etc.
+		//mode: 'cors', // no-cors, *cors, same-origin
+		//cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+		//credentials: 'same-origin', // include, *same-origin, omit
+		headers: {
+		'Content-Type': 'application/json',
+		'X-CSRFToken': csrftoken,
+		// 'Content-Type': 'application/x-www-form-urlencoded',
+		},
+		//redirect: 'follow', // manual, *follow, error
+		//referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+		body: JSON.stringify(data) // body data type must match "Content-Type" header
+	}) // parses JSON response into native JavaScript objects
+	.then((response) => response.json())
+  							.then((data) => {
+								  window.location.href = '/order/complete/'+data.order_number+'/'
+							  });
+	}
+	    // Render the PayPal button into #paypal-button-container
+        paypal.Buttons({
+            style: {
+                color:  'blue',
+                shape:  'pill',
+                label:  'pay',
+                height: 40
+            },
+            // Set up the transaction
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: grant_total
+                        }
+                    }]
+                });
+            },
+
+            // Finalize the transaction
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+					console.log(details);
+					data = {	
+                                orderId:orderId,
+                                payment_method:payment_method,
+								transId:details.id,								
+								status:details.status,
+								payer_email:details.payer.email_address,
+								payer_fullname:details.payer.name.given_name+' '+details.payer.name.surname,
+								payer_id:details.payer.payer_id,
+								payer_address:details.payer.address.country_code,
+								amount:grant_total,
+								currency_code:details.purchase_units[0].amount.currency_code,
+							};
+					        postData(url, data);						
+					
+                    // Show a success message to the buyer
+                    //alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                });
+            }
+        }).render('#paypal-button-container');
+
+    </script>
+{% endblock %}

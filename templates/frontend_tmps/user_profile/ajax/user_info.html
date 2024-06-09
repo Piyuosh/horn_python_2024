@@ -1,0 +1,3 @@
+<b>Full Name </b>: {{ user.first_name}}  {{ user.last_name }}<br>
+<b>Email </b> : {{ user.email}}<br> 
+<b>Mobile </b> : {% if user.mobile_no  %} {{ user.mobile_no  }} {% else %} --- {% endif %}

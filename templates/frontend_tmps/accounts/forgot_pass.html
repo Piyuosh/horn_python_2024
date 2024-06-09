@@ -1,0 +1,68 @@
+{% extends 'frontend_base.html' %}
+
+{% block main_content %}
+
+<div class="tt-breadcrumb">
+	<div class="container">
+		<ul>
+			<li><a href="{% url 'home' %}">Home</a></li>
+			<li>Register</li>
+		</ul>
+	</div>
+</div>
+<div id="tt-pageContent">
+	<div class="container-indent">
+		<div class="container">
+			<h1 class="tt-title-subpages noborder">ALREADY REGISTERED?</h1>
+			<div class="tt-login-form">
+				<div class="row">
+					<div class="col-xs-12 col-md-6">
+						<div class="tt-item">
+							<h2 class="tt-title">NEW CUSTOMER</h2>
+							<p>
+								By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.
+							</p>
+							<div class="form-group">
+								<a href="{% url 'register' %}" class="btn btn-top btn-border">CREATE AN ACCOUNT</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-6">
+						<div class="tt-item">
+							<h2 class="tt-title">Forgot Password</h2>
+							If you have an account with us, please <a href="{% url 'login' %}" class="btn btn-top btn-border">LOGIN</a>.
+							<div class="form-default form-top">
+								<form action="{% url 'forgot.password' %}" method="POST">
+								{% csrf_token %}									
+									{% include 'frontend_tmps/includes/alert.html' %}
+									<div class="form-group">
+										<label for="loginInputName">E-MAIL *</label>
+										<div class="tt-required">* Required Fields</div>
+										<input type="text" name="email" class="form-control" required placeholder="Enter Username or E-mail">
+									</div>
+									
+									<div class="row">
+										<div class="col-auto mr-auto">
+											<div class="form-group">
+												<button class="btn btn-border" type="submit">Submit</button>
+											</div>
+										</div>
+										<div class="col-auto align-self-end">
+											<div class="form-group">
+												<ul class="additional-links">
+													<li><a href="{% url 'login' %}" class="btn btn-top btn-border">LOGIN</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,136 @@
+				{% load static %}
+                <div class="tt-modal-quickview desctope">
+					<div class="row">
+						<div class="col-12 col-md-5 col-lg-6">
+							<div class="tt-mobile-product-slider arrow-location-center">
+                                {% for item in product.pro_image.all %}                                    
+                                        <div><img src="{% static '/front_assets/images/loader.svg' %}" data-lazy="{{item.image.url}}" alt="{{product.product_name}}"></div> 
+							    {% endfor %}
+								<!--
+								//video insertion template
+								<div>
+									<div class="tt-video-block">
+										<a href="#" class="link-video"></a>
+										<video class="movie" src="video/video.mp4" poster="video/video_img.jpg"></video>
+									</div>
+								</div> -->
+							</div>
+						</div>
+						<div class="col-12 col-md-7 col-lg-6">
+							<div class="tt-product-single-info">
+								<div class="tt-add-info">
+									<ul>
+										{% comment %} <li><span>SKU:</span> 001</li>
+										<li><span>Availability:</span> 40 in Stock</li> {% endcomment %}
+                                        {% if product.quantity <= 0 %}
+                                            <li><span>Availability:</span> <span class="tt-label-out-stock">Out Of Stock</span></li>								
+                                        {% else %}
+                                            <li><span>Availability:</span> <span class="tt-label-in-stock">{{product.quantity}} in Stock</span></li>
+                                        {% endif %}
+									</ul>
+								</div>
+								<h2 class="tt-title">{{product.product_name}}</h2>
+								<div class="tt-price">									
+                                    <span class="new-price">₹{{product.sale_price}}</span>
+							        <span class="old-price">₹{{product.regular_price}} </span>
+							        <span class="percent-off">{{ product.persent_off }}% Off</span>
+								</div>
+								<div class="tt-review">
+									<input name="rating" value="{{ product.averageReview }}" readonly class="rating rating-loading" data-min="0" data-max="5" data-step="0.5">
+							            &nbsp <a href="#">({{product.countReview}} Review)</a>
+								</div>
+								<div class="tt-wrapper">
+									{{product.long_desc}}
+								</div>
+                                <form action="{% url 'add.to.cart.view' %}" method="POST" id="addToCartForm">
+						            {% csrf_token %}
+						            <input type="hidden" value="{{product.id}}" name="pId" id="product_id">
+								{% comment %} <div class="tt-swatches-container">
+									<div class="tt-wrapper">
+										<div class="tt-title-options">SIZE</div>
+										<form class="form-default">
+											<div class="form-group">
+												<select class="form-control">
+													<option>21</option>
+													<option>25</option>
+													<option>36</option>
+												</select>
+											</div>
+										</form>
+									</div>
+									<div class="tt-wrapper">
+										<div class="tt-title-options">COLOR</div>
+										<form class="form-default">
+											<div class="form-group">
+												<select class="form-control">
+													<option>Red</option>
+													<option>Green</option>
+													<option>Brown</option>
+												</select>
+											</div>
+										</form>
+									</div>
+									<div class="tt-wrapper">
+										<div class="tt-title-options">TEXTURE:</div>
+										<ul class="tt-options-swatch options-large">
+											<li><a class="options-color" href="#">
+												<span class="swatch-img">
+													<img src="images/loader.svg" data-src="images/custom/texture-img-01.jpg" alt="">
+												</span>
+												<span class="swatch-label color-black"></span>
+											</a></li>
+											<li class="active"><a class="options-color" href="#">
+												<span class="swatch-img">
+													<img src="images/loader.svg" data-src="images/custom/texture-img-02.jpg" alt="">
+												</span>
+												<span class="swatch-label color-black"></span>
+											</a></li>
+											<li><a class="options-color" href="#">
+												<span class="swatch-img">
+													<img src="images/loader.svg" data-src="images/custom/texture-img-03.jpg" alt="">
+												</span>
+												<span class="swatch-label color-black"></span>
+											</a></li>
+											<li><a class="options-color" href="#">
+												<span class="swatch-img">
+													<img src="images/loader.svg" data-src="images/custom/texture-img-04.jpg" alt="">
+												</span>
+												<span class="swatch-label color-black"></span>
+											</a></li>
+											<li><a class="options-color" href="#">
+												<span class="swatch-img">
+													<img src="images/loader.svg" data-src="images/custom/texture-img-05.jpg" alt="">
+												</span>
+												<span class="swatch-label color-black"></span>
+											</a></li>
+										</ul>
+									</div>
+								</div> {% endcomment %}
+								<div class="tt-wrapper">
+										{% if product.quantity <= 0 %}
+								<div class="tt-row-custom-01">								
+								<div class="col-item">
+									<a href="#" class="btn btn-lg"><i class="icon-f-39"></i>Out Of Stock</a>
+								</div>
+							</div>
+								{% else %}
+								
+								<div class="tt-row-custom-01">
+									<div class="col-item">
+										<div class="tt-input-counter style-01">
+											<span class="minus-btn"></span>
+											<input type="text" value="1" size="5" name="qty" id="item_qty">
+											<span class="plus-btn"></span>
+										</div>
+									</div>
+									<div class="col-item">
+										<button type="button" onclick="addToCart()" class="btn btn-lg"><i class="icon-f-39"></i>ADD TO CART</button>
+									</div>
+								</div>
+								{% endif %}
+								</div>
+                            </form>
+							</div>
+						</div>
+					</div>
+				</div>

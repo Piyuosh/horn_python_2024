@@ -1,0 +1,157 @@
+{% extends 'frontend_base.html' %}
+{% load static %}
+{% block main_content %}
+<div class="tt-breadcrumb">
+	<div class="container">
+		<ul>
+			<li><a href="{% url 'home' %}">Home</a></li>
+			<li>Order Placed Successfull</li>
+		</ul>
+	</div>
+</div>
+<div id="tt-pageContent">
+	<div class="container-indent nomargin">
+		<div class="tt-empty-cart">
+			<span class="tt-icon icon-f-68"></span>
+			<h1 class="tt-title">ORDER PLACED SUCCESSFULL</h1>
+			
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="panel panel-default">
+              <div class="panel-heading large-heading">
+                <div class="panel-action">
+                  <button class="btn btn-close"></button>
+                  <button class="btn btn-min"></button>
+                  <button class="btn btn-expand"></button>
+                </div><!-- /.panel-action -->
+                <div class="panel-title">
+                  <div class="panel-tools">
+                    <span class="title">Invoice</span>
+                    <div class="tools-content">
+                      <button type="button" class="btn btn-default btn-sm rounded">
+                        <i class="fa fa-print m-right-5"></i> Print
+                      </button>
+                      <button type="button" class="btn btn-default btn-sm rounded">
+                        <i class="fa fa-download m-right-5"></i> Save
+                      </button>
+                    </div>
+                  </div><!-- /.panel-tools -->
+                </div><!-- /.panel-title -->
+              </div><!-- /.panel-heading -->
+
+              <div class="panel-body">
+                <div class="invoice-header clearfix">
+                  <div class="col-sm-6 invoice-header-left">
+                    <h1>Recipient Company</h1>
+                    <address>
+                      <strong>Recipient Co. LLC</strong><br>
+                      1001 Abeckett Street,<br>
+                      Melbourne, Australia,<br>
+                      +5-909-575-6341,<br>
+                      +5-709-675-6341,<br>
+                      info@company.com<br>
+                      www.company-web.com
+                    </address>
+                  </div><!-- /.col-sm-6 -->
+
+                  <div class="col-sm-6 invoice-header-right">
+                    <h1>INVOICE</h1>
+                    <span class="block">Invoice N: 1254</span>
+                    <span class="block">Invoice Date: 01/01/2016</span>
+                    <span class="block">Due Date: 01/08/2016</span>
+
+                    <div class="label rounded">
+                      Amount Due: <strong class="block m-top-10">$ 1.140.00</strong>
+                    </div>
+                  </div><!-- /.col-sm-6 -->
+                </div><!-- /.invoice-header -->
+
+                <div class="invoice-body">
+                  <div class="p-left-15 p-right-15 m-bottom-20">
+                    <strong>To: Lena Kepick, Accountant</strong>
+                    <em class="block m-top-5">kepick_l@company.com</em>
+                  </div>
+
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <td style="width: 60%;">Description</td>
+                          <td>Quantity</td>
+                          <td>Price</td>
+                          <td>Amount</td>
+                        </tr>
+                      </thead>
+
+                      <tfoot>
+                        <tr>
+                          <td colspan="2">
+                            <h1>Sender Company</h1>
+                            <strong>To: Lena Kepick, Accountant</strong>
+                            <em class="block m-top-5">kepick_l@company.com</em>
+                          </td>
+                          <td colspan="2">
+                            <table class="table m-left-15">
+                              <tbody>
+                                <tr>
+                                  <td>Subtotal:</td>
+                                  <td>$950</td>
+                                </tr>
+                                <tr>
+                                  <td>Tax (20%):</td>
+                                  <td>$190</td>
+                                </tr>
+                                <tr>
+                                  <td><strong>Grand Total:</strong></td>
+                                  <td><strong>$1140</strong></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tfoot>
+
+                      <tbody>
+                        <tr>
+                          <td>
+                            <strong>Product Name</strong>
+                            <em class="block">Product description text lorem ipsum</em>
+                          </td>
+                          <td>5</td>
+                          <td>$60</td>
+                          <td>$300</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <strong>Product Name</strong>
+                            <em class="block">Product description text lorem ipsum</em>
+                          </td>
+                          <td>7</td>
+                          <td>$50</td>
+                          <td>$350</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <strong>Product Name</strong>
+                            <em class="block">Product description text lorem ipsum</em>
+                          </td>
+                          <td>5</td>
+                          <td>$60</td>
+                          <td>$300</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <button type="button" class="btn btn-primary btn-labeled-left pull-right m-top-25">
+                    <i class="fa fa-send"></i> Send Invoice
+                  </button>
+                </div><!-- /.invoice-body -->
+              </div><!-- /.panel-body -->
+            </div><!--/.panel-->
+          </div><!-- /.col-sm-12 -->
+        </div><!-- /.row -->
+		</div>
+	</div>
+</div>
+{% endblock %}

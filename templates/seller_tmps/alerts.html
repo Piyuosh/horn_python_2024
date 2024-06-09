@@ -1,0 +1,3289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WiseBoard : Alerts</title>
+    <!-- REQUIRED STYLES -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic" rel="stylesheet" type="text/css">
+    <link href="../../dist/main/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!-- REQUIRED PLUGINS -->
+    <link href="../../dist/main/plugins/fontawesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../../dist/main/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css">
+    <!-- main.min.css - WISEBOARD CORE CSS -->
+    <link href="../../dist/main/css/main.min.css" rel="stylesheet" type="text/css">
+    <!-- plugins.min.css - ALL PLUGINS CUSTOMIZATIONS -->
+    <link href="../../dist/main/css/plugins.min.css" rel="stylesheet" type="text/css">
+    <!-- admin.min.css - ADMIN LAYOUT -->
+    <link href="css/admin.min.css" rel="stylesheet" type="text/css">
+    <!-- theme-default.min.css - DEFAULT THEME -->
+    <link href="css/theme-default.min.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  
+    <!-- TOP NAVIGATION STARTS -->
+    <nav class="navbar navbar-fixed-top navbar-h-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle rounded collapsed" data-toggle="collapse" data-target="#navbar-h-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div><!-- /.navbar-header -->
+
+        <!-- Collect the nav links for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-h-collapse">
+          <ul class="nav navbar-nav">
+            <li>
+              <a class="navbar-brand" href="dashboard1.html">
+                <img src="img/logo.svg" alt="logo">
+              </a>
+            </li>
+
+            <li class="dropdown">
+              <a href="alerts.html#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Dashboard</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="dashboard1.html">
+                    <i class="fa fa-bar-chart"></i>
+                    <span>Dashboard 1</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="dashboard2.html">
+                    <i class="fa fa-line-chart"></i>
+                    <span>Dashboard 2</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="dashboard3.html">
+                    <i class="fa fa-area-chart"></i>
+                    <span>Dashboard 3</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="dashboard4.html">
+                    <i class="fa fa-pie-chart"></i>
+                    <span>Dashboard 4</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="dashboard5.html">
+                    <i class="fa fa-tasks"></i>
+                    <span>Dashboard 5</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="dashboard6.html">
+                    <i class="fa fa-list-ol"></i>
+                    <span>Dashboard 6</span>
+                  </a>
+                </li>
+              </ul><!-- /.dropdown-menu -->
+            </li><!-- /.dropdown -->
+
+            <li class="dropdown">
+              <a href="alerts.html#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Components</a>
+              <div class="dropdown-menu">
+                <ul class="dropdown-menu-item">
+                  <li>
+                    <a href="buttons.html">Buttons</a>
+                  </li>
+                  <li>
+                    <a href="buttons-extra.html">Buttons Extra</a>
+                  </li>
+                  <li>
+                    <a href="plugin-bootstrap-ladda.html">Spinner Buttons</a>
+                  </li>
+                  <li>
+                    <a href="labels-badges.html">Labels &amp; Badges</a>
+                  </li>
+                  <li>
+                    <a href="tabs.html">Tabs</a>
+                  </li>
+                  <li>
+                    <a href="plugin-bootstrap-tabdrop.html">Tabdrop</a>
+                  </li>
+                  <li>
+                    <a href="modals.html">Modals</a>
+                  </li>
+                </ul>
+
+                <ul class="dropdown-menu-item">
+                  <li>
+                    <a href="plugin-bootstrap-modal.html">Advanced Modals</a>
+                  </li>
+                  <li>
+                    <a href="plugin-bootbox.html">Bootbox Modals</a>
+                  </li>
+                  <li>
+                    <a href="steps.html">Steps</a>
+                  </li>
+                  <li>
+                    <a href="plugin-bootstrap-wizard.html">Steps Wizard</a>
+                  </li>
+                  <li>
+                    <a href="alerts.html">Alerts</a>
+                  </li>
+                  <li>
+                    <a href="plugin-bootstrap-notify.html">Bootstrap Notify</a>
+                  </li>
+                  <li>
+                    <a href="plugin-bootstrap-sweetalert.html">Bootstrap Sweetalert</a>
+                  </li>
+                </ul>
+
+                <ul class="dropdown-menu-item">
+                  <li>
+                    <a href="plugin-toastr.html">Toastr Alerts</a>
+                  </li>
+                  <li>
+                    <a href="plugin-blockui.html">Block UI</a>
+                  </li>
+                  <li>
+                    <a href="pricing.html">Pricing</a>
+                  </li>
+                  <li>
+                    <a href="plugin-sortable-lists.html">Sortable Lists</a>
+                  </li>
+                  <li>
+                    <a href="typography.html">Typography</a>
+                  </li>
+                  <li>
+                    <a href="plugin-cookiebar.html">Cookie Bar</a>
+                  </li>
+                  <li>
+                    <a href="other-components.html">Other Components</a>
+                  </li>
+                </ul>
+              </div><!-- /.dropdown-menu -->
+            </li><!-- /.dropdown -->
+
+            <li class="dropdown">
+              <a href="alerts.html#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Pages</a>
+              <div class="dropdown-menu">
+                <ul class="dropdown-menu-item">
+                  <li>
+                    <a href="page-invoice.html">Invoice</a>
+                  </li>
+                  <li>
+                    <a href="page-login1.html">Login 1</a>
+                  </li>
+                  <li>
+                    <a href="page-login2.html">Login 2</a>
+                  </li>
+                  <li>
+                    <a href="page-login3.html">Login 3</a>
+                  </li>
+                  <li>
+                    <a href="page-register1.html">Register 1</a>
+                  </li>
+                  <li>
+                    <a href="page-register2.html">Register 2</a>
+                  </li>
+                  <li>
+                    <a href="page-register3.html">Register 3</a>
+                  </li>
+                  <li>
+                    <a href="page-lockscreen1.html">Lockscreen 1</a>
+                  </li>
+                  <li>
+                    <a href="page-lockscreen2.html">Lockscreen 2</a>
+                  </li>
+                </ul>
+
+                <ul class="dropdown-menu-item">
+                  <li>
+                    <a href="page-profile.html">Profile</a>
+                  </li>
+                  <li>
+                    <a href="page-profile-edit.html">Profile Edit</a>
+                  </li>
+                  <li>
+                    <a href="page-portfolio1.html">Portfolio 1</a>
+                  </li>
+                  <li>
+                    <a href="page-portfolio2.html">Portfolio 2</a>
+                  </li>
+                  <li>
+                    <a href="page-search-results1.html">Search Results 1</a>
+                  </li>
+                  <li>
+                    <a href="page-search-results2.html">Search Results 2</a>
+                  </li>
+                  <li>
+                    <a href="page-faq.html">FAQ</a>
+                  </li>
+                  <li>
+                    <a href="page-timeline.html">Timeline</a>
+                  </li>
+                  <li>
+                    <a href="page-contact.html">Contact Us</a>
+                  </li>
+                </ul>
+
+                <ul class="dropdown-menu-item">
+                  <li>
+                    <a href="page-coming-soon.html">Coming Soon</a>
+                  </li>
+                  <li>
+                    <a href="page-error-404-1.html">404 Page 1</a>
+                  </li>
+                  <li>
+                    <a href="page-error-404-2.html">404 Page 2</a>
+                  </li>
+                  <li>
+                    <a href="page-error-404-3.html">404 Page 3</a>
+                  </li>
+                  <li>
+                    <a href="page-error-404-4.html">404 Page 4</a>
+                  </li>
+                  <li>
+                    <a href="page-error-500-1.html">500 Page 1</a>
+                  </li>
+                  <li>
+                    <a href="page-error-500-2.html">500 Page 2</a>
+                  </li>
+                  <li>
+                    <a href="page-error-500-3.html">500 Page 3</a>
+                  </li>
+                  <li>
+                    <a href="page-error-500-4.html">500 Page 4</a>
+                  </li>
+                </ul>
+              </div><!-- /.dropdown-menu -->
+            </li><!-- /.dropdown -->
+
+            <li class="dropdown">
+              <a href="alerts.html#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Form</a>
+              <div class="dropdown-menu">
+                <ul class="dropdown-menu-item">
+                  <li>
+                    <a href="form.html">Form Components</a>
+                  </li>
+                  <li>
+                    <a href="form-validation.html">Form Validation</a>
+                  </li>
+                  <li>
+                    <a href="form-wizard-with-validation.html">Form Wizard With Validation</a>
+                  </li>
+                  <li>
+                    <a href="form-layouts.html">Form Layouts</a>
+                  </li>
+                  <li>
+                    <a href="plugin-bootstrap-touchspin.html">Bootstrap Touchspin</a>
+                  </li>
+                  <li>
+                    <a href="plugin-bootstrap-tagsinput.html">Bootstrap Tagsinput</a>
+                  </li>
+                  <li>
+                    <a href="plugin-jquery-inputmask.html">Inputmask</a>
+                  </li>
+                  <li>
+                    <a href="plugin-bootstrap-select.html">Bootstrap Select</a>
+                  </li>
+                </ul>
+
+                <ul class="dropdown-menu-item">
+                  <li>
+                    <a href="plugin-bootstrap-selectsplitter.html">Bootstrap Select Splitter</a>
+                  </li>
+                  <li>
+                    <a href="plugin-select2.html">Select2</a>
+                  </li>
+                  <li>
+                    <a href="plugin-multi-select.html">Multiselect</a>
+                  </li>
+                  <li>
+                    <a href="plugin-typeahead.html">Autocomplete</a>
+                  </li>
+                  <li>
+                    <a href="plugin-icheck.html">Icheck</a>
+                  </li>
+                  <li>
+                    <a href="plugin-bootstrap-switch.html">Bootstrap Switch</a>
+                  </li>
+                  <li>
+                    <a href="plugin-jasny-bootstrap-file-input.html">File Input</a>
+                  </li>
+                  <li>
+                    <a href="plugin-dropzone-upload.html">Dropzone Upload</a>
+                  </li>
+                </ul>
+
+                <ul class="dropdown-menu-item">
+                  <li>
+                    <a href="plugin-dropzone-upload-bootstrap-theme.html">Dropzone Bootstrap Theme</a>
+                  </li>
+                  <li>
+                    <a href="plugins-bootstrap-date-time-pickers.html">Date &amp; Time Pickers</a>
+                  </li>
+                  <li>
+                    <a href="plugin-combodate.html">Combodate</a>
+                  </li>
+                  <li>
+                    <a href="plugin-x-editable.html">X-Editable</a>
+                  </li>
+                  <li>
+                    <a href="plugins-bootstrap3-wysiwyg-editors.html">WYSIWYG Editors</a>
+                  </li>
+                  <li>
+                    <a href="plugin-minicolors.html">Colorpicker</a>
+                  </li>
+                  <li>
+                    <a href="plugin-bootstrap-tokenfield.html">Bootstrap Tokenfield</a>
+                  </li>
+                  <li>
+                    <a href="plugin-bootstrap-maxlength.html">Bootstrap Maxlength</a>
+                  </li>
+                </ul>
+              </div><!-- /.dropdown-menu -->
+            </li><!-- /.dropdown -->
+
+            <li class="dropdown">
+              <a href="alerts.html#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Panels</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="panels.html">Default Panels</a>
+                </li>
+                <li>
+                  <a href="panels-light.html">Light Panels</a>
+                </li>
+                <li>
+                  <a href="panels-light-bordered.html">Light Bordered Panels</a>
+                </li>
+                <li>
+                  <a href="panels-scrollable.html">Scrollable Panels</a>
+                </li>
+                <li>
+                  <a href="panel-full-height.html">Full Height Panel</a>
+                </li>
+              </ul>
+            </li><!-- /.dropdown -->
+
+            <li class="dropdown">
+              <a href="alerts.html#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Tables</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="tables.html">Basic Tables</a>
+                </li>
+                <li>
+                  <a href="plugin-datatables-basic.html">Datatables Basic</a>
+                </li>
+                <li>
+                  <a href="plugin-datatables-individual-search.html">Datatables Individual Search</a>
+                </li>
+                <li>
+                  <a href="plugin-datatables-extensions.html">Datatables Extensions</a>
+                </li>
+                <li>
+                  <a href="plugin-datatables-ajax.html">Ajax Datatables</a>
+                </li>
+                <li>
+                  <a href="plugin-datatables-editable.html">Datatables Editable</a>
+                </li>
+                <li>
+                  <a href="plugin-datatables-add-remove-rows.html">Datatables Editable (rows)</a>
+                </li>
+                <li>
+                  <a href="plugin-table-sortable.html">Sortable Tables</a>
+                </li>
+              </ul>
+            </li><!-- /.dropdown -->
+
+            <li class="dropdown">
+              <a href="alerts.html#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Plugins Extra</a>
+              <div class="dropdown-menu">
+                <ul class="dropdown-menu-item">
+                  <li>
+                    <a href="plugin-fullcalendar.html">FullCalendar</a>
+                  </li>
+                  <li>
+                    <a href="plugin-treeview.html">Treeview</a>
+                  </li>
+                  <li>
+                    <a href="plugin-jstree.html">JsTree</a>
+                  </li>
+                  <li>
+                    <a href="plugin-ion.range-slider.html">Ion Range Slider</a>
+                  </li>
+                  <li>
+                    <a href="plugin-nouislider.html">No UI Slider</a>
+                  </li>
+                </ul>
+
+                <ul class="dropdown-menu-item">
+                  <li>
+                    <a href="plugin-bootstrap-session-timeout.html">Bootstrap Session Timeout</a>
+                  </li>
+                  <li>
+                    <a href="plugin-pace.html">Page Progress Loader</a>
+                  </li>
+                  <li>
+                    <a href="plugin-prism.html">Code Editor</a>
+                  </li>
+                  <li>
+                    <a href="plugin-bootpag.html">Bootpag</a>
+                  </li>
+                  <li>
+                    <a href="plugin-bootstrap-slider.html">Bootstrap Slider</a>
+                  </li>
+                </ul>
+              </div><!-- /.dropdown-menu -->
+            </li><!-- /.dropdown -->
+
+            <li class="dropdown">
+              <a href="alerts.html#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Maps</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="plugin-gmaps.html">Google Maps</a>
+                </li>
+                <li>
+                  <a href="plugin-jqvmap.html">Vector Maps</a>
+                </li>
+              </ul>
+            </li><!-- /.dropdown -->
+
+            <li class="dropdown">
+              <a href="alerts.html#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Charts</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="plugin-flot.html">Flot Charts</a>
+                </li>
+                <li>
+                  <a href="plugin-google-chart.html">Google Charts</a>
+                </li>
+                <li>
+                  <a href="plugin-c3.html">C3 Charts</a>
+                </li>
+                <li>
+                  <a href="plugin-chart.js.html">Chart Js</a>
+                </li>
+                <li>
+                  <a href="plugin-chartist-js.html">Chartist</a>
+                </li>
+                <li>
+                  <a href="plugins-easy-pie-sparkline.html">Sparkline &amp; Easy Pie</a>
+                </li>
+              </ul>
+            </li><!-- /.dropdown -->
+
+            <li class="dropdown">
+              <a href="alerts.html#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Ecommerce</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="ecommerce-dashboard.html">Dashboard</a>
+                </li>
+                <li>
+                  <a href="ecommerce-orders.html">Orders</a>
+                </li>
+                <li>
+                  <a href="ecommerce-order-details.html">Order Details</a>
+                </li>
+                <li>
+                  <a href="ecommerce-products.html">Products</a>
+                </li>
+                <li>
+                  <a href="ecommerce-product-add-edit.html">Product Add/Edit</a>
+                </li>
+              </ul>
+            </li><!-- /.dropdown -->
+
+            <li class="dropdown">
+              <a href="alerts.html#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Apps</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="page-inbox.html">Inbox</a>
+                </li>
+                <li>
+                  <a href="page-todo.html">To Do</a>
+                </li>
+                <li>
+                  <a href="page-events.html">Events</a>
+                </li>
+              </ul>
+            </li><!-- /.dropdown -->
+
+            <li class="dropdown">
+              <a href="alerts.html#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Layouts</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="page-layout-blank-page.html">Blank Page</a>
+                </li>
+                <li>
+                  <a href="page-layout-grey-body.html">Grey Body</a>
+                </li>
+                <li>
+                  <a href="page-layout-navbar-click-menu.html">Navbar Click</a>
+                </li>
+                <li>
+                  <a href="page-layout-navbar-static.html">Navbar Static</a>
+                </li>
+                <li>
+                  <a href="page-layout-navbar-language-bar.html">Navbar Language Bar</a>
+                </li>
+                <li>
+                  <a href="page-layout-navbar-without-search.html">Navbar Without Search</a>
+                </li>
+                <li>
+                  <a href="page-layout-fixed-footer.html">Fixed Footer</a>
+                </li>
+                <li>
+                  <a href="page-layout-boxed.html">Boxed Version</a>
+                </li>
+              </ul>
+            </li><!-- /.dropdown -->
+          </ul><!-- /.navbar-nav -->
+        </div><!-- /.collapse -->
+      </div>
+    </nav>
+
+    <nav class="navbar navbar-fixed-top navbar-top">
+      <div class="container-fluid">
+        <form class="navbar-form navbar-left" autocomplete="off">
+          <div class="input-group input-group-sm rounded">
+            <input type="text" class="form-control" placeholder="Search">
+            <span class="input-group-btn">
+              <button type="submit" class="btn">
+                <i class="fa fa-search"></i>
+              </button>
+            </span>
+          </div><!-- /input-group -->
+        </form><!-- /.navbar-form -->
+        
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="alerts.html#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-bell"></i>
+              <span class="label circle">4</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-header">
+                You have 3 <a href="page-profile.html">notifications.</a>
+              </li><!-- /.dropdown-header -->
+
+              <li>
+                <ul class="list-dropdown-content list-dropdown-notifications">
+                  <li>
+                    <a href="alerts.html#" data-click="prevent">
+                      <div class="media">
+                        <div class="media-left">
+                          <span class="label label-success circle">
+                            <i class="fa fa-power-off"></i>
+                          </span>
+                        </div>
+                        <div class="media-body">
+                          <i class="pull-right">1 min</i> Servers restarted successfully.
+                        </div>
+                      </div><!-- /.media -->
+                    </a>
+                  </li>
+                  <li>
+                    <a href="alerts.html#" data-click="prevent">
+                      <div class="media">
+                        <div class="media-left">
+                          <span class="label label-info circle">
+                            <i class="fa fa-user"></i>
+                          </span>
+                        </div>
+                        <div class="media-body">
+                          <i class="pull-right">2 min</i> New user registered.
+                        </div>
+                      </div><!-- /.media -->
+                    </a>
+                  </li>
+                  <li>
+                    <a href="alerts.html#" data-click="prevent">
+                      <div class="media">
+                        <div class="media-left">
+                          <span class="label label-danger circle">
+                            <i class="fa fa-undo"></i>
+                          </span>
+                        </div>
+                        <div class="media-body">
+                          <i class="pull-right">4 min</i> Backup error.
+                        </div>
+                      </div><!-- /.media -->
+                    </a>
+                  </li>
+                  <li>
+                    <a href="alerts.html#" data-click="prevent">
+                      <div class="media">
+                        <div class="media-left">
+                          <span class="label label-primary circle">
+                            <i class="fa fa-gear"></i>
+                          </span>
+                        </div>
+                        <div class="media-body">
+                          <i class="pull-right">7 min</i> Settings updated.
+                        </div>
+                      </div><!-- /.media -->
+                    </a>
+                  </li>
+                  <li>
+                    <a href="alerts.html#" data-click="prevent">
+                      <div class="media">
+                        <div class="media-left">
+                          <span class="label label-warning circle">
+                            <i class="fa fa-exclamation"></i>
+                          </span>
+                        </div>
+                        <div class="media-body">
+                          <i class="pull-right">9 min</i> Application is not responding.
+                        </div>
+                      </div><!-- /.media -->
+                    </a>
+                  </li>
+                  <li>
+                    <a href="alerts.html#" data-click="prevent">
+                      <div class="media">
+                        <div class="media-left">
+                          <span class="label label-success circle">
+                            <i class="fa fa-cube"></i>
+                          </span>
+                        </div>
+                        <div class="media-body">
+                          <i class="pull-right">12 min</i> Weekly dump created successfully.
+                        </div>
+                      </div><!-- /.media -->
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul><!-- /.dropdown-menu -->
+          </li><!-- /.dropdown -->
+
+          <li class="dropdown">
+            <a href="alerts.html#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-envelope"></i>
+              <span class="label circle">3</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-header">
+                You have 3 new <a href="page-inbox.html">messages.</a>
+              </li><!-- /.dropdown-header -->
+
+              <li>
+                <ul class="list-dropdown-content list-dropdown-messages">
+                  <li>
+                    <a href="alerts.html#" data-click="prevent">
+                      <div class="media">
+                        <div class="media-left">
+                          <img src="img/avatar3.png" alt="avatar" class="media-object img-circle">
+                        </div>
+                        <div class="media-body">
+                          <h6 class="media-heading">
+                            <i class="pull-right">1 min</i>
+                            <strong class="text-primary">Nancy Allen</strong>
+                          </h6>
+                          <span class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+                        </div>
+                      </div><!-- /.media -->
+                    </a>
+                  </li>
+                  <li>
+                    <a href="alerts.html#" data-click="prevent">
+                      <div class="media">
+                        <div class="media-left">
+                          <img src="img/avatar2.png" alt="avatar" class="media-object img-circle">
+                        </div>
+                        <div class="media-body">
+                          <h6 class="media-heading">
+                            <i class="pull-right">2 min</i>
+                            <strong class="text-primary">Michael Spencer</strong>
+                          </h6>
+                          <span class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+                        </div>
+                      </div><!-- /.media -->
+                    </a>
+                  </li>
+                  <li>
+                    <a href="alerts.html#" data-click="prevent">
+                      <div class="media">
+                        <div class="media-left">
+                          <img src="img/avatar1.png" alt="avatar" class="media-object img-circle">
+                        </div>
+                        <div class="media-body">
+                          <h6 class="media-heading">
+                            <i class="pull-right">5 min</i>
+                            <strong class="text-primary">Jessica Parker</strong>
+                          </h6>
+                          <span class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+                        </div>
+                      </div><!-- /.media -->
+                    </a>
+                  </li>
+                  <li>
+                    <a href="alerts.html#" data-click="prevent">
+                      <div class="media">
+                        <div class="media-left">
+                          <img src="img/avatar2.png" alt="avatar" class="media-object img-circle">
+                        </div>
+                        <div class="media-body">
+                          <h6 class="media-heading">
+                            <i class="pull-right">7 min</i>
+                            <strong class="text-primary">Michael Spencer</strong>
+                          </h6>
+                          <span class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+                        </div>
+                      </div><!-- /.media -->
+                    </a>
+                  </li>
+                  <li>
+                    <a href="alerts.html#" data-click="prevent">
+                      <div class="media">
+                        <div class="media-left">
+                          <img src="img/avatar3.png" alt="avatar" class="media-object img-circle">
+                        </div>
+                        <div class="media-body">
+                          <h6 class="media-heading">
+                            <i class="pull-right">10 min</i>
+                            <strong class="text-primary">Nancy Allen</strong>
+                          </h6>
+                          <span class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+                        </div>
+                      </div><!-- /.media -->
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li><!-- /.dropdown -->
+
+          <li class="dropdown">
+            <a href="alerts.html#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-tasks"></i>
+              <span class="label circle">7</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-header">
+                2 <a href="page-todo.html">projects</a> of 3 are not completed.
+              </li><!-- /.dropdown-header -->
+
+              <li>
+                <ul class="list-dropdown-content list-dropdown-tasks">
+                  <li>
+                    <a href="alerts.html#" data-click="prevent">
+                      <h6>
+                        <i class="pull-right">1 min</i>
+                        <strong>Landing page design</strong>
+                      </h6>
+                      <p>The project includes landing page design, frontend &amp; backend development.</p>
+                        
+                      <div class="progress rounded">
+                        <div class="progress-bar progress-bar-success progress-bar-striped" style="width: 100%">
+                        </div>
+                      </div>
+                      <small>Project end: 03.03.2017</small>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="alerts.html#" data-click="prevent">
+                      <h6>
+                        <i class="pull-right">4 min</i>
+                        <strong>Frontend app</strong>
+                      </h6>
+                      <p>Frontend development, responsiveness fixes, sidebar css cleanup.</p>
+                        
+                      <div class="progress rounded">
+                        <div class="progress-bar progress-bar-primary progress-bar-striped" style="width: 70%">
+                        </div>
+                      </div>
+                      <small>Project end: 25.02.2017</small>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="alerts.html#" data-click="prevent">
+                      <h6>
+                        <i class="pull-right">7 min</i>
+                        <strong>Backend development</strong>
+                      </h6>
+                      <p>Backend development, database engineering, domain &amp; hosting.</p>
+                        
+                      <div class="progress rounded">
+                        <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 90%">
+                        </div>
+                      </div>
+                      <small>Project end: 20.02.2017</small>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li><!-- /.dropdown -->
+
+          <li class="dropdown">
+            <a href="alerts.html#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="img/profile-sm.png" alt="avatar" class="img-circle">
+            </a>
+            <ul class="dropdown-menu dropdown-menu-profile">
+              <li class="dropdown-header">Account Details</li>
+              <li>
+                <div class="media">
+                  <div class="media-left">
+                    <img src="img/profile-lg.png" alt="avatar" class="media-object img-circle">
+                  </div>
+                  <div class="media-body">
+                    <h5 class="media-heading">Sandra Baker</h5>
+                    <p>sandrabaker@gmail.com</p>
+                    <a href="page-profile.html" class="btn btn-primary btn-xs">View profile</a>
+                  </div>
+                </div><!-- /.media -->
+              </li>
+
+              <li>
+                <a href="page-inbox.html">
+                  <i class="fa fa-paper-plane-o"></i> Inbox
+                </a>
+              </li>
+              <li>
+                <a href="page-timeline.html">
+                  <i class="fa fa-history"></i> Timeline
+                </a>
+              </li>
+              <li>
+                <a href="plugin-fullcalendar.html">
+                  <i class="fa fa-calendar-check-o"></i> Calendar
+                </a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="page-login1.html">
+                  <i class="fa fa-sign-out"></i> Sign Out
+                </a>
+              </li>
+            </ul>
+          </li><!-- /.dropdown -->
+
+          <li class="dropdown">
+            <a href="alerts.html#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-align-justify"></i>
+            </a>
+            <div class="sidebar-extra">
+              <div class="sidebar-extra-scroller">
+                <ul class="nav nav-tabs solid-tabs">
+                  <li class="active">
+                    <a href="alerts.html#sidebar-timeline">Timeline</a>
+                  </li>
+                  <li>
+                    <a href="alerts.html#sidebar-mail">Mail</a>
+                  </li>
+                  <li>
+                    <a href="alerts.html#sidebar-settings">Settings</a>
+                  </li>
+                </ul>
+
+                <div class="tab-content">
+                  <div class="tab-pane sidebar-timeline fade in active" id="sidebar-timeline">
+                    <h6>Today</h6>
+                    <ul class="list-sidebar-extra">
+                      <li>
+                        <a href="page-timeline.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar3.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <p>Nancy A. submitted the <span class="text-highlight">project.</span></p>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">7:10PM</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-timeline.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar2.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <p>Michael S. commented on <span class="text-highlight">Hosting options: the best experiences.</span></p>
+                              <div class="text-ellipsis">"No, I wouldn't recommend an unmanaged service to a novice client"</div>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">5:35PM</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                    </ul>
+
+                    <h6>Thursday</h6>
+                    <ul class="list-sidebar-extra">
+                      <li>
+                        <a href="page-timeline.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar3.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <p>Nancy A. created a new <span class="text-highlight">Urgent project</span> topic.</p>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">6:00PM</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-timeline.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar2.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <p>Michael S. replied on <span class="text-highlight">Hosting options: the best experiences.</span></p>
+                              <div class="text-ellipsis">"I agree with Jessica, but I think I have a brilliant idea"</div>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">5:35PM</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-timeline.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar1.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <p>Jessica M. assigned a <span class="text-highlight">project</span> to you.</p>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">4:30PM</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-timeline.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar3.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <p>Nancy A. submitted the <span class="text-highlight">project.</span></p>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">4:25PM</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                    </ul>
+
+                    <h6>Wednesday</h6>
+                    <ul class="list-sidebar-extra">
+                      <li>
+                        <a href="page-timeline.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar1.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <p>Jessica M. commented on <span class="text-highlight">Design &amp; Development.</span></p>
+                              <div class="text-ellipsis">"I think this is the most beautiful design we have ever created"</div>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">4:15PM</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-timeline.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar3.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <p>Nancy A. created a new <span class="text-highlight">Urgent project</span> topic.</p>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">6:00PM</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-timeline.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar2.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <p>Michael S. replied on <span class="text-highlight">Hosting options: the best experiences.</span></p>
+                              <div class="text-ellipsis">"I agree with Jessica, but I think I have a brilliant idea"</div>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">5:35PM</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-timeline.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar3.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <p>Nancy A. submitted the <span class="text-highlight">project.</span></p>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">4:25PM</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                    </ul>
+
+                    <h6>Tuesday</h6>
+                    <ul class="list-sidebar-extra">
+                      <li>
+                        <a href="page-timeline.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar3.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <p>Nancy A. submitted the <span class="text-highlight">project.</span></p>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">7:10PM</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-timeline.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar2.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <p>Michael S. commented on <span class="text-highlight">Hosting options: the best experiences.</span></p>
+                              <div class="text-ellipsis">"No, I wouldn't recommend an unmanaged service to a novice client"</div>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">5:35PM</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                    </ul>
+
+                    <h6>Monday</h6>
+                    <ul class="list-sidebar-extra">
+                      <li>
+                        <a href="page-timeline.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar3.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <p>Nancy A. created a new <span class="text-highlight">Urgent project</span> topic.</p>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">6:00PM</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-timeline.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar2.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <p>Michael S. replied on <span class="text-highlight">Hosting options: the best experiences.</span></p>
+                              <div class="text-ellipsis">"I agree with Jessica, but I think I have a brilliant idea"</div>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">5:35PM</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-timeline.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar1.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <p>Jessica M. assigned a <span class="text-highlight">project</span> to you.</p>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">4:30PM</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-timeline.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar3.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <p>Nancy A. submitted the <span class="text-highlight">project.</span></p>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">4:25PM</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                    </ul>
+                  </div><!-- /.tab-pane -->
+
+                  <div class="tab-pane sidebar-mail fade" id="sidebar-mail">
+                    <h6>Today</h6>
+                    <ul class="list-sidebar-extra">
+                      <li>
+                        <a href="page-inbox.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar3.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <span>Nancy Allen</span>
+                              <div class="text-ellipsis">Here is the code sample.</div>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">5/30/16</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-inbox.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar2.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <span>Michael Spencer</span>
+                              <div class="text-ellipsis">Re: Welcome to Wiseboard.</div>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">5/30/16</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-inbox.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar3.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <span>Nancy Allen</span>
+                              <div class="text-ellipsis">Your contract started.</div>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">5/30/16</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                    </ul>
+
+                    <h6>Thursday</h6>
+                    <ul class="list-sidebar-extra">
+                      <li>
+                        <a href="page-inbox.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar3.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <span>Nancy Allen</span>
+                              <div class="text-ellipsis">Re: I have sent you the sketch files.</div>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">5/29/16</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-inbox.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar1.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <span>Jessica Parker</span>
+                              <div class="text-ellipsis">Here is the code sample.</div>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">5/29/16</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-inbox.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar2.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <span>Michael Spencer</span>
+                              <div class="text-ellipsis">Here are all the design materials.</div>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">5/29/16</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-inbox.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar1.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <span>Jessica Parker</span>
+                              <div class="text-ellipsis">Here are all the psd files.</div>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">5/29/16</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-inbox.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar3.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <span>Nancy Allen</span>
+                              <div class="text-ellipsis">Re: I have sent you the sketch files.</div>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">5/29/16</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                    </ul>
+
+                    <h6>Wednesday</h6>
+                    <ul class="list-sidebar-extra">
+                      <li>
+                        <a href="page-inbox.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar3.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <span>Nancy Allen</span>
+                              <div class="text-ellipsis">Here is the code sample.</div>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">5/28/16</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-inbox.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar2.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <span>Michael Spencer</span>
+                              <div class="text-ellipsis">Re: Welcome to Wiseboard.</div>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">5/28/16</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-inbox.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar3.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <span>Nancy Allen</span>
+                              <div class="text-ellipsis">Your contract started.</div>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">5/28/16</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-inbox.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar1.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <span>Jessica Parker</span>
+                              <div class="text-ellipsis">Here is the code sample.</div>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">5/28/16</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                    </ul>
+
+                    <h6>Tuesday</h6>
+                    <ul class="list-sidebar-extra">
+                      <li>
+                        <a href="page-inbox.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar3.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <span>Nancy Allen</span>
+                              <div class="text-ellipsis">Re: I have sent you the sketch files.</div>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">5/27/16</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-inbox.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar1.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <span>Jessica Parker</span>
+                              <div class="text-ellipsis">Here is the code sample.</div>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">5/27/16</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-inbox.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar2.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <span>Michael Spencer</span>
+                              <div class="text-ellipsis">Here are all the design materials.</div>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">5/27/16</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-inbox.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar1.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <span>Jessica Parker</span>
+                              <div class="text-ellipsis">Here are all the psd files.</div>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">5/27/16</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-inbox.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar3.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <span>Nancy Allen</span>
+                              <div class="text-ellipsis">Re: I have sent you the sketch files.</div>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">5/27/16</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                    </ul>
+
+                    <h6>Monday</h6>
+                    <ul class="list-sidebar-extra">
+                      <li>
+                        <a href="page-inbox.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar3.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <span>Nancy Allen</span>
+                              <div class="text-ellipsis">Here is the code sample.</div>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">5/26/16</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-inbox.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar2.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <span>Michael Spencer</span>
+                              <div class="text-ellipsis">Re: Welcome to Wiseboard.</div>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">5/26/16</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                      <li>
+                        <a href="page-inbox.html">
+                          <div class="media">
+                            <div class="media-left">
+                              <img src="img/avatar3.png" alt="avatar" class="media-object img-circle">
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                              <span>Nancy Allen</span>
+                              <div class="text-ellipsis">Your contract started.</div>
+                            </div><!-- /.media-body -->
+                            <div class="media-right">5/26/16</div>
+                          </div><!-- /.media -->
+                        </a>
+                      </li>
+                    </ul>
+                  </div><!-- /.tab-pane -->
+
+                  <div class="tab-pane sidebar-settings fade" id="sidebar-settings">
+                    <h6>Settings</h6>
+                    <ul class="list-sidebar-extra">
+                      <li>
+                        Enable notifications
+                        <input type="checkbox" class="bs-switch" data-size="small" checked>
+                      </li>
+                      <li>
+                        Enable reports
+                        <input type="checkbox" class="bs-switch" data-size="small" checked>
+                      </li>
+                      <li>
+                        Enable alerts
+                        <input type="checkbox" class="bs-switch" data-size="small">
+                      </li>
+                      <li>
+                        Enable Cookies
+                        <input type="checkbox" class="bs-switch" data-size="small" checked>
+                      </li>
+                      <li>
+                        Enable SMTP
+                        <input type="checkbox" class="bs-switch" data-size="small">
+                      </li>
+                      <li>
+                        Enable upload
+                        <input type="checkbox" class="bs-switch" data-size="small">
+                      </li>
+                      <li>
+                        Enable backup
+                        <input type="checkbox" class="bs-switch" data-size="small">
+                      </li>
+                      <li>
+                        Enable mail
+                        <input type="checkbox" class="bs-switch" data-size="small">
+                      </li>
+                      <li>
+                        Enable chat
+                        <input type="checkbox" class="bs-switch" data-size="small" checked>
+                      </li>
+                    </ul>
+                  </div><!-- /.tab-pane -->
+                </div>
+              </div><!-- /.sidebar-extra-scroller -->
+            </div><!-- /.sidebar-extra -->
+          </li><!-- /.dropdown -->
+        </ul><!-- /.navbar-nav -->
+      </div>
+    </nav>
+    <!-- TOP NAVIGATION ENDS -->
+
+    <!-- CONTENT WRAPPER STARTS -->
+    <div class="content-wrapper">
+      <!-- CONTENT STARTS -->
+      <div class="content">
+        <div class="breadcrumb-wrapper">
+          <ol class="breadcrumb">
+            <li><a href="dashboard1.html"><i class="fa fa-home"></i>Home</a></li>
+            <li class="active">Alerts</li>
+          </ol>
+        </div><!-- /.breadcrumb-wrapper -->
+
+        <div class="page-title-wrapper">
+          <h2 class="page-title">Alerts</h2>
+        </div><!-- /.page-titile-wrapper -->
+
+        <ul class="nav nav-tabs underline-tabs primary-tabs">
+          <li class="active">
+            <a href="alerts.html#tab-alert-square" data-toggle="tab">Square</a>
+          </li>
+          <li>
+            <a href="alerts.html#tab-alert-rounded" data-toggle="tab">Rounded</a>
+          </li>
+          <li>
+            <a href="alerts.html#tab-alert-circle" data-toggle="tab">Circle</a>
+          </li>
+        </ul>
+        
+        <div class="tab-content">
+          <div class="tab-pane active fade in" id="tab-alert-square">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="alert alert-info border-info alert-dismissible fade in">
+                  <button type="button" class="close" data-dismiss="alert">
+                    <span>&times;</span>
+                  </button>
+                  <p>NOTE: This is demonstrative page of static alerts. <a href="plugin-bootstrap-notify.html">Click here</a> to see them in action.</p>
+                </div><!-- /.alert -->
+              </div><!-- /.col-sm-12 -->
+            </div><!-- /.row -->
+
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-action">
+                      <button class="btn btn-close"></button>
+                      <button class="btn btn-min"></button>
+                      <button class="btn btn-expand"></button>
+                    </div>
+                    <div class="panel-title">Light Alerts</div>
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <div class="m-bottom-30">
+                      <div class="alert alert-info">
+                        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-success">
+                        <strong>Well done!</strong> You successfully read this important alert message.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-warning">
+                        <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-danger">
+                        <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                      </div><!-- /.alert -->
+                    </div>
+                  </div><!-- /.panel-body -->
+                </div><!--/.panel-->
+              </div><!-- /.col-sm-12 -->
+
+              <div class="col-sm-12 col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-action">
+                      <button class="btn btn-close"></button>
+                      <button class="btn btn-min"></button>
+                      <button class="btn btn-expand"></button>
+                    </div>
+                    <div class="panel-title">Solid Alerts</div>
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <div class="m-bottom-30">
+                      <div class="alert bg-info">
+                        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                      </div><!-- /.alert -->
+                      <div class="alert bg-success">
+                        <strong>Well done!</strong> You successfully read this important alert message.
+                      </div><!-- /.alert -->
+                      <div class="alert bg-warning">
+                        <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                      </div><!-- /.alert -->
+                      <div class="alert bg-danger">
+                        <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                      </div><!-- /.alert -->
+                    </div>
+                  </div><!-- /.panel-body -->
+                </div><!--/.panel-->
+              </div><!-- /.col-sm-12 -->
+            </div><!-- /.row -->
+
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-action">
+                      <button class="btn btn-close"></button>
+                      <button class="btn btn-min"></button>
+                      <button class="btn btn-expand"></button>
+                    </div>
+                    <div class="panel-title">Dismissible alerts</div>
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <h4>Dismissible alerts</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert alert-info alert-dismissible fade in">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-success alert-dismissible fade in">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Well done!</strong> You successfully read this important alert message.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-warning alert-dismissible fade in">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-danger alert-dismissible fade in">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                      </div><!-- /.alert -->
+                    </div>
+                  </div><!-- /.panel-body -->
+                </div><!--/.panel-->
+              </div><!-- /.col-sm-12 -->
+
+              <div class="col-sm-12 col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-action">
+                      <button class="btn btn-close"></button>
+                      <button class="btn btn-min"></button>
+                      <button class="btn btn-expand"></button>
+                    </div>
+                    <div class="panel-title">Dismissible alerts</div>
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <h4>Dismissible alerts</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert bg-info alert-dismissible fade in">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                      </div><!-- /.alert -->
+                      <div class="alert bg-success alert-dismissible fade in">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Well done!</strong> You successfully read this important alert message.
+                      </div><!-- /.alert -->
+                      <div class="alert bg-warning alert-dismissible fade in">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                      </div><!-- /.alert -->
+                      <div class="alert bg-danger alert-dismissible fade in">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                      </div><!-- /.alert -->
+                    </div>
+                  </div><!-- /.panel-body -->
+                </div><!--/.panel-->
+              </div><!-- /.col-sm-12 -->
+            </div><!-- /.row -->
+
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-action">
+                      <button class="btn btn-close"></button>
+                      <button class="btn btn-min"></button>
+                      <button class="btn btn-expand"></button>
+                    </div>
+                    <div class="panel-title">Bordered alerts</div>
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <h4>Bordered alerts</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert alert-info border-info alert-dismissible fade in">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-success border-success alert-dismissible fade in">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Well done!</strong> You successfully read this important alert message.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-warning border-warning alert-dismissible fade in">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-danger border-danger alert-dismissible fade in">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                      </div><!-- /.alert -->
+                    </div>
+
+                    <h4>With bold borders</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert alert-info border-info border-top-bold alert-dismissible fade in">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-success border-success border-left-bold alert-dismissible fade in">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Well done!</strong> You successfully read this important alert message.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-warning border-warning border-right-bold alert-dismissible fade in">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-danger border-danger border-bottom-bold alert-dismissible fade in">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                      </div><!-- /.alert -->
+                    </div>
+                  </div><!-- /.panel-body -->
+                </div><!--/.panel-->
+              </div><!-- /.col-sm-12 -->
+
+              <div class="col-sm-12 col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-action">
+                      <button class="btn btn-close"></button>
+                      <button class="btn btn-min"></button>
+                      <button class="btn btn-expand"></button>
+                    </div>
+                    <div class="panel-title">With inset border</div>
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <h4>With inset borders</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert bg-info border-inset alert-dismissible fade in">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <h4>Info alert heading</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.</p>
+                      </div><!-- /.alert -->
+                      <div class="alert bg-success border-inset alert-dismissible fade in">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <h4>Success alert heading</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.</p>
+                      </div><!-- /.alert -->
+                      <div class="alert bg-warning border-inset alert-dismissible fade in">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <h4>Warning alert heading</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.</p>
+                      </div><!-- /.alert -->
+                      <div class="alert bg-danger border-inset alert-dismissible fade in">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <h4>Danger alert heading</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.</p>
+                      </div><!-- /.alert -->
+                    </div>
+                  </div><!-- /.panel-body -->
+                </div><!--/.panel-->
+              </div><!-- /.col-sm-12 -->
+            </div><!-- /.row -->
+
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-action">
+                      <button class="btn btn-close"></button>
+                      <button class="btn btn-min"></button>
+                      <button class="btn btn-expand"></button>
+                    </div>
+                    <div class="panel-title">Iconic</div>
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <h4>With left icon</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert alert-info border-info has-icon">
+                        <div class="alert-icon">
+                          <i class="fa fa-rss"></i>
+                        </div>
+                        <div class="alert-body">3 new projects added to rss feed.</div>
+                      </div><!-- /.alert -->
+                      <div class="alert alert-success border-success has-icon">
+                        <div class="alert-icon">
+                          <i class="fa fa-user"></i>
+                        </div>
+                        <div class="alert-body">You have successfully created new profile.</div>
+                      </div><!-- /.alert -->
+                      <div class="alert alert-warning border-warning has-icon alert-dismissible fade in">
+                        <div class="alert-icon">
+                          <i class="fa fa-warning"></i>
+                        </div>
+                        <div class="alert-body">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          Javascript warning on line 300.
+                        </div>
+                      </div><!-- /.alert -->
+                      <div class="alert alert-danger border-danger has-icon alert-dismissible fade in">
+                        <div class="alert-icon">
+                          <i class="fa fa-tasks"></i>
+                        </div>
+                        <div class="alert-body">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          Server has stoppped working.
+                        </div>
+                      </div><!-- /.alert -->
+                    </div>
+
+                    <h4>With right icon</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert alert-info border-info has-icon">
+                        <div class="alert-body">3 new projects added to rss feed.</div>
+                        <div class="alert-icon">
+                          <i class="fa fa-rss"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                      <div class="alert alert-success border-success has-icon">
+                        <div class="alert-body">You have successfully created new profile.</div>
+                        <div class="alert-icon">
+                          <i class="fa fa-user"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                      <div class="alert alert-warning border-warning has-icon alert-dismissible fade in">
+                        <div class="alert-body">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          Javascript warning on line 300.
+                        </div>
+                        <div class="alert-icon">
+                          <i class="fa fa-warning"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                      <div class="alert alert-danger border-danger has-icon alert-dismissible fade in">
+                        <div class="alert-body">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          Server has stoppped working.
+                        </div>
+                        <div class="alert-icon">
+                          <i class="fa fa-tasks"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                    </div>
+
+                    <h4>Light content body</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert alert-info border-info has-icon">
+                        <div class="alert-icon bg-info">
+                          <i class="fa fa-rss"></i>
+                        </div>
+                        <div class="alert-body">3 new projects added to rss feed.</div>
+                      </div><!-- /.alert -->
+                      <div class="alert alert-success border-success has-icon">
+                        <div class="alert-body">You have successfully created new profile.</div>
+                        <div class="alert-icon bg-success">
+                          <i class="fa fa-user"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                    </div>
+                  </div><!-- /.panel-body -->
+                </div><!--/.panel-->
+              </div><!-- /.col-sm-12 -->
+
+              <div class="col-sm-12 col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-action">
+                      <button class="btn btn-close"></button>
+                      <button class="btn btn-min"></button>
+                      <button class="btn btn-expand"></button>
+                    </div>
+                    <div class="panel-title">Iconic</div>
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <h4>With left icon</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert bg-info has-icon">
+                        <div class="alert-icon">
+                          <i class="fa fa-rss"></i>
+                        </div>
+                        <div class="alert-body">3 new projects added to rss feed.</div>
+                      </div><!-- /.alert -->
+                      <div class="alert bg-success has-icon">
+                        <div class="alert-icon">
+                          <i class="fa fa-user"></i>
+                        </div>
+                        <div class="alert-body">You have successfully created new profile.</div>
+                      </div><!-- /.alert -->
+                      <div class="alert bg-warning has-icon alert-dismissible fade in">
+                        <div class="alert-icon">
+                          <i class="fa fa-warning"></i>
+                        </div>
+                        <div class="alert-body">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          Javascript warning on line 300.
+                        </div>
+                      </div><!-- /.alert -->
+                      <div class="alert bg-danger has-icon alert-dismissible fade in">
+                        <div class="alert-icon">
+                          <i class="fa fa-tasks"></i>
+                        </div>
+                        <div class="alert-body">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          Server has stoppped working.
+                        </div>
+                      </div><!-- /.alert -->
+                    </div>
+
+                    <h4>With right icon</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert bg-info has-icon">
+                        <div class="alert-body">3 new projects added to rss feed.</div>
+                        <div class="alert-icon">
+                          <i class="fa fa-rss"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                      <div class="alert bg-success has-icon">
+                        <div class="alert-body">You have successfully created new profile.</div>
+                        <div class="alert-icon">
+                          <i class="fa fa-user"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                      <div class="alert bg-warning has-icon alert-dismissible fade in">
+                        <div class="alert-body">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          Javascript warning on line 300.
+                        </div>
+                        <div class="alert-icon">
+                          <i class="fa fa-warning"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                      <div class="alert bg-danger has-icon alert-dismissible fade in">
+                        <div class="alert-body">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          Server has stoppped working.
+                        </div>
+                        <div class="alert-icon">
+                          <i class="fa fa-tasks"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                    </div>
+
+                    <h4>Solid content body</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert alert-info border-info has-icon">
+                        <div class="alert-icon">
+                          <i class="fa fa-rss"></i>
+                        </div>
+                        <div class="alert-body bg-info">3 new projects added to rss feed.</div>
+                      </div><!-- /.alert -->
+                      <div class="alert alert-success border-success has-icon">
+                        <div class="alert-body bg-success">You have successfully created new profile.</div>
+                        <div class="alert-icon">
+                          <i class="fa fa-user"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                    </div>
+                  </div><!-- /.panel-body -->
+                </div><!--/.panel-->
+              </div><!-- /.col-sm-12 -->
+            </div><!-- /.row -->
+
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-action">
+                      <button class="btn btn-close"></button>
+                      <button class="btn btn-min"></button>
+                      <button class="btn btn-expand"></button>
+                    </div>
+                    <div class="panel-title">Advanced Alerts</div>
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <div class="alert alert-info alert-dismissible fade in">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          <h4>Heads up! You got a new message!</h4>
+                          <p>This alert needs your attention, but it's not super important. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+                          <p>
+                            <button type="button" class="btn btn-primary">Confirm</button>
+                            <button type="button" class="btn btn-warning">Cancel</button>
+                          </p>
+                        </div><!-- /.alert -->
+                      </div><!-- /.col-sm-12 -->
+                      
+                      <div class="col-sm-12 col-md-6">
+                        <div class="alert alert-success alert-dismissible fade in">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          <h4>Well done! You got a new message!</h4>
+                          <p>You successfully read this important alert message. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+                          <p>
+                            <button type="button" class="btn btn-success">Go to message</button>
+                            <button type="button" class="btn btn-danger">Close</button>
+                          </p>
+                        </div><!-- /.alert -->
+                      </div><!-- /.col-sm-12 -->
+                    </div><!-- /.row -->
+
+                    <div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <div class="alert alert-warning alert-dismissible fade in">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          <h4>Warning! You got a warning!</h4>
+                          <p>Please fill all the fields and submit again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+                          <p>
+                            <button type="button" class="btn btn-primary">Ok</button>
+                            <button type="button" class="btn btn-warning">Cancel</button>
+                          </p>
+                        </div><!-- /.alert -->
+                      </div><!-- /.col-sm-12 -->
+                      
+                      <div class="col-sm-12 col-md-6">
+                        <div class="alert alert-danger alert-dismissible fade in">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          <h4>Oh snap! You got a error!</h4>
+                          <p>Change a few things up and try submitting again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+                          <p>
+                            <button type="button" class="btn btn-primary">Proceed anyway</button>
+                            <button type="button" class="btn btn-danger">Cancel</button>
+                          </p>
+                        </div><!-- /.alert -->
+                      </div><!-- /.col-sm-12 -->
+                    </div><!-- /.row -->
+                  </div><!-- /.panel-body -->
+                </div><!--/.panel-->
+              </div><!-- /.col-sm-12 -->
+            </div><!-- /.row -->
+          </div><!-- /.tab-pane -->
+          
+          <div class="tab-pane fade" id="tab-alert-rounded">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="alert alert-info border-info alert-dismissible fade in rounded">
+                  <button type="button" class="close" data-dismiss="alert">
+                    <span>&times;</span>
+                  </button>
+                  <p>NOTE: This is demonstrative page of static alerts. <a href="plugin-bootstrap-notify.html">Click here</a> to see them in action.</p>
+                  <p>Apply class <code>.rounded</code> to <code>.alert</code> to make the square alert rounded.</p>
+                </div><!-- /.alert -->
+              </div><!-- /.col-sm-12 -->
+            </div><!-- /.row -->
+
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-action">
+                      <button class="btn btn-close"></button>
+                      <button class="btn btn-min"></button>
+                      <button class="btn btn-expand"></button>
+                    </div>
+                    <div class="panel-title">Light Alerts</div>
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <div class="m-bottom-30">
+                      <div class="alert alert-info rounded">
+                        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-success rounded">
+                        <strong>Well done!</strong> You successfully read this important alert message.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-warning rounded">
+                        <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-danger rounded">
+                        <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                      </div><!-- /.alert -->
+                    </div>
+                  </div><!-- /.panel-body -->
+                </div><!--/.panel-->
+              </div><!-- /.col-sm-12 -->
+
+              <div class="col-sm-12 col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-action">
+                      <button class="btn btn-close"></button>
+                      <button class="btn btn-min"></button>
+                      <button class="btn btn-expand"></button>
+                    </div>
+                    <div class="panel-title">Solid Alerts</div>
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <div class="m-bottom-30">
+                      <div class="alert bg-info rounded">
+                        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                      </div><!-- /.alert -->
+                      <div class="alert bg-success rounded">
+                        <strong>Well done!</strong> You successfully read this important alert message.
+                      </div><!-- /.alert -->
+                      <div class="alert bg-warning rounded">
+                        <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                      </div><!-- /.alert -->
+                      <div class="alert bg-danger rounded">
+                        <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                      </div><!-- /.alert -->
+                    </div>
+                  </div><!-- /.panel-body -->
+                </div><!--/.panel-->
+              </div><!-- /.col-sm-12 -->
+            </div><!-- /.row -->
+
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-action">
+                      <button class="btn btn-close"></button>
+                      <button class="btn btn-min"></button>
+                      <button class="btn btn-expand"></button>
+                    </div>
+                    <div class="panel-title">Dismissible alerts</div>
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <h4>Dismissible alerts</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert alert-info alert-dismissible fade in rounded">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-success alert-dismissible fade in rounded">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Well done!</strong> You successfully read this important alert message.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-warning alert-dismissible fade in rounded">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-danger alert-dismissible fade in rounded">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                      </div><!-- /.alert -->
+                    </div>
+                  </div><!-- /.panel-body -->
+                </div><!--/.panel-->
+              </div><!-- /.col-sm-12 -->
+
+              <div class="col-sm-12 col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-action">
+                      <button class="btn btn-close"></button>
+                      <button class="btn btn-min"></button>
+                      <button class="btn btn-expand"></button>
+                    </div>
+                    <div class="panel-title">Dismissible alerts</div>
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <h4>Dismissible alerts</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert bg-info alert-dismissible fade in rounded">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                      </div><!-- /.alert -->
+                      <div class="alert bg-success alert-dismissible fade in rounded">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Well done!</strong> You successfully read this important alert message.
+                      </div><!-- /.alert -->
+                      <div class="alert bg-warning alert-dismissible fade in rounded">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                      </div><!-- /.alert -->
+                      <div class="alert bg-danger alert-dismissible fade in rounded">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                      </div><!-- /.alert -->
+                    </div>
+                  </div><!-- /.panel-body -->
+                </div><!--/.panel-->
+              </div><!-- /.col-sm-12 -->
+            </div><!-- /.row -->
+
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-action">
+                      <button class="btn btn-close"></button>
+                      <button class="btn btn-min"></button>
+                      <button class="btn btn-expand"></button>
+                    </div>
+                    <div class="panel-title">Bordered alerts</div>
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <h4>Bordered alerts</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert alert-info border-info alert-dismissible fade in rounded">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-success border-success alert-dismissible fade in rounded">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Well done!</strong> You successfully read this important alert message.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-warning border-warning alert-dismissible fade in rounded">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-danger border-danger alert-dismissible fade in rounded">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                      </div><!-- /.alert -->
+                    </div>
+
+                    <h4>With bold borders</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert alert-info border-info border-top-bold alert-dismissible fade in rounded">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-success border-success border-left-bold alert-dismissible fade in rounded">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Well done!</strong> You successfully read this important alert message.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-warning border-warning border-right-bold alert-dismissible fade in rounded">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-danger border-danger border-bottom-bold alert-dismissible fade in rounded">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                      </div><!-- /.alert -->
+                    </div>
+                  </div><!-- /.panel-body -->
+                </div><!--/.panel-->
+              </div><!-- /.col-sm-12 -->
+
+              <div class="col-sm-12 col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-action">
+                      <button class="btn btn-close"></button>
+                      <button class="btn btn-min"></button>
+                      <button class="btn btn-expand"></button>
+                    </div>
+                    <div class="panel-title">With inset border</div>
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <h4>With inset borders</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert bg-info border-inset alert-dismissible fade in rounded">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <h4>Info alert heading</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.</p>
+                      </div><!-- /.alert -->
+                      <div class="alert bg-success border-inset alert-dismissible fade in rounded">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <h4>Success alert heading</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.</p>
+                      </div><!-- /.alert -->
+                      <div class="alert bg-warning border-inset alert-dismissible fade in rounded">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <h4>Warning alert heading</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.</p>
+                      </div><!-- /.alert -->
+                      <div class="alert bg-danger border-inset alert-dismissible fade in rounded">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <h4>Danger alert heading</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.</p>
+                      </div><!-- /.alert -->
+                    </div>
+                  </div><!-- /.panel-body -->
+                </div><!--/.panel-->
+              </div><!-- /.col-sm-12 -->
+            </div><!-- /.row -->
+
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-action">
+                      <button class="btn btn-close"></button>
+                      <button class="btn btn-min"></button>
+                      <button class="btn btn-expand"></button>
+                    </div>
+                    <div class="panel-title">Iconic</div>
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <h4>With left icon</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert alert-info border-info has-icon rounded">
+                        <div class="alert-icon">
+                          <i class="fa fa-rss"></i>
+                        </div>
+                        <div class="alert-body">3 new projects added to rss feed.</div>
+                      </div><!-- /.alert -->
+                      <div class="alert alert-success border-success has-icon rounded">
+                        <div class="alert-icon">
+                          <i class="fa fa-user"></i>
+                        </div>
+                        <div class="alert-body">You have successfully created new profile.</div>
+                      </div><!-- /.alert -->
+                      <div class="alert alert-warning border-warning has-icon alert-dismissible fade in rounded">
+                        <div class="alert-icon">
+                          <i class="fa fa-warning"></i>
+                        </div>
+                        <div class="alert-body">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          Javascript warning on line 300.
+                        </div>
+                      </div><!-- /.alert -->
+                      <div class="alert alert-danger border-danger has-icon alert-dismissible fade in rounded">
+                        <div class="alert-icon">
+                          <i class="fa fa-tasks"></i>
+                        </div>
+                        <div class="alert-body">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          Server has stoppped working.
+                        </div>
+                      </div><!-- /.alert -->
+                    </div>
+
+                    <h4>With right icon</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert alert-info border-info has-icon rounded">
+                        <div class="alert-body">3 new projects added to rss feed.</div>
+                        <div class="alert-icon">
+                          <i class="fa fa-rss"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                      <div class="alert alert-success border-success has-icon rounded">
+                        <div class="alert-body">You have successfully created new profile.</div>
+                        <div class="alert-icon">
+                          <i class="fa fa-user"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                      <div class="alert alert-warning border-warning has-icon alert-dismissible fade in rounded">
+                        <div class="alert-body">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          Javascript warning on line 300.
+                        </div>
+                        <div class="alert-icon">
+                          <i class="fa fa-warning"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                      <div class="alert alert-danger border-danger has-icon alert-dismissible fade in rounded">
+                        <div class="alert-body">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          Server has stoppped working.
+                        </div>
+                        <div class="alert-icon">
+                          <i class="fa fa-tasks"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                    </div>
+
+                    <h4>Light content body</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert alert-info border-info has-icon rounded">
+                        <div class="alert-icon bg-info">
+                          <i class="fa fa-rss"></i>
+                        </div>
+                        <div class="alert-body">3 new projects added to rss feed.</div>
+                      </div><!-- /.alert -->
+                      <div class="alert alert-success border-success has-icon rounded">
+                        <div class="alert-body">You have successfully created new profile.</div>
+                        <div class="alert-icon bg-success">
+                          <i class="fa fa-user"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                    </div>
+                  </div><!-- /.panel-body -->
+                </div><!--/.panel-->
+              </div><!-- /.col-sm-12 -->
+
+              <div class="col-sm-12 col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-action">
+                      <button class="btn btn-close"></button>
+                      <button class="btn btn-min"></button>
+                      <button class="btn btn-expand"></button>
+                    </div>
+                    <div class="panel-title">Iconic</div>
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <h4>With left icon</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert bg-info has-icon rounded">
+                        <div class="alert-icon">
+                          <i class="fa fa-rss"></i>
+                        </div>
+                        <div class="alert-body">3 new projects added to rss feed.</div>
+                      </div><!-- /.alert -->
+                      <div class="alert bg-success has-icon rounded">
+                        <div class="alert-icon">
+                          <i class="fa fa-user"></i>
+                        </div>
+                        <div class="alert-body">You have successfully created new profile.</div>
+                      </div><!-- /.alert -->
+                      <div class="alert bg-warning has-icon alert-dismissible fade in rounded">
+                        <div class="alert-icon">
+                          <i class="fa fa-warning"></i>
+                        </div>
+                        <div class="alert-body">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          Javascript warning on line 300.
+                        </div>
+                      </div><!-- /.alert -->
+                      <div class="alert bg-danger has-icon alert-dismissible fade in rounded">
+                        <div class="alert-icon">
+                          <i class="fa fa-tasks"></i>
+                        </div>
+                        <div class="alert-body">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          Server has stoppped working.
+                        </div>
+                      </div><!-- /.alert -->
+                    </div>
+
+                    <h4>With right icon</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert bg-info has-icon rounded">
+                        <div class="alert-body">3 new projects added to rss feed.</div>
+                        <div class="alert-icon">
+                          <i class="fa fa-rss"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                      <div class="alert bg-success has-icon rounded">
+                        <div class="alert-body">You have successfully created new profile.</div>
+                        <div class="alert-icon">
+                          <i class="fa fa-user"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                      <div class="alert bg-warning has-icon alert-dismissible fade in rounded">
+                        <div class="alert-body">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          Javascript warning on line 300.
+                        </div>
+                        <div class="alert-icon">
+                          <i class="fa fa-warning"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                      <div class="alert bg-danger has-icon alert-dismissible fade in rounded">
+                        <div class="alert-body">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          Server has stoppped working.
+                        </div>
+                        <div class="alert-icon">
+                          <i class="fa fa-tasks"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                    </div>
+
+                    <h4>Solid content body</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert alert-info border-info has-icon rounded">
+                        <div class="alert-icon">
+                          <i class="fa fa-rss"></i>
+                        </div>
+                        <div class="alert-body bg-info">3 new projects added to rss feed.</div>
+                      </div><!-- /.alert -->
+                      <div class="alert alert-success border-success has-icon rounded">
+                        <div class="alert-body bg-success">You have successfully created new profile.</div>
+                        <div class="alert-icon">
+                          <i class="fa fa-user"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                    </div>
+                  </div><!-- /.panel-body -->
+                </div><!--/.panel-->
+              </div><!-- /.col-sm-12 -->
+            </div><!-- /.row -->
+
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-action">
+                      <button class="btn btn-close"></button>
+                      <button class="btn btn-min"></button>
+                      <button class="btn btn-expand"></button>
+                    </div>
+                    <div class="panel-title">Advanced Alerts</div>
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <div class="alert alert-info alert-dismissible fade in rounded">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          <h4>Heads up! You got a new message!</h4>
+                          <p>This alert needs your attention, but it's not super important. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+                          <p>
+                            <button type="button" class="btn btn-primary rounded">Confirm</button>
+                            <button type="button" class="btn btn-warning rounded">Cancel</button>
+                          </p>
+                        </div><!-- /.alert -->
+                      </div><!-- /.col-sm-12 -->
+                      
+                      <div class="col-sm-12 col-md-6">
+                        <div class="alert alert-success alert-dismissible fade in rounded">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          <h4>Well done! You got a new message!</h4>
+                          <p>You successfully read this important alert message. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+                          <p>
+                            <button type="button" class="btn btn-success rounded">Go to message</button>
+                            <button type="button" class="btn btn-danger rounded">Close</button>
+                          </p>
+                        </div><!-- /.alert -->
+                      </div><!-- /.col-sm-12 -->
+                    </div><!-- /.row -->
+
+                    <div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <div class="alert alert-warning alert-dismissible fade in rounded">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          <h4>Warning! You got a warning!</h4>
+                          <p>Please fill all the fields and submit again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+                          <p>
+                            <button type="button" class="btn btn-primary rounded">Ok</button>
+                            <button type="button" class="btn btn-warning rounded">Cancel</button>
+                          </p>
+                        </div><!-- /.alert -->
+                      </div><!-- /.col-sm-12 -->
+                      
+                      <div class="col-sm-12 col-md-6">
+                        <div class="alert alert-danger alert-dismissible fade in rounded">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          <h4>Oh snap! You got a error!</h4>
+                          <p>Change a few things up and try submitting again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+                          <p>
+                            <button type="button" class="btn btn-primary rounded">Proceed anyway</button>
+                            <button type="button" class="btn btn-danger rounded">Cancel</button>
+                          </p>
+                        </div><!-- /.alert -->
+                      </div><!-- /.col-sm-12 -->
+                    </div><!-- /.row -->
+                  </div><!-- /.panel-body -->
+                </div><!--/.panel-->
+              </div><!-- /.col-sm-12 -->
+            </div><!-- /.row -->
+          </div><!-- /.tab-pane -->
+
+          <div class="tab-pane fade" id="tab-alert-circle">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="alert alert-info border-info alert-dismissible fade in circle">
+                  <button type="button" class="close" data-dismiss="alert">
+                    <span>&times;</span>
+                  </button>
+                  <p>NOTE: This is demonstrative page of static alerts. <a href="plugin-bootstrap-notify.html">Click here</a> to see them in action.</p>
+                  <p>Apply class <code>.circle</code> to <code>.alert</code> to make the square alert circle.</p>
+                </div><!-- /.alert -->
+              </div><!-- /.col-sm-12 -->
+            </div><!-- /.row -->
+
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-action">
+                      <button class="btn btn-close"></button>
+                      <button class="btn btn-min"></button>
+                      <button class="btn btn-expand"></button>
+                    </div>
+                    <div class="panel-title">Light Alerts</div>
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <div class="m-bottom-30">
+                      <div class="alert alert-info circle">
+                        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-success circle">
+                        <strong>Well done!</strong> You successfully read this important alert message.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-warning circle">
+                        <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-danger circle">
+                        <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                      </div><!-- /.alert -->
+                    </div>
+                  </div><!-- /.panel-body -->
+                </div><!--/.panel-->
+              </div><!-- /.col-sm-12 -->
+
+              <div class="col-sm-12 col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-action">
+                      <button class="btn btn-close"></button>
+                      <button class="btn btn-min"></button>
+                      <button class="btn btn-expand"></button>
+                    </div>
+                    <div class="panel-title">Solid Alerts</div>
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <div class="m-bottom-30">
+                      <div class="alert bg-info circle">
+                        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                      </div><!-- /.alert -->
+                      <div class="alert bg-success circle">
+                        <strong>Well done!</strong> You successfully read this important alert message.
+                      </div><!-- /.alert -->
+                      <div class="alert bg-warning circle">
+                        <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                      </div><!-- /.alert -->
+                      <div class="alert bg-danger circle">
+                        <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                      </div><!-- /.alert -->
+                    </div>
+                  </div><!-- /.panel-body -->
+                </div><!--/.panel-->
+              </div><!-- /.col-sm-12 -->
+            </div><!-- /.row -->
+
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-action">
+                      <button class="btn btn-close"></button>
+                      <button class="btn btn-min"></button>
+                      <button class="btn btn-expand"></button>
+                    </div>
+                    <div class="panel-title">Dismissible alerts</div>
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <h4>Dismissible alerts</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert alert-info alert-dismissible fade in circle">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-success alert-dismissible fade in circle">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Well done!</strong> You successfully read this important alert message.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-warning alert-dismissible fade in circle">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-danger alert-dismissible fade in circle">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                      </div><!-- /.alert -->
+                    </div>
+                  </div><!-- /.panel-body -->
+                </div><!--/.panel-->
+              </div><!-- /.col-sm-12 -->
+
+              <div class="col-sm-12 col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-action">
+                      <button class="btn btn-close"></button>
+                      <button class="btn btn-min"></button>
+                      <button class="btn btn-expand"></button>
+                    </div>
+                    <div class="panel-title">Dismissible alerts</div>
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <h4>Dismissible alerts</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert bg-info alert-dismissible fade in circle">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                      </div><!-- /.alert -->
+                      <div class="alert bg-success alert-dismissible fade in circle">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Well done!</strong> You successfully read this important alert message.
+                      </div><!-- /.alert -->
+                      <div class="alert bg-warning alert-dismissible fade in circle">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                      </div><!-- /.alert -->
+                      <div class="alert bg-danger alert-dismissible fade in circle">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                      </div><!-- /.alert -->
+                    </div>
+                  </div><!-- /.panel-body -->
+                </div><!--/.panel-->
+              </div><!-- /.col-sm-12 -->
+            </div><!-- /.row -->
+
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-action">
+                      <button class="btn btn-close"></button>
+                      <button class="btn btn-min"></button>
+                      <button class="btn btn-expand"></button>
+                    </div>
+                    <div class="panel-title">Bordered alerts</div>
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <h4>Bordered alerts</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert alert-info border-info alert-dismissible fade in circle">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-success border-success alert-dismissible fade in circle">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Well done!</strong> You successfully read this important alert message.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-warning border-warning alert-dismissible fade in circle">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-danger border-danger alert-dismissible fade in circle">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                      </div><!-- /.alert -->
+                    </div>
+
+                    <h4>With bold borders</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert alert-info border-info border-top-bold alert-dismissible fade in circle">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-success border-success border-left-bold alert-dismissible fade in circle">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Well done!</strong> You successfully read this important alert message.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-warning border-warning border-right-bold alert-dismissible fade in circle">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                      </div><!-- /.alert -->
+                      <div class="alert alert-danger border-danger border-bottom-bold alert-dismissible fade in circle">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                      </div><!-- /.alert -->
+                    </div>
+                  </div><!-- /.panel-body -->
+                </div><!--/.panel-->
+              </div><!-- /.col-sm-12 -->
+
+              <div class="col-sm-12 col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-action">
+                      <button class="btn btn-close"></button>
+                      <button class="btn btn-min"></button>
+                      <button class="btn btn-expand"></button>
+                    </div>
+                    <div class="panel-title">With inset border</div>
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <h4>With inset borders</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert bg-info border-inset alert-dismissible fade in circle">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <h4>Info alert heading</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.</p>
+                      </div><!-- /.alert -->
+                      <div class="alert bg-success border-inset alert-dismissible fade in circle">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <h4>Success alert heading</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.</p>
+                      </div><!-- /.alert -->
+                      <div class="alert bg-warning border-inset alert-dismissible fade in circle">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <h4>Warning alert heading</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.</p>
+                      </div><!-- /.alert -->
+                      <div class="alert bg-danger border-inset alert-dismissible fade in circle">
+                        <button type="button" class="close" data-dismiss="alert">
+                          <span>&times;</span>
+                        </button>
+                        <h4>Danger alert heading</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.</p>
+                      </div><!-- /.alert -->
+                    </div>
+                  </div><!-- /.panel-body -->
+                </div><!--/.panel-->
+              </div><!-- /.col-sm-12 -->
+            </div><!-- /.row -->
+
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-action">
+                      <button class="btn btn-close"></button>
+                      <button class="btn btn-min"></button>
+                      <button class="btn btn-expand"></button>
+                    </div>
+                    <div class="panel-title">Iconic</div>
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <h4>With left icon</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert alert-info border-info has-icon circle">
+                        <div class="alert-icon">
+                          <i class="fa fa-rss"></i>
+                        </div>
+                        <div class="alert-body">3 new projects added to rss feed.</div>
+                      </div><!-- /.alert -->
+                      <div class="alert alert-success border-success has-icon circle">
+                        <div class="alert-icon">
+                          <i class="fa fa-user"></i>
+                        </div>
+                        <div class="alert-body">You have successfully created new profile.</div>
+                      </div><!-- /.alert -->
+                      <div class="alert alert-warning border-warning has-icon alert-dismissible fade in circle">
+                        <div class="alert-icon">
+                          <i class="fa fa-warning"></i>
+                        </div>
+                        <div class="alert-body">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          Javascript warning on line 300.
+                        </div>
+                      </div><!-- /.alert -->
+                      <div class="alert alert-danger border-danger has-icon alert-dismissible fade in circle">
+                        <div class="alert-icon">
+                          <i class="fa fa-tasks"></i>
+                        </div>
+                        <div class="alert-body">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          Server has stoppped working.
+                        </div>
+                      </div><!-- /.alert -->
+                    </div>
+
+                    <h4>With right icon</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert alert-info border-info has-icon circle">
+                        <div class="alert-body">3 new projects added to rss feed.</div>
+                        <div class="alert-icon">
+                          <i class="fa fa-rss"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                      <div class="alert alert-success border-success has-icon circle">
+                        <div class="alert-body">You have successfully created new profile.</div>
+                        <div class="alert-icon">
+                          <i class="fa fa-user"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                      <div class="alert alert-warning border-warning has-icon alert-dismissible fade in circle">
+                        <div class="alert-body">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          Javascript warning on line 300.
+                        </div>
+                        <div class="alert-icon">
+                          <i class="fa fa-warning"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                      <div class="alert alert-danger border-danger has-icon alert-dismissible fade in circle">
+                        <div class="alert-body">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          Server has stoppped working.
+                        </div>
+                        <div class="alert-icon">
+                          <i class="fa fa-tasks"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                    </div>
+
+                    <h4>Light content body</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert alert-info border-info has-icon circle">
+                        <div class="alert-icon bg-info">
+                          <i class="fa fa-rss"></i>
+                        </div>
+                        <div class="alert-body">3 new projects added to rss feed.</div>
+                      </div><!-- /.alert -->
+                      <div class="alert alert-success border-success has-icon circle">
+                        <div class="alert-body">You have successfully created new profile.</div>
+                        <div class="alert-icon bg-success">
+                          <i class="fa fa-user"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                    </div>
+                  </div><!-- /.panel-body -->
+                </div><!--/.panel-->
+              </div><!-- /.col-sm-12 -->
+
+              <div class="col-sm-12 col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-action">
+                      <button class="btn btn-close"></button>
+                      <button class="btn btn-min"></button>
+                      <button class="btn btn-expand"></button>
+                    </div>
+                    <div class="panel-title">Iconic</div>
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <h4>With left icon</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert bg-info has-icon circle">
+                        <div class="alert-icon">
+                          <i class="fa fa-rss"></i>
+                        </div>
+                        <div class="alert-body">3 new projects added to rss feed.</div>
+                      </div><!-- /.alert -->
+                      <div class="alert bg-success has-icon circle">
+                        <div class="alert-icon">
+                          <i class="fa fa-user"></i>
+                        </div>
+                        <div class="alert-body">You have successfully created new profile.</div>
+                      </div><!-- /.alert -->
+                      <div class="alert bg-warning has-icon alert-dismissible fade in circle">
+                        <div class="alert-icon">
+                          <i class="fa fa-warning"></i>
+                        </div>
+                        <div class="alert-body">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          Javascript warning on line 300.
+                        </div>
+                      </div><!-- /.alert -->
+                      <div class="alert bg-danger has-icon alert-dismissible fade in circle">
+                        <div class="alert-icon">
+                          <i class="fa fa-tasks"></i>
+                        </div>
+                        <div class="alert-body">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          Server has stoppped working.
+                        </div>
+                      </div><!-- /.alert -->
+                    </div>
+
+                    <h4>With right icon</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert bg-info has-icon circle">
+                        <div class="alert-body">3 new projects added to rss feed.</div>
+                        <div class="alert-icon">
+                          <i class="fa fa-rss"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                      <div class="alert bg-success has-icon circle">
+                        <div class="alert-body">You have successfully created new profile.</div>
+                        <div class="alert-icon">
+                          <i class="fa fa-user"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                      <div class="alert bg-warning has-icon alert-dismissible fade in circle">
+                        <div class="alert-body">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          Javascript warning on line 300.
+                        </div>
+                        <div class="alert-icon">
+                          <i class="fa fa-warning"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                      <div class="alert bg-danger has-icon alert-dismissible fade in circle">
+                        <div class="alert-body">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          Server has stoppped working.
+                        </div>
+                        <div class="alert-icon">
+                          <i class="fa fa-tasks"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                    </div>
+
+                    <h4>Solid content body</h4>
+                    <div class="m-bottom-30">
+                      <div class="alert alert-info border-info has-icon circle">
+                        <div class="alert-icon">
+                          <i class="fa fa-rss"></i>
+                        </div>
+                        <div class="alert-body bg-info">3 new projects added to rss feed.</div>
+                      </div><!-- /.alert -->
+                      <div class="alert alert-success border-success has-icon circle">
+                        <div class="alert-body bg-success">You have successfully created new profile.</div>
+                        <div class="alert-icon">
+                          <i class="fa fa-user"></i>
+                        </div>
+                      </div><!-- /.alert -->
+                    </div>
+                  </div><!-- /.panel-body -->
+                </div><!--/.panel-->
+              </div><!-- /.col-sm-12 -->
+            </div><!-- /.row -->
+
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-action">
+                      <button class="btn btn-close"></button>
+                      <button class="btn btn-min"></button>
+                      <button class="btn btn-expand"></button>
+                    </div>
+                    <div class="panel-title">Advanced Alerts</div>
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <div class="alert alert-info alert-dismissible fade in circle">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          <h4>Heads up! You got a new message!</h4>
+                          <p>This alert needs your attention, but it's not super important. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+                          <p>
+                            <button type="button" class="btn btn-primary circle">Confirm</button>
+                            <button type="button" class="btn btn-warning circle">Cancel</button>
+                          </p>
+                        </div><!-- /.alert -->
+                      </div><!-- /.col-sm-12 -->
+                      
+                      <div class="col-sm-12 col-md-6">
+                        <div class="alert alert-success alert-dismissible fade in circle">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          <h4>Well done! You got a new message!</h4>
+                          <p>You successfully read this important alert message. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+                          <p>
+                            <button type="button" class="btn btn-success circle">Go to message</button>
+                            <button type="button" class="btn btn-danger circle">Close</button>
+                          </p>
+                        </div><!-- /.alert -->
+                      </div><!-- /.col-sm-12 -->
+                    </div><!-- /.row -->
+
+                    <div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <div class="alert alert-warning alert-dismissible fade in circle">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          <h4>Warning! You got a warning!</h4>
+                          <p>Please fill all the fields and submit again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+                          <p>
+                            <button type="button" class="btn btn-primary circle">Ok</button>
+                            <button type="button" class="btn btn-warning circle">Cancel</button>
+                          </p>
+                        </div><!-- /.alert -->
+                      </div><!-- /.col-sm-12 -->
+                      
+                      <div class="col-sm-12 col-md-6">
+                        <div class="alert alert-danger alert-dismissible fade in circle">
+                          <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                          </button>
+                          <h4>Oh snap! You got a error!</h4>
+                          <p>Change a few things up and try submitting again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+                          <p>
+                            <button type="button" class="btn btn-primary circle">Proceed anyway</button>
+                            <button type="button" class="btn btn-danger circle">Cancel</button>
+                          </p>
+                        </div><!-- /.alert -->
+                      </div><!-- /.col-sm-12 -->
+                    </div><!-- /.row -->
+                  </div><!-- /.panel-body -->
+                </div><!--/.panel-->
+              </div><!-- /.col-sm-12 -->
+            </div><!-- /.row -->
+          </div><!-- /.tab-pane -->
+        </div><!-- /.tab-content -->
+      </div>
+      <!-- CONTENT ENDS -->
+    </div>
+    <!-- CONTENT WRAPPER ENDS -->
+    
+    <!-- FOOTER STARTS -->
+    <div class="footer">&copy; Copyright 2017 <span class="divider">|</span> <span class="hidden-xs">Wiseboard Theme by The Next Theme</span> <span class="divider hidden-xs">|</span> All rights reserved.</div>
+    <!-- FOOTER ENDS -->
+
+    <!-- REQUIRED SCRIPTS -->
+    <script src="../../dist/main/js/jquery.min.js"></script>
+    <script src="../../dist/main/js/bootstrap.min.js"></script>
+    <!-- REQUIRED PLUGINS -->
+    <script src="../../dist/main/plugins/jquery.slimscroll/js/jquery.slimscroll.min.js"></script>
+    <script src="../../dist/main/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+    <script src="../../dist/main/plugins/jquery.succinct/js/jquery.succinct.min.js"></script>
+    <script src="../../dist/main/plugins/bootstrap-hover-dropdown/js/bootstrap-hover-dropdown.min.js"></script>
+    <!-- main.min.js - WISEBOARD CORE SCRIPT -->
+    <script src="../../dist/main/js/main.min.js"></script>
+    <!-- admin.min.js - GENERAL CONFIGURATION SCRIPT FOR THE PAGES -->
+    <script src="js/admin.min.js"></script>
+  </body>
+</html>

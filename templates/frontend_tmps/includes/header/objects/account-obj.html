@@ -1,0 +1,33 @@
+<div class="tt-account tt-dropdown-obj">
+							<button class="tt-dropdown-toggle"  data-tooltip="My Account" data-tposition="bottom"><i class="icon-f-94"></i></button>
+							<div class="tt-dropdown-menu">
+								<div class="tt-mobile-add">
+									<button class="tt-close">Close</button>
+								</div>
+								<div class="tt-dropdown-inner">
+									<ul>
+									{% if request.user.is_authenticated %}
+
+									<li><a href="{% url 'dashboard' %}"><i class="icon-f-94"></i>Account</a></li>
+									    <li><a href="{% url 'wishlist.product' %}"><i class="icon-n-072"></i>Wishlist</a></li>	
+										<li><a href="{% url 'compare.product' %}"><i class="icon-n-08"></i>Compare</a></li>									    
+									    {% comment %} <li><a href="page404.html"><i class="icon-f-68"></i>Check Out</a></li>									     {% endcomment %}
+									    <li><a href="{% url 'logout' %}"><i class="icon-f-77"></i>Sign Out</a></li>
+
+									    
+										
+										{% else %}
+										
+										<li><a href="{% url 'dashboard' %}"><i class="icon-f-94"></i>Account</a></li>
+									    <li><a href="{% url 'wishlist.product' %}"><i class="icon-n-072"></i>Wishlist</a></li>	
+										<li><a href="{% url 'compare.product' %}"><i class="icon-n-08"></i>Compare</a></li>									   
+									    {% comment %} <li><a href="page404.html"><i class="icon-f-68"></i>Check Out</a></li> {% endcomment %}
+									    <li><a href="{% url 'login' %}"><i class="icon-f-76"></i>Sign In</a></li>									    
+									    <li><a href="{% url 'register' %}"><i class="icon-f-94"></i>Register</a></li>
+									    
+										{% endif %}
+										
+									</ul>
+								</div>
+							</div>
+						</div>

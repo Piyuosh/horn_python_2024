@@ -1,0 +1,217 @@
+{% extends 'frontend_base.html' %}
+{% load static %}
+
+{% block main_content %}
+
+<div class="tt-breadcrumb">
+	<div class="container">
+		<ul>
+			<li><a href="{% url 'home' %}">Home</a></li>
+			<li>Shopping Cart</li>
+		</ul>
+	</div>
+</div>
+<div id="tt-pageContent" class="cart_item_page">
+{% if not cart_items %}
+	           
+					<div class="container-indent nomargin">
+						<div class="tt-empty-cart">
+							<span class="tt-icon icon-f-39"></span>
+							<h1 class="tt-title">SHOPPING CART IS EMPTY</h1>
+							<p>You have no items in your shopping cart.</p>
+							<a href="{% url 'home' %}" class="btn">CONTINUE SHOPPING</a>
+						</div>
+					</div>
+				
+{% else %}
+	<div class="container-indent">
+		<div class="container">
+			<h1 class="tt-title-subpages noborder">SHOPPING CART</h1>
+			<div class="row">
+				<div class="col-sm-12 col-xl-8">				
+					<div class="tt-shopcart-table">
+						<table>
+							<tbody>
+							{% for cart_item in cart_items %}
+									<tr>
+									<td>
+										<a href="javascript:void(0)" onclick="deleteCartItem({{cart_item.product.id}})" class="tt-btn-close"></a>
+									</td>
+									<td>
+										<div class="tt-product-img">
+											<img src="  {% static 'front_assets/images/loader.svg' %}" data-src="{{ cart_item.product.mainThumb }}" alt="{{cart_item.product.product_name}}">
+										</div>
+									</td>
+									<td>
+										<h2 class="tt-title">
+											<a href="{{ cart_item.product.get_absolute_url }}">{{ cart_item.product.product_name }}</a>
+										</h2>
+										<ul class="tt-list-parameters">
+											<li>
+												<div class="tt-price">
+													₹{{ cart_item.product.sale_price }}
+												</div>
+											</li>
+											<li>
+												<div class="detach-quantity-mobile"></div>
+											</li>
+											<li>
+												<div class="tt-price subtotal">
+													₹{{ cart_item.sub_total }}
+												</div>
+											</li>
+										</ul>
+									</td>
+									<td>
+										<div class="tt-price">
+											₹{{ cart_item.product.sale_price }}
+										</div>
+									</td>
+									<td>
+										<div class="detach-quantity-desctope">
+											<div class="tt-input-counter style-01">
+												<a href="javascript:void(0)" onclick="decQuantity({{cart_item.product.id}})"><span class="minus-btn"></span></a>
+												<input type="text" value="{{cart_item.quantity}}" size="5">
+												<a href="javascript:void(0)" onclick="incQuantity({{cart_item.product.id}})"><span class="plus-btn"></span></a>
+											</div>
+										</div>
+									</td>
+									<td>
+										<div class="tt-price subtotal">
+											₹{{ cart_item.sub_total }}
+										</div>
+									</td>
+								</tr>
+							{% endfor %}
+							</tbody>
+						</table>
+						<div class="tt-shopcart-btn">
+							<input type="text" name="email" class="form-control" placeholder="Enter your e-mail">
+							<button type="submit" class="btn">JOIN US</button>
+						</div>
+						<div class="tt-shopcart-btn">
+							<div class="col-left">
+								<a class="btn-link" href="{% url 'home' %}"><i class="icon-e-19"></i>CONTINUE SHOPPING</a>
+							</div>
+							{% comment %} <div class="col-right">
+								<a class="btn-link" href="#"><i class="icon-h-02"></i>CLEAR SHOPPING CART</a>
+								<a class="btn-link" href="#"><i class="icon-h-48"></i>UPDATE CART</a>
+							</div> {% endcomment %}
+						</div>
+
+			<div class="tt-shopcart-col">
+				<div class="row">
+					<div class="col-md-12 col-lg-12">
+						<div class="tt-shopcart-box">
+							<h4 class="tt-title">
+								ESTIMATE SHIPPING AND TAX
+							</h4>
+							<p>Enter your destination to get a shipping estimate.</p>
+							<form action="{% url 'cart.product' %}" method="POST" id="shipping_estimate" class="form-default">
+							<div class="row">
+								<div class="col-md-4 col-lg-4">
+								<div class="form-group">
+									<label for="address_country">COUNTRY <sup>*</sup></label>
+									{{form.country}}
+									<span class="invalid-feedback" id="error_country" role="alert"></span>
+								</div>
+								</div>
+								<div class="col-md-4 col-lg-4">
+								<div class="form-group">
+									<label for="address_province">STATE/PROVINCE <sup>*</sup></label>
+									{{form.state}}
+									<span class="invalid-feedback" id="error_state" role="alert"></span>
+								</div>
+								</div>
+								<div class="col-md-4 col-lg-4">
+									<div class="form-group">
+										<label for="address_zip">ZIP/POSTAL CODE <sup>*</sup></label>
+										{{form.zip_code}}
+										<span class="invalid-feedback" id="error_zip_code" role="alert"></span>
+									</div>
+								</div>
+								<div class="col-md-12 col-lg-12">
+									<button type="button" onclick="shippingEstimate('shipping_estimate')" class="btn btn-border">CALCULATE SHIPPING</button>
+									<span id="shippingEstimateResult">									
+									</span>
+								</div>
+							  </div>								
+							</form>
+						</div>
+					</div>
+									
+				</div>
+			</div>
+
+					</div>
+				</div>
+				<div class="col-sm-12 col-xl-4">
+					<div class="tt-shopcart-wrapper">					
+						<div class="tt-shopcart-box">							
+								<form id="apply_coupon_code" class="form-inline form-default" method="post" novalidate="novalidate" action="{% url 'apply.coupon.code' %}">
+									<div class="form-group">
+										<input type="text" name="coupon_code" class="form-control" placeholder="Enter coupon code">
+										<button type="button" onclick="applyCode()" class="btn">Apply Code</button>
+										<span class="invalid-feedback" id="error_coupon_code" role="alert"></span>
+									</div>
+								</form>
+							
+						</div>
+						<div class="tt-shopcart-box tt-boredr-large">
+							<table class="tt-shopcart-table01" id="order_summary_data">
+								{% include "./ajax-content/ajax-order-summary.html" %}
+							</table>
+							<a href="{% url 'checkout' %}" class="btn btn-lg"><span class="icon icon-check_circle"></span>PROCEED TO CHECKOUT</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endif %}
+</div>
+{% endblock %}
+{% block ex_js %}
+<script>
+jQuery(function($){
+	var $window = $(window),
+		$ttPageContent = $('#tt-pageContent'),
+		ttwindowWidth = window.innerWidth || $window.width(),
+		blocks = {
+			ttShopCart: $ttPageContent.find('.tt-shopcart-table, .tt-shopcart-table-02')
+		};
+	if (blocks.ttShopCart.length) {
+		ttShopCart(ttwindowWidth);
+	};
+	var ttCachedWidth = $window.width();
+	$window.on('resize', function () {
+		var newWidth = $window.width();
+		if(newWidth !== ttCachedWidth){
+			ttCachedWidth = newWidth;
+			var ttwindowWidth = window.innerWidth || $window.width();
+
+			// shopping_cart.html
+			if (blocks.ttShopCart.length) {
+					ttShopCart(ttwindowWidth);
+			};
+		}
+	});
+	function ttShopCart(ttwindowWidth){
+		ttwindowWidth <= 789 ?  insertDesctopeObj() : insertMobileObj();
+
+		function insertDesctopeObj(){
+				blocks.ttShopCart.find('tr').each(function(){
+					var objDesctope = $(this).find('.detach-quantity-desctope .tt-input-counter').detach().get(0);
+					$(this).find('.detach-quantity-mobile').append(objDesctope);
+				});
+		};
+		function insertMobileObj(){
+				blocks.ttShopCart.find('tr').each(function(){
+					var objMobile = $(this).find('.detach-quantity-mobile .tt-input-counter').detach().get(0);
+					$(this).find('.detach-quantity-desctope').append(objMobile);
+				});
+		};
+	};
+});
+</script>
+{% endblock %}

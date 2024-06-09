@@ -1,0 +1,67 @@
+{% load static %}
+<tr id="productvariant_set-{{last_row_no}}">                                                               
+                                                                <td class="field-title"><input type="text" name="title[]" value="{{product.product_name}}" maxlength="200" class="form-control form-control-sm" placeholder="Title" id="id_productvariant_set-{{last_row_no}}-title"></td>
+                                                                <td class="field-sku"><input type="text" name="sku[]" value="{{product.sku}}" maxlength="20" class="form-control form-control-sm" placeholder="SKU" id="id_productvariant_set-{{last_row_no}}-sku"></td>
+                                                                {% for attr in theme_attributes.pro_attr.all %}                                                                
+                                                                <td class="field-{{attr.slug}} td-sm">
+                                                                
+                                                                {% if attr.input_type == 'dropdown' %}   
+                                                                <input type="hidden" value="{{attr.id}}" name="attr_name[]">                      
+                                                                    <select name="{{attr.slug}}[]" id="id_productvariant_set-{{last_row_no}}-{{attr.slug}}" class="select2">
+                                                                        {% for values in attr.attr_values.all %}
+                                                                            <option value="{{values.id}}">{{values.name}}</option>
+                                                                        {% endfor %} 
+                                                                    </select>
+                                                                {% elif attr.input_type == 'multiselect' %}
+                                                                <input type="hidden" value="{{attr.id}}" name="attr_name[]">
+                                                                    <select name="{{attr.slug}}[]" id="id_productvariant_set-{{last_row_no}}-{{attr.slug}}" class="select2">
+                                                                        {% for values in attr.attr_values.all %}
+                                                                            <option value="{{values.id}}">{{values.name}}</option>
+                                                                        {% endfor %} 
+                                                                    </select>
+                                                                {% elif attr.input_type == 'file' %}
+                                                                    <input type="hidden" value="{{attr.id}}" name="attr_name[]">
+                                                                <div class="imgUp">                                                                    
+                                                                    <div class="imagePreview avatar avatar-lg">
+                                                                        <img src=" {% static 'super_admin_assets/assets/img/90x90.jpg' %}" alt="image" class="rounded" data-name="cat_sample_img">
+                                                                        <input type="hidden" name="file[]" id="id_productvariant_set-{{last_row_no}}-file">
+                                                                    </div>
+                                                                    <label class="btn btn-primary">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg><input type="file" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;">
+                                                                    </label>
+                                                                    <div class="help-block" id="error-create-cat_sample_img"></div>
+                                                                </div><!-- col-2 -->
+                                                                {% elif attr.input_type == 'reference' %}
+                                                                    <input type="hidden" value="{{attr.id}}" name="attr_name[]">
+                                                                    <input type="text" class="form-control form-control-sm" placeholder="SKU">
+                                                                {% elif attr.input_type == 'numeric' %}
+                                                                    <input type="hidden" value="{{attr.id}}" name="attr_name[]">
+                                                                    <input type="numeric" class="form-control form-control-sm" placeholder="SKU">
+                                                                {% elif attr.input_type == 'rich-text' %}
+                                                                    <input type="hidden" value="{{attr.id}}" name="attr_name[]">
+                                                                    <input type="text" class="form-control form-control-sm" placeholder="SKU">
+                                                                {% else %}
+                                                                    <input type="hidden" value="{{attr.id}}" name="attr_name[]">
+                                                                    <input type="text" class="form-control form-control-sm" placeholder="SKU">
+                                                                {% endif %}                                                                
+                                                                </td>
+
+                                                                {% if attr.slug == 'color' %}
+                                                                 <td class="field-file text-center">                                                                     
+                                                                     <button type="button" class="btn btn-primary mb-2 mr-2" onclick="variationImage({{theme_attributes.id}},{{last_row_no}})" data-toggle="modal" data-target="#attrModal">
+                                                                        Upload Images
+                                                                      </button>                                                                    
+                                                                </td>
+                                                                {% endif %}
+                                                                {% endfor %}
+
+                                                                <td class="field-price">
+                                                                    <input type="number" min="99" max="99999" name="price[]" value="{{product.sale_price}}" id="id_productvariant_set-{{last_row_no}}-price" class="form-control form-control-sm" placeholder="Price">
+                                                                </td>
+                                                                <td class="field-qty"><input type="number" min="0" max="9999" value="{{product.quantity}}" name="qty[]" id="id_productvariant_set-{{last_row_no}}-qty" class="form-control form-control-sm" placeholder="Quantity"></td>                                                              
+                                                                <td class="delete_row_set-0" class="field-variation">
+                                                                    <ul class="table-controls">
+                                                                        <li><a href="javascript:void(0);" onclick="deleteAttr({{last_row_no}})" class="delete-item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg></a></li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>

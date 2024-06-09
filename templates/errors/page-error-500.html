@@ -1,0 +1,45 @@
+{% extends 'frontend_base.html' %}
+
+{% block main_content %}
+
+    <!-- CONTENT WRAPPER STARTS -->
+    <div class="content-wrapper">
+      <!-- CONTENT STARTS -->
+      <div class="content">
+        <div class="breadcrumb-wrapper">
+          <ol class="breadcrumb">
+            <li><a href="dashboard1.html"><i class="fa fa-home"></i>Home</a></li>
+            <li class="active">Error 500</li>
+          </ol>
+        </div><!-- /.breadcrumb-wrapper -->
+
+        <div class="page-title-wrapper">
+          <h2 class="page-title">Error Page 500</h2>
+        </div><!-- /.page-titile-wrapper -->
+
+        <div class="error-wrapper">
+          <span class="error-status">500</span>
+          <h1>Oops!</h1>
+          <p class="lead">Internal server error</p>
+          <form>
+            <div class="form-group">
+              <div class="input-group input-group-lg">
+                <input type="text" class="form-control" placeholder="Search">
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-default-outline">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </span>
+              </div><!-- /.input-group -->
+            </div>
+            <div class="form-group">
+              <a href="{% url '/' %}" class="btn btn-primary btn-block">GO BACK TO DASHBOARD</a>
+            </div>
+          </form>
+        </div><!-- /.error-wrapper -->
+      </div>
+      <!-- CONTENT ENDS -->
+    </div>
+    <!-- CONTENT WRAPPER ENDS -->
+    
+    {% endblock %}

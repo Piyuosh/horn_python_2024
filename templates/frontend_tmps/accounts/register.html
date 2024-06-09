@@ -1,0 +1,91 @@
+{% extends 'frontend_base.html' %}
+
+{% block main_content %}
+{% load widget_tweaks %}
+
+<div class="tt-breadcrumb">
+	<div class="container">
+		<ul>
+			<li><a href="{% url 'home' %}">Home</a></li>
+			<li>Register</li>
+		</ul>
+	</div>
+</div>
+<div id="tt-pageContent">
+	<div class="container-indent">
+		<div class="container">
+			<h1 class="tt-title-subpages noborder">REGISTORETION FORM</h1>
+			<div class="tt-login-form">
+				<div class="row">
+					<div class="col-xs-12 col-md-6">
+						<div class="tt-item">
+							<h2 class="tt-title">ALREADY REGISTERED?</h2>
+							<p>
+								By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.
+							</p>
+							<div class="form-group">
+								<a href="{% url 'login' %}" class="btn btn-top btn-border">LOGIN</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-6">
+						<div class="tt-item">
+							<h2 class="tt-title">REGISTER</h2>
+							If you have an account with us, please log in.
+							<div class="form-default form-top">
+								<form action="{% url 'register' %}" method="POST" id="registerForm">
+									{% csrf_token %}
+									
+									{% include 'frontend_tmps/includes/alert.html' %}
+									
+                                    <div class="form-group">
+										<label for="loginInputName">FIRST NAME *</label>
+										<div class="tt-required">* Required Fields</div>
+										{% render_field form.first_name type="text" %}	
+										<div class="invalid-feedback" id="register-error-first_name"></div>						
+									</div>
+                                    <div class="form-group">
+										<label for="loginInputName">LAST NAME *</label>										
+                                        {% render_field form.last_name type="text" %}	
+										<div class="invalid-feedback" id="register-error-last_name"></div>										
+									</div>
+                                    <div class="form-group">
+										<label for="loginInputName">USERNAME OR E-MAIL *</label>										
+                                        	{% render_field form.email type="text" %}	
+											<div class="invalid-feedback" id="register-error-email"></div>								
+									</div>
+									<div class="form-group">
+										<label for="loginInputEmail">PASSWORD *</label>
+                                          {% render_field form.password type="password" %}	  
+										  <div class="invalid-feedback" id="register-error-password"></div>                                 
+									</div>
+                                    <div class="form-group">
+										<label for="loginInputEmail">CONFIRM PASSWORD *</label>
+										  {% render_field form.confirm_password type="password" %}	
+										  <div class="invalid-feedback" id="register-error-confirm_password"></div>                                    
+									</div>
+									<div class="row">
+										<div class="col-auto mr-auto">
+											<div class="form-group">
+												<button class="btn btn-border" type="button" onclick="registerMe()">REGISTER</button>
+											</div>
+										</div>
+										<div class="col-auto align-self-end">
+											<div class="form-group">
+												<ul class="additional-links">
+													<li><a href="{% url 'login' %}">Login</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,188 @@
+{% load static %}
+<div class="row">
+    <div class="slider-revolution revolution-default">
+        <div class="tp-banner-container">
+            <div class="tp-banner revolution">
+                <ul>
+                    <li data-thumb="{% static '/front_assets/images/slides/07/slide-01.jpg' %}" data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-saveperformance="off"  data-title="Slide">
+                        <img src="{% static '/front_assets/images/slides/07/slide-01.jpg' %}"  alt="slide1"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" >
+                        <div class="tp-caption tp-caption1 lfr str"
+                            data-x="right"
+                            data-y="center"
+                            data-hoffset="-351"
+                            data-voffset="-20"
+                            data-speed="600"
+                            data-start="900"
+                            data-easing="Power4.easeOut"
+                            data-endeasing="Power4.easeIn">
+                            <div class="tp-caption1-wd-1 tt-base-color">Multipurpose</div>
+                            <div class="tp-caption1-wd-2">Premium<br>Html Template</div>
+                            <div class="tp-caption1-wd-3">30 skins, powerful features, great support, exclusive offer</div>
+                            <div class="tp-caption1-wd-4"><a href="listing-left-column.html" class="btn btn-xl" data-text="SHOP NOW!">SHOP NOW!</a></div>
+                        </div>
+                    </li>
+                    <li data-thumb="{% static '/front_assets/images/slides/07/slide-02.jpg' %}" data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-saveperformance="off"  data-title="Slide">
+                        <img src="{% static '/front_assets/images/slides/07/slide-02.jpg' %}"  alt="slide1"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" >
+                        <div class="tp-caption tp-caption1 lft stb"
+                            data-x="center"
+                            data-y="center"
+                            data-hoffset="0"
+                            data-voffset="0"
+                            data-speed="600"
+                            data-start="900"
+                            data-easing="Power4.easeOut"
+                            data-endeasing="Power4.easeIn">
+                            <div class="tp-caption1-wd-1 tt-base-color">Ready To</div>
+                            <div class="tp-caption1-wd-2">Use Unique<br>Demos</div>
+                            <div class="tp-caption1-wd-3">Optimized for speed, website that sells</div>
+                            <div class="tp-caption1-wd-4"><a href="listing-left-column.html" class="btn btn-xl" data-text="SHOP NOW!">SHOP NOW!</a></div>
+                        </div>
+                    </li>
+                    <li data-thumb="{% static '/front_assets/images/slides/07/slide-02.jpg' %}" data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-saveperformance="off"  data-title="Slide">
+                        <img src="{% static '/front_assets/images/slides/07/slide-02.jpg' %}"  alt="slide1"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" >
+                        <div class="tp-caption tp-caption1 lft stb"
+                            data-x="center"
+                            data-y="center"
+                            data-hoffset="0"
+                            data-voffset="0"
+                            data-speed="600"
+                            data-start="900"
+                            data-easing="Power4.easeOut"
+                            data-endeasing="Power4.easeIn">
+                            <div class="tp-caption1-wd-1 tt-base-color">Ready To</div>
+                            <div class="tp-caption1-wd-2">Use Unique<br>Demos</div>
+                            <div class="tp-caption1-wd-3">Optimized for speed, website that sells</div>
+                            <div class="tp-caption1-wd-4"><a href="listing-left-column.html" class="btn btn-xl" data-text="SHOP NOW!">SHOP NOW!</a></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- {% comment %} <div class="row flex-sm-row-reverse tt-layout-promo-box">
+    <div class="col-sm-12 col-md-6">
+        <div class="row">
+            <div class="col-sm-6">
+                <a href="listing-left-column.html" class="tt-promo-box tt-one-child hover-type-2">
+                    <img  src="{% static '/static/front_assets/images/loader.svg' %}" data-src="/media/{{home_banner.1.banner_img}}" alt="">
+                    <div class="tt-description">
+                        <div class="tt-description-wrapper">
+                        <div class="tt-background"></div>
+                            {% if home_banner.1.other_text %}
+                        <div class="tt-title-small">{{home_banner.1.other_text}}</div>
+                    {% endif %}
+                    {% if home_banner.1.other_text_2 %} 
+                        <div class="tt-title-large">{{home_banner.1.other_text_2}}</div>
+                    {% endif %}
+                    {% if home_banner.1.offer_text %} 
+                        <div class="tt-title-large">{{home_banner.1.other_text_2}}</div>
+                    {% endif %}
+                    {% if home_banner.1.offer_link %} {{home_banner.1.offer_link}} {% endif %}
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <a href="listing-left-column.html" class="tt-promo-box tt-one-child hover-type-2">
+                    <img  src="{% static '/static/front_assets/images/loader.svg' %}" data-src="/media/{{home_banner.2.banner_img}}" alt="">
+                    <div class="tt-description">
+                        <div class="tt-description-wrapper">
+                            <div class="tt-background"></div>
+                            {% if home_banner.2.other_text %}
+                        <div class="tt-title-small">{{home_banner.2.other_text}}</div>
+                    {% endif %}
+                    {% if home_banner.2.other_text_2 %} 
+                        <div class="tt-title-large">{{home_banner.2.other_text_2}}</div>
+                    {% endif %}
+                    {% if home_banner.2.offer_text %} 
+                        <div class="tt-title-large">{{home_banner.2.other_text_2}}</div>
+                    {% endif %}
+                    {% if home_banner.2.offer_link %} {{home_banner.2.offer_link}} {% endif %}
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-12">
+                <a href="listing-left-column.html" class="tt-promo-box tt-one-child">
+                    <img  src="{% static '/static/front_assets/images/loader.svg' %}" data-src="/media/{{home_banner.3.banner_img}}" alt="">
+                    <div class="tt-description">
+                        <div class="tt-description-wrapper">
+                            <div class="tt-background"></div>
+                            {% if home_banner.3.other_text %}
+                        <div class="tt-title-small">{{home_banner.3.other_text}}</div>
+                    {% endif %}
+                    {% if home_banner.3.other_text_2 %} 
+                        <div class="tt-title-large">{{home_banner.3.other_text_2}}</div>
+                    {% endif %}
+                    {% if home_banner.3.offer_text %} 
+                        <div class="tt-title-large">{{home_banner.3.other_text_2}}</div>
+                    {% endif %}
+                    {% if home_banner.3.offer_link %} {{home_banner.3.offer_link}} {% endif %}
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-12 col-md-6">
+        <a href="listing-left-column.html" class="tt-promo-box">
+            <img src="{% static '/static/front_assets/images/loader.svg' %}" data-src="/media/{{home_banner.0.banner_img}}" alt="">
+            <div class="tt-description">
+                <div class="tt-description-wrapper">
+                    <div class="tt-background"></div>
+                    {% if home_banner.0.other_text %}
+                        <div class="tt-title-small">{{home_banner.0.other_text}}</div>
+                    {% endif %}
+                    {% if home_banner.0.other_text_2 %} 
+                        <div class="tt-title-large">{{home_banner.0.other_text_2}}</div>
+                    {% endif %}
+                    {% if home_banner.0.offer_text %} 
+                        <div class="tt-title-large">{{home_banner.0.other_text_2}}</div>
+                    {% endif %}
+                    {% if home_banner.0.offer_link %} {{home_banner.0.offer_link}} {% endif %}
+                    
+                    
+                </div>
+            </div>
+        </a>
+    </div>
+
+</div>  {% endcomment %}
+
+<div class="container-indent nomargin">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="slider-revolution revolution-default">
+                <div class="tp-banner-container">
+                    <div class="tp-banner revolution">
+                        <ul>
+                            {% for item in home_banner %}
+                            <li data-thumb="/media/{{item.banner_img}}" data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-saveperformance="off"  data-title="Slide">
+                                <img src="/media/{{item.banner_img}}"  alt="slide1"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" >
+                                <div class="tp-caption tp-caption1 lft stb"
+                                    data-x="center"
+                                    data-y="center"
+                                    data-hoffset="0"
+                                    data-voffset="0"
+                                    data-speed="600"
+                                    data-start="900"
+                                    data-easing="Power4.easeOut"
+                                    data-endeasing="Power4.easeIn">
+                                    <div class="tp-caption1-wd-1 tt-base-color">Multipurpose</div>
+                                    <div class="tp-caption1-wd-2">Premium<br>Html Template</div>
+                                    <div class="tp-caption1-wd-3">30 skins, powerful features, great support, exclusive offer</div>
+                                    <div class="tp-caption1-wd-4"><a href="listing-left-column.html" target="_blank" class="btn btn-xl" data-text="SHOP NOW!">SHOP NOW!</a></div>
+                                </div>
+                            </li>  
+                            {% endfor %}                
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->

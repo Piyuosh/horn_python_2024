@@ -1,0 +1,29 @@
+{% extends 'seller_base.html' %}
+{% load static %}
+{% block body_class %} <body class="sidebar-noneoverflow"> {% endblock body_class %}
+{% block main_content %}
+
+    <div class="layout-px-spacing">
+        <div class="seperator-header layout-top-spacing">
+            <h4 class="">Product details</h4>
+        </div>
+
+      
+    </div><!-- end layout-px-spacing -->
+            
+{% endblock main_content %}
+{% block ex_css %}
+ <!-- BEGIN PAGE LEVEL CUSTOM STYLES -->
+    <link rel="stylesheet" type="text/css" href="{% static 'super_admin_assets/plugins/table/datatable/datatables.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'super_admin_assets/assets/css/forms/theme-checkbox-radio.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'super_admin_assets/plugins/table/datatable/dt-global_style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'super_admin_assets/plugins/table/datatable/custom_dt_custom.css' %}">
+    <!-- END PAGE LEVEL CUSTOM STYLES -->
+{% endblock ex_css %}
+
+{% block ex_js %}
+ <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src="{% static 'super_admin_assets/plugins/table/datatable/datatables.js' %}"></script>
+ 
+    <!-- END PAGE LEVEL SCRIPTS --> 
+{% endblock ex_js %}

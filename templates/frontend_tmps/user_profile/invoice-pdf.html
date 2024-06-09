@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load custom_tags %}
+	
+	<title>Invoice-{{ order.order_number }}</title>
+	<!-- REQUIRED STYLES -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link href="static/front_assets/css/invoice.min.css" rel="stylesheet" type="text/css">
+	
+</head>
+<body>
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="invoice-header clearfix">						
+						<div class="invoice-body">
+							<div class="table-responsive">
+								<table class="table">
+									<tbody>
+										<tr>
+											<td class="tdLeft">												
+												<address>	
+													<img src="static/front_assets/images/bat_design_New3_07.jpg" alt="Hornbill Mart" height="70"><br>												
+													<strong>Hornbill Mart</strong><br>
+													<strong>Add:</strong> B-54, Sector-1, Shatabdi Nagar<br>
+													Meerut-250103, Uttar Pradesh, India<br>
+													<strong>Mobile:</strong> +91-9259403040, +91-9557000873<br>
+												</address>
+											</td>
+											<td class="tdRight">
+												<span class="block"><strong>Invoice No: </strong> {{ order.order_number }} </span>
+												<span class="block"><strong>Invoice Date: </strong> {{ order.created_at }} </span>
+												
+												<div class="label rounded">
+													<strong>Total Amount:</strong> <strong class="block m-top-10">₹{{ grant_total }}</strong>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>						
+						</div><!-- /.invoice-body -->
+					</div><!-- /.invoice-header -->
+
+				<div class="invoice-header clearfix">
+					<div class="invoice-body">
+						<div class="table-responsive">
+							<table class="table">
+								<tbody>
+									<tr>
+										<td class="tdLeft">
+											<em class="block m-top-5"><strong>EmaiL:</strong> info@hornbillmart.com
+											</em>
+											<em class="block m-top-5"><strong>Web:</strong> www.hornbillmart.com
+											</em>
+										</td>
+										<td class="tdRight">
+											<em class="block m-top-5"><strong>GSTIN:</strong> 09AAJFH7214G1ZC</em>
+											<em class="block m-top-5"><strong>PAN:</strong> AAJFH7214G</em>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>	<!-- /.invoice-body -->
+				</div> <!-- /.invoice-header -->
+
+			 	<div class="invoice-header clearfix">
+					<div class="invoice-body">
+						<div class="table-responsive">
+							<table class="table">
+								<tbody>
+									<tr>
+									<td class="tdLeft">
+										<strong>Billing Address</strong>
+										<br>
+										{% if order.address_book.first_name %}
+										<em class="block m-top-5">{{order.address_book.first_name}} {{order.address_book.last_name}}
+										</em>
+										{% endif %}
+										{% if order.address_book.email %}
+										<em class="block m-top-5">
+										{{order.address_book.email}}
+										</em>
+										{% endif %}
+										{% if  order.address_book.contact_mobile1 %}
+										<em class="block m-top-5">
+										{{order.address_book.contact_mobile1}} {% if order.address_book.contact_mobile2 %}, {{order.address_book.contact_mobile2}} {% endif %}
+										</em>
+										{% endif %}
+										{% if order.address_book.company %}
+										<em class="block m-top-5">
+										{{order.address_book.company}}
+										</em>
+										{% endif %}
+										{% if order.address_book.gstin  %}
+										<em class="block m-top-5">
+										{{order.address_book.gstin}}
+										</em>
+										{% endif %}
+										{% if order.address_book.pan_number  %}
+										<em class="block m-top-5">
+										{{order.address_book.pan_number}}
+										</em>
+										{% endif %}
+										<em class="block m-top-5">
+										{{order.address_book.address_line1}} {{ order.address_book.address_line2 }}, <br>{{order.address_book.city.name}},  {{order.address_book.zip_code}},  {{order.address_book.state.name }},  {{order.address_book.country.name}}
+										</em>
+									</td>
+									<td class="tdRight">
+											<strong>Shipping Address</strong>	<br>
+											{% if order.address_book.first_name %}
+											<em class="block m-top-5">{{order.address_book.first_name}} {{order.address_book.last_name}}
+											</em>
+											{% endif %}
+											{% if order.address_book.email %}
+											<em class="block m-top-5">
+											{{order.address_book.email}}
+											</em>
+											{% endif %}
+											{% if  order.address_book.contact_mobile1 %}
+											<em class="block m-top-5">
+											{{order.address_book.contact_mobile1}} {% if order.address_book.contact_mobile2 %}, {{order.address_book.contact_mobile2}} {% endif %}
+											</em>
+											{% endif %}
+											{% if order.address_book.company %}
+											<em class="block m-top-5">
+											{{order.address_book.company}}
+											</em>
+											{% endif %}
+											{% if order.address_book.gstin  %}
+											<em class="block m-top-5">
+											{{order.address_book.gstin}}
+											</em>
+											{% endif %}
+											{% if order.address_book.pan_number  %}
+											<em class="block m-top-5">
+											{{order.address_book.pan_number}}
+											</em>
+											{% endif %}
+											<em class="block m-top-5">
+											{{order.address_book.address_line1}} {{ order.address_book.address_line2 }}, <br>{{order.address_book.city.name}},  {{order.address_book.zip_code}},  {{order.address_book.state.name }},  {{order.address_book.country.name}}
+											</em>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+		  		</div> <!-- /.invoice-header -->
+
+		  <div class="invoice-body">
+			 <div class="table-responsive">
+				<table class="table">
+				   <thead>
+					  <tr>
+						 <td style="width: 40%;">Item</td>
+						 <td style="text-align: center;">HSN</td>
+						 <td style="text-align: center;">Qty</td>
+						 <td style="text-align: center;">Price</td>
+						 {% if order.address_book.state_id == 38 %}
+						 <td style="text-align: center;">CGST(%)</td>
+						 <td style="text-align: center;">SGST(%)</td>
+						 {% else %}
+						 <td style="text-align: center;">IGST(%)</td>
+						 {% endif %}
+						 <td style="text-align: center;">Tax Amt.</td>
+						 <td style="text-align: center;">Amount</td>
+					  </tr>
+				   </thead>
+				   <tbody>
+					  {% for item in  order_detail %}
+					  <tr>
+						 <td>
+							<strong>{{ item.product.product_name}}</strong>												
+						 </td>
+						  <td style="text-align: center;">{% comment %}{{ item.product.hsn_code}} {% endcomment %} 7117</td> 
+						 <td style="text-align: center;">{{ item.quantity }}</td>
+						 <td>₹{{ item.product.sale_price }}</td>
+						 {% percentage_value item.quantity item.product.sale_price as tax %}
+						 {% if order.address_book.state_id == 38 %}
+						 <td style="text-align: center;"> {% sgst_cgst_rate %}%</td>
+						 <td style="text-align: center;"> {% sgst_cgst_rate %}%</td>
+						 {% else %}
+						 <td style="text-align: center;"> {% igst_rate %}%</td>
+						 {% endif %}
+						 <td style="text-align: center;">₹{{ tax }}</td>
+						 <td style="text-align: center;">₹{% multiply item.quantity item.product.sale_price %}</td>
+					  </tr>
+					  {% empty %}
+					  {% endfor %}
+				   </tbody>
+				   <tfoot>
+					  <tr>
+						 {% if order.address_book.state_id == 38 %}
+						 <td colspan="5">
+							{% else %}
+						 <td colspan="4">
+							{% endif %}
+							<h1>Hornbill Mart</h1>
+							<em class="block m-top-5">Authorized Signature</em>
+						 </td>
+						 <td colspan="3">
+							<table class="table m-left-15">
+							   <tbody>
+								  <tr>
+									 <td style="text-align: center;">Subtotal:</td>
+									 <td style="text-align: center;">₹{{ subtotal }}</td>
+								  </tr>
+								  <tr>
+									 <td style="text-align: center;">Total Tax:</td>
+									 <td style="text-align: center;">₹{{ tax }}</td>
+								  </tr>
+								  <tr>
+									 <td style="text-align: center;"><strong>Grand Total:</strong></td>
+									 <td style="text-align: center;"><strong>₹{{ grant_total }}</strong></td>
+								  </tr>
+							   </tbody>
+							</table>
+						 </td>
+					  </tr>
+				   </tfoot>
+				</table>
+			 </div>
+		  </div>
+		  <!-- /.invoice-body -->
+	   </div>
+	   <!-- /.panel-body -->
+	</div>
+	<!--/.panel-->
+ </div>
+ <!-- /.col-sm-12 -->
+ </div><!-- /.row -->
+
+</body>
+</html>
+
+ 
+

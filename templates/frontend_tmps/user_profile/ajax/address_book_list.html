@@ -1,0 +1,55 @@
+{% for i in billing %}
+										<div class="col-md-6">
+											<h6 class="">Default Billing Address</h6>
+											<address>
+												<b>Full Name </b>: {{i.first_name}}  {{i.last_name}}<br>
+												<b>Email </b> : {{i.email}}<br> 
+												<b>Contact Mobile </b> : {% if j.contact_mobile1 %} {{j.contact_mobile1}} {% else %} --- {% endif %}<br>
+												<b>Alternate Mobile </b> : {% if j.contact_mobile2 %} {{j.contact_mobile2}} {% else %} --- {% endif %}<br>
+												<b>Company </b> :  {% if i.company %} {{i.company}} {% else %} --- {% endif %}<br> 
+												<b>PAN Number </b> : {% if i.pan_number %} {{i.pan_number}} {% else %} --- {% endif %}<br> 
+												<b>GSTIN </b> : {% if i.gstin %} {{i.gstin}} {% else %} --- {% endif %}<br> 
+												<b>Address</b> : {{i.address_line1}},{{i.address_line2}} {{i.city_set.name}}, {{i.state.name}}, {{i.country.name}}, PIN: {{i.zip_code}}<br>
+												<a href="javascript:void(0)"  onclick="editAddBook({{i.id}},'billing')" class="address_book" data-type="shipping"><b>Edit</b></a>&nbsp;&nbsp;&nbsp;
+											</address>
+										</div>
+									{% empty %}
+										<div class="col-md-12">
+											<h6 class="">Default Billing Address</h6>
+											<address>
+												You have not set a default billing address.<br>
+												<a href="javascript:void(0)" onclick="addressBookForm('billing')" class="address_book"><b>Add Billing Address</b></a>
+											</address>
+										</div>
+									{% endfor %}
+
+									{% for j in shipping %}
+										<div class="col-md-6">
+											<h6>{{j.shipping_title|capfirst}} Shipping Address</h6>
+											<address>
+												<b>Full Name </b>: {{j.first_name}}  {{j.last_name}}<br>
+												<b>Email </b> : {{j.email}}<br> 
+												<b>Contact Mobile </b> : {% if j.contact_mobile1 %} {{j.contact_mobile1}} {% else %} --- {% endif %}<br>
+												<b>Alternate Mobile </b> : {% if j.contact_mobile2 %} {{j.contact_mobile2}} {% else %} --- {% endif %}<br>
+												<b>Address</b> : {{j.address_line1}},{{j.address_line2}}, {{j.city.name}}, {{j.state.name}}, {{j.country.name}}, PIN: {{j.zip_code}}<br>
+												<a href="javascript:void(0)"  onclick="editAddBook({{j.id}},'shipping')" class="address_book" data-type="shipping"><b>Edit</b></a>&nbsp;&nbsp;&nbsp;
+												<a href="javascript:void(0)"  onclick="deleteAddBook({{j.id}})" class="delete_address" data-type="shipping"><b>Delete</b></a><br><br>
+											</address>
+										</div>
+									{% empty %}
+										<div class="col-md-12">
+											<h6 class="">Default Shipping Address</h6>
+											<address>
+												You have not set a default shipping address.<br>
+												<a href="javascript:void(0)" onclick="addressBookForm('shipping')" class="address_book"><b>Add Shipping Address</b></a>
+											</address>
+										</div>
+									{% endfor %}									
+
+									{% if shipping %}
+										<div class="col-md-12 text-right">
+											<address>
+												<a href="javascript:void(0)" onclick="addressBookForm('shipping')" class="address_book"><b>Add Shipping Address</b></a>
+											</address>
+										</div>
+									{% endif %}

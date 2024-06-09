@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>Oval 1 Copy 5 + Line + Line Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Artboard-1" sketch:type="MSArtboardGroup" transform="translate(0.000000, -17.000000)">
+            <g id="Oval-1-Copy-5-+-Line-+-Line-Copy" sketch:type="MSLayerGroup" transform="translate(1.000000, 18.000000)">
+                <circle id="Oval-1-Copy-5" stroke="#EB5241" fill="#FD6251" sketch:type="MSShapeGroup" cx="6.5" cy="6.5" r="6.5"></circle>
+                <g id="Line-+-Line-Copy" transform="translate(3.640000, 3.293333)" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" sketch:type="MSShapeGroup">
+                    <path d="M0.777387418,1.15655408 L5.06716856,5.44633522" id="Line"></path>
+                    <path d="M0.777387418,5.44633522 L5.06716856,1.15655408" id="Line-Copy"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,24 @@
+
+                                {% for child in sub_child.all %}
+                                    <div class="card">
+                                        <div class="card-header" id="...">
+                                            <section class="mb-0 mt-0">
+                                                <div role="menu" class="collapsed" data-toggle="collapse" data-target="#iconAccordionSub{{child.id}}" aria-expanded="true" aria-controls="iconsAccordion">
+                                                    <div class="accordion-icon"><svg> ... </svg></div>
+                                                    {{child.category_name}}  <div class="icons"><svg> ... </svg></div>
+                                                </div>
+                                            </section>
+                                        </div>
+                                       
+                                            <div id="iconAccordionSub{{child.id}}" class="collapse" aria-labelledby="..." data-parent="#iconsAccordion">
+                                                <div class="card-body">
+                                                    <div class="avatar avatar-xl">
+                                                        <img alt="avatar" src="assets/img/90x90.jpg" class="rounded" />
+                                                    </div>                                                    
+                                                    <button class="btn btn-primary mb-2">{{child.name}}</button>
+                                                </div>
+                                            </div>
+
+                                    </div>
+                                {% endfor %}
+                 

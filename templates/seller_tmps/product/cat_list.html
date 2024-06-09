@@ -1,0 +1,72 @@
+{% extends 'seller_base.html' %}
+{% load static %}
+{% block body_class %} <body class="sidebar-noneoverflow"> {% endblock body_class %}
+{% block main_content %}
+
+    <div class="layout-px-spacing">
+        <div class="seperator-header layout-top-spacing">
+            <h4 class="">Add Product</h4>
+        </div>
+        <div class="row layout-spacing">
+            <div class="col-lg-6 offset-lg-3 col-6 layout-spacing">            
+                <div id="iconsAccordion" class="accordion-icons">
+                {% for category in categories %}
+                    <div class="card">
+                        <div class="card-header" id="...">
+                            <section class="mb-0 mt-0">
+                                <div role="menu" class="collapsed" data-toggle="collapse" data-target="#iconAccordion{{category.id}}" aria-expanded="true" aria-controls="iconsAccordion">
+                                    <div class="accordion-icon"><svg> ... </svg></div>
+                                    {{category.category_name}}  <div class="icons"><svg> ... </svg></div>
+                                </div>
+                            </section>
+                        </div>                        
+                        {% if category.children.all %}
+                        <div id="iconAccordion{{category.id}}" class="collapse" aria-labelledby="...">
+                            <div class="card-body">
+                                 <!--  BEGIN child category  -->
+                                        {% include 'seller_tmps/includes/child-cat.html' with child_cat=category.children %}
+                                 <!--  END child category  -->
+                            </div>
+                        </div>
+                        {% else %}
+                            <div id="iconAccordion{{category.id}}" class="collapse" aria-labelledby="..." data-parent="#iconsAccordion">
+                              <div class="card-body text-center">
+                                                    <div class="avatar avatar-xl">
+                                                        {% if  child.cat_img %} 
+                                                            <img alt="avatar" src="{{ child.cat_img.url}}" width="100" class="rounded" />
+                                                        {% else %}
+                                                            <img alt="avatar" src="{% static 'super_admin_assets/assets/img/90x90.jpg' %}" class="rounded" />
+                                                        {% endif %}                                                           
+                                                        <p><b>{{child.category_name}}</b></p>
+                                                        <p>{{child.short_desc|slice:":50"}}</p>
+                                                    </div>                                                    
+                                                    <a href="{% url 'seller:product.create' child.uuid %}" class="btn btn-primary mb-2">Select</a>
+                                </div>
+                            </div>
+                        {% endif %}	
+                    </div>
+                {% endfor %}
+           
+                </div>
+            <div>
+        </div>
+
+    </div><!-- end layout-px-spacing -->
+            
+{% endblock main_content %}
+{% block ex_css %}
+ <!-- BEGIN PAGE LEVEL CUSTOM STYLES -->
+    <link rel="stylesheet" type="text/css" href="{% static 'super_admin_assets/plugins/table/datatable/datatables.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'super_admin_assets/assets/css/forms/theme-checkbox-radio.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'super_admin_assets/plugins/table/datatable/dt-global_style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'super_admin_assets/plugins/table/datatable/custom_dt_custom.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'super_admin_assets/assets/css/components/tabs-accordian/custom-accordions.css' %}" />
+    <!-- END PAGE LEVEL CUSTOM STYLES -->
+{% endblock ex_css %}
+
+{% block ex_js %}
+ <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src="{% static 'super_admin_assets/plugins/table/datatable/datatables.js' %}"></script>
+    <script src="{% static 'super_admin_assets/assets/js/components/ui-accordions.js' %}"></script>
+    <!-- END PAGE LEVEL SCRIPTS --> 
+{% endblock ex_js %}

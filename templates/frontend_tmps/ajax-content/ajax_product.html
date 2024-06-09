@@ -1,0 +1,55 @@
+{% load static %}
+{% for product in products %}
+							<div class="col-6 col-md-4 tt-col-item">
+								<div class="tt-product thumbprod-center">
+									<div class="tt-image-box">
+										<a href="javascript:void(0)" onclick="quickView('{{ product.uuid }}')" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"	data-tooltip="Quick View" data-tposition="left"></a>
+										<a href="javascript:void(0)" onclick="addToWishlist('{{ product.uuid }}')" class="tt-btn-wishlist" data-tooltip="Add to Wishlist" data-tposition="left"></a>
+										<a href="javascript:void(0)" onclick="addToCompare('{{ product.uuid }}')" class="tt-btn-compare" data-tooltip="Add to Compare" data-tposition="left"></a>
+										<a href="{{product.get_absolute_url}}">											
+											<span class="tt-img"><img src="{% static '/front_assets/images/loader.svg' %}" data-src="{{ product.mainThumb }}" alt="{{product.product_name}}"></span>
+											<span class="tt-img-roll-over"><img src="{% static '/front_assets/images/loader.svg' %}" data-src="{{ product.mainThumb }}" alt="{{product.product_name}}"></span>
+										</a>										
+									</div>
+									<div class="tt-description">
+										<div class="tt-row">
+											<ul class="tt-add-info">
+												<li><a href="#">{{ product.category }}</a></li>
+											</ul>
+											<div class="tt-rating">
+												{% if product.averageReview  >= 4%}
+													<input name="rating" value="{{ product.averageReview }}" readonly class="rating rating-loading" data-min="0" data-max="5" data-step="0.5">
+												{% endif %}
+											</div>
+										</div>
+										<h2 class="tt-title"><a href="{{product.get_absolute_url}}">{{ product.product_name }}</a></h2>
+										<div class="tt-price">
+											<span class="new-price">₹{{ product.sale_price }}</span>
+											<span class="old-price">₹{{ product.regular_price }}</span>
+										</div>
+										{% comment %} <div class="tt-option-block">
+											<ul class="tt-options-swatch">
+												<li><a class="options-color tt-color-bg-01" href="#"></a></li>
+												<li><a class="options-color tt-color-bg-02" href="#"></a></li>
+											</ul>
+										</div> {% endcomment %}
+										<div class="tt-product-inside-hover">
+											<div class="tt-row-btn">
+											{% if product.quantity <= 0 %}
+												Out of Stock
+											{% else %}
+												<a href="javascript:void(0)" onclick="addToCartOther({{product.id}})" class="tt-btn-addtocart thumbprod-button-bg">ADD TO CART</a>
+								
+											{% endif %}
+												
+											</div>
+											<div class="tt-row-btn">
+												<a href="javascript:void(0)" onclick="quickView('{{ product.uuid }}')" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"></a>
+												<a href="javascript:void(0)" onclick="addToWishlist('{{ product.uuid }}')" class="tt-btn-wishlist"></a>
+												<a href="javascript:void(0)" onclick="addToCompare('{{ product.uuid }}')" class="tt-btn-compare"></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							{% endfor %}	

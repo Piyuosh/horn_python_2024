@@ -1,0 +1,151 @@
+<h5 class="modal-title">{% if add_type == 'shipping' %} Shipping Address {% else %} Billing Address {% endif %} </h5>
+<div class="text-success" role="alert" id="successMessage2"></div>
+<div class="text-danger" role="alert" id="errorMessage2"></div>
+<form action="{% url 'address.book' %}" method="POST" id="addressForm">
+	<div class="row">
+		{{form.addr_type}}	
+		{% if add_type == 'shipping' %}
+		<div class="col-sm-12 col-md-12 col-lg-12">
+			<div class="form-group required-field">
+				<label class="control-label">Shipping Address Title *</label>
+			</div>
+		</div>
+		<div class="col-sm-2 col-md-2 col-lg-2"></div>
+		{% for radio in form.shipping_title %}
+			<div class="col-sm-2 col-md-2 col-lg-2">
+				<div class="list-form-inline">
+					<label class="radio" for="{{ radio.id_for_label }}">
+							{{ radio.tag }}
+							<span class="outer"><span class="inner"></span></span>{{ radio.choice_label }}
+					</label>
+				</div>			
+			</div>       
+    	{% endfor %}
+		<div class="col-sm-2 col-md-2 col-lg-2"></div>
+		<div class="col-sm-12 col-md-12 col-lg-12"></div>
+
+		<div class="col-sm-12 col-md-12 col-lg-12">
+			<span class="invalid-feedback" id="error_shipping_title" role="alert"></span>	
+		</div>
+
+		{% endif %}
+		<div class="col-sm-6 col-md-3 col-lg-3">
+			<div class="form-group required-field">
+				<label for="first_name" class="control-label">FIRST NAME *</label>
+				{{form.first_name}}				
+				<span class="invalid-feedback" id="error_first_name" role="alert"></span>	
+			</div>
+		</div>						
+		<div class="col-sm-6 col-md-3 col-lg-3">
+			<div class="form-group required-field">
+				<label for="last_name" class="control-label">LAST NAME *</label>				
+				{{form.last_name}}				
+				<span class="invalid-feedback" id="error_last_name" role="alert"></span>	
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-3 col-lg-3">
+			<div class="form-group required-field">
+				<label for="phone" class="control-label">CONTACT MOBILE *</label>
+				{{form.contact_mobile1}}				
+				<span class="invalid-feedback" id="error_contact_mobile1" role="alert"></span>	
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-3 col-lg-3">
+			<div class="form-group required-field">
+				<label for="phone" class="control-label">ALTERNATE MOBILE</label>
+				{{form.contact_mobile2}}				
+				<span class="invalid-feedback" id="error_contact_mobile2" role="alert"></span>	
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-3 col-lg-3">
+			<div class="form-group required-field">
+				<label for="email" class="control-label">EMAIL ADDRESS *</label>
+				{{form.email}}				
+				<span class="invalid-feedback" id="error_email" role="alert"></span>	
+			</div>
+		</div>
+		{% if add_type == 'billing' %}
+		<div class="col-sm-6 col-md-3 col-lg-3">
+			<div class="form-group required-field">
+				<label for="companyName" class="control-label">COMPANY NAME</label>
+				{{form.company}}				
+				<span class="invalid-feedback" id="error_company" role="alert"></span>	
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-3 col-lg-3">
+			<div class="form-group required-field">
+				<label for="pan" class="control-label">PAN NUMBER</label>
+				{{form.pan_number}}				
+				<span class="invalid-feedback" id="error_pan_number" role="alert"></span>	
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-3 col-lg-3">
+			<div class="form-group required-field">
+				<label for="gstin" class="control-label">GSTIN</label>
+				{{form.gstin}}				
+				<span class="invalid-feedback" id="error_gstin" role="alert"></span>	
+			</div>
+		</div>
+		{% endif %}
+		<div class="col-sm-6 col-md-3 col-lg-3">
+			<div class="form-group required-field">
+				<label for="country" class="control-label">COUNTRY *</label>
+				{{form.country}}				
+				<span class="invalid-feedback" id="error_country" role="alert"></span>	
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-3 col-lg-3">
+			<div class="form-group required-field">
+				<label for="state" class="control-label">STATE / COUNTY *</label>
+				{{form.state}}				
+				<span class="invalid-feedback" id="error_state" role="alert"></span>	
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-3 col-lg-3">
+			<div class="form-group required-field">
+				<label for="city" class="control-label">TOWN / CITY *</label>
+				{{form.city}}				
+				<span class="invalid-feedback" id="error_city" role="alert"></span>	
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-3 col-lg-3">
+			<div class="form-group required-field">
+				<label for="postCode" class="control-label">POSTCODE / ZIP *</label>
+				{{form.zip_code}}				
+				<span class="invalid-feedback" id="error_zip_code" role="alert"></span>	
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-6">
+			<div class="form-group required-field">
+				<label for="address" class="control-label">ADDRESS LINE 1*</label>
+				{{form.address_line1}}				
+				<span class="invalid-feedback" id="error_address_line1" role="alert"></span>	
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-6">
+			<div class="form-group required-field">
+				<label for="address" class="control-label">ADDRESS LINE 2</label>
+				{{form.address_line2}}				
+				<span class="invalid-feedback" id="error_address_line2" role="alert"></span>	
+			</div>
+		</div>
+		{% if add_type == 'billing' %}
+		<div class="col-sm-12 col-md-6 col-lg-6">
+			<div class="form-group checkbox-group required-field">
+				{{ form.same_as_shipping }}
+				 <label  for="id_same_as_shipping">
+					<span class="check"></span>
+					<span class="box"></span>
+					Set as shipping default address?
+				</label> 
+			</div> 
+			</div> 
+		{% endif %}
+	</div>
+	<div class="row tt-offset-21 text-right">
+		<div class="col-md-12 col-offset-md-6">
+			<button type="button" class="btn" onclick="addressBookUpdate('addressForm')">ADD  ADDRESS</button>
+			<button type="button" class="btn" data-dismiss="modal">Close</button>			
+		</div>							
+	</div>
+</form>

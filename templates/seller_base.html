@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include 'seller_tmps/includes/head.html' %}  
+    {% block ex_css %}{% endblock ex_css %}  
+  </head>  
+ {% block body_class %}{% endblock body_class %}
+        {% include 'seller_tmps/includes/loader.html' %}
+            <!-- TOP NAVIGATION STARTS -->
+        {% include 'seller_tmps/includes/header.html' %}
+            <!-- TOP NAVIGATION ENDS -->
+
+
+            <!--  BEGIN MAIN CONTAINER  -->
+    <div class="main-container" id="container">
+
+        <div class="overlay"></div>
+        <div class="search-overlay"></div>
+
+        <!--  BEGIN SIDEBAR  -->
+        {% include 'seller_tmps/includes/navbar_left.html' %}
+        <!--  END SIDEBAR  -->
+        
+        <!--  BEGIN CONTENT AREA  -->
+        <div id="content" class="main-content">
+    
+            <!-- CONTENT WRAPPER STARTS -->
+        {% block main_content %}
+        
+        {% endblock main_content %}
+            <!-- CONTENT WRAPPER ENDS -->         
+
+         <!-- FOOTER STARTS -->
+        {% include 'seller_tmps/includes/footer.html' %}
+        <!-- FOOTER ENDS -->            
+        </div>
+        <!--  END CONTENT AREA  -->        
+    </div>
+    <!-- END MAIN CONTAINER -->
+        {% comment %} {% include 'seller_tmps/includes/modals.html' %} {% endcomment %}
+        <!-- /.modal -->
+
+        <!-- REQUIRED SCRIPTS -->
+        {% include 'seller_tmps/includes/jquery_files.html' %}
+{% block ex_js %}{% endblock ex_js %}
+  </body>
+</html>

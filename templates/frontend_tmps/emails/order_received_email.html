@@ -1,0 +1,188 @@
+ {% load custom_tags %}
+ {% autoescape off %}
+ <!DOCTYPE html>
+ <html>
+	 <head>
+		 <meta charset="utf-8">
+		 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		 <title></title>
+		 <meta name="description" content="">
+		 <meta name="viewport" content="width=device-width, initial-scale=1">
+		 <link rel="stylesheet" href="">
+	 </head>
+	 <body>
+  <layout label="Section 2">
+	<!-- Section 2 -->							
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td align="center" valign="top">
+				<table width="650" border="0" cellspacing="0" cellpadding="0" class="mobile-shell">
+					<tr>
+						<td class="td" style="width:650px; min-width:650px; font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal;">
+							<table width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td class="ptb-25" style="padding: 50px 0 30px 0;"> 
+										<table width="100%" border="0" cellspacing="0" cellpadding="0">
+											<!-- Section Head -->
+											<tr>
+												<td class="text-grey centered" style="padding-bottom: 30px; color:#7d7e80; font-family:'Quicksand', Arial,sans-serif; font-size:16px; line-height:24px; letter-spacing:1px; text-align:center;">
+													<multiline>
+														Your order is confirmed.
+													</multiline>
+												</td>
+											</tr>
+
+											<tr>
+												<td class="text-grey centered" style="padding-bottom: 30px; color:#7d7e80; font-family:'Quicksand', Arial,sans-serif; font-size:16px; line-height:24px; letter-spacing:1px; text-align:center;">
+													<multiline>														
+														
+														<small>
+															Hi <strong>{{user}}</strong>, we've received <strong>Order No. {{ order.order_number }}</strong> and are working on it now. We'll email you an update when we've shipped it.</small>
+
+															</multiline>
+														</td>
+													</tr>
+													<!-- Article - Image Right -->
+													<tr>
+														<td class="pb-25" style="padding-bottom: 50px;">
+															<table width="100%" border="0" cellspacing="0" cellpadding="0" dir="rtl">
+																<tr>
+																	<td class="text-grey centered" style="padding-bottom: 30px; color:#7d7e80; font-family:'Quicksand', Arial,sans-serif; font-size:16px; line-height:24px; letter-spacing:1px; text-align:center;">
+																		<multiline>
+																			Order Item
+																		</multiline>
+																	</td>
+																</tr>
+																<tr>
+																	<th class="column-top" valign="top" dir="ltr" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top;">
+																		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+																			<tr>
+																				<td class="plr-15" style="border-top: 1px solid #ddd;">
+																					<table width="100%" border="0" cellspacing="0" cellpadding="0">																					
+																						<tr>
+																							<th class="text-grey centered" valign="top" width="20%" style="padding: 15px 0; color:#1d2025; font-family:'Barlow Condensed', Arial,sans-serif; font-size:14px; line-height:26px; vertical-align:top;"><multiline>Image</multiline></th>
+																							<th class="text-grey centered" valign="top" width="50%" style="padding: 15px 0; color:#1d2025; font-family:'Barlow Condensed', Arial,sans-serif; font-size:14px; line-height:26px; vertical-align:top;"><multiline>Product Name</multiline></th>
+																							<th class="text-grey centered" valign="top" width="15%" style="padding: 15px 0; color:#1d2025; font-family:'Barlow Condensed', Arial,sans-serif; font-size:14px; line-height:26px; vertical-align:top;"><multiline>Quantity</multiline></th>
+																							<th class="text-grey centered" valign="top" width="15%" style="padding: 15px 0; color:#1d2025; font-family:'Barlow Condensed', Arial,sans-serif; font-size:14px; line-height:26px; vertical-align:top;"><multiline>unit price</multiline></th>								
+																						</tr>
+
+																						{% for item in order_product %}
+																						<tr>
+																							<td class="plr-15 pb-25" style="padding: 5px 0px;" colspan="5">
+																								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+																									<tr>
+																										<td class="img" height="1" bgcolor="#ecebeb" style="font-size:0pt; line-height:0pt; text-align:left;">&nbsp;</td>
+																									</tr>
+																								</table>
+																							</td>
+																						</tr>
+																						<tr>
+																							<td width="20%">
+																								<a href="http://127.0.0.1:8000{{item.product.get_absolute_url}}">
+																									<img src="http://127.0.0.1:8000{{ item.product.mainThumb }}" alt="{{ item.product.product_name }}" width="50" height="50" >
+																								</a>
+																							</td>
+																							<td class="text-6" width="50%" style="padding: 15px 0; color:#1d2025; font-family:'Barlow Condensed', Arial,sans-serif; font-size:14px; line-height:26px; text-align:center;">
+																								<a href="http://127.0.0.1:8000{{item.product.get_absolute_url}}" title="{{ item.product.product_name }}" style="color:#1d2025;">{{ item.product.product_name }}</a>
+
+																							</td>
+																							<td width="15%" class="text-grey" style="padding-bottom: 15px; color:#1d2025; font-family:'Quicksand', Arial,sans-serif; font-size:12px; line-height:14px; text-align:center;">
+																								{{ item.quantity }}
+
+																							</td>
+																							<td width="15%" class="text-grey" style="padding-bottom: 15px; color:#1d2025; font-family:'Quicksand', Arial,sans-serif; font-size:12px; line-height:14px; text-align:center;">
+																								₹ {{ item.product_price }}
+																							</td>
+
+																						</tr>
+																						{% endfor %}
+																						<tr>
+																							<td class="plr-15 pb-25" style="padding: 20px 0px;" colspan="5">
+																								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+																									<tr>
+																										<td class="img" height="1" bgcolor="#ecebeb" style="font-size:0pt; line-height:0pt; text-align:left;">&nbsp;</td>
+																									</tr>
+																								</table>
+																							</td>
+																						</tr>
+																						<tr>
+																							<td colspan="2">
+																								&nbsp;
+																								
+																							</td>
+																							<td colspan="3" class="text-6" style="color:#1d2025; font-family:'Barlow Condensed', Arial,sans-serif; font-size:14px; line-height:16px; text-align:left;">
+																								<table width="100%" border="0"   cellspacing="0" cellpadding="0">
+
+																									<tr>
+																										<td class="text-grey centered" style="padding: 15px 0px;color:#1d2025; font-family:'Barlow Condensed', Arial,sans-serif; font-size:14px; line-height:16px;">Subtotal:</td>
+																										<td class="text-grey centered" style="padding: 15px 0px;color:#1d2025; font-family:'Barlow Condensed', Arial,sans-serif; font-size:14px; line-height:16px;">₹{{ order.order_total }}</td>
+																									</tr>
+																									<tr>
+																										<td style="padding: 1px 0px;" colspan="2">
+																											<table width="100%" border="0" cellspacing="0" cellpadding="0">
+																												<tr>
+																													<td class="img" height="1" bgcolor="#ecebeb" style="font-size:0pt; line-height:0pt; text-align:left;">&nbsp;</td>
+																												</tr>
+																											</table>
+																										</td>
+																									</tr>
+																									<tr>
+																										<td class="text-grey centered" style="padding: 15px 0px;color:#1d2025; font-family:'Barlow Condensed', Arial,sans-serif; font-size:14px; line-height:16px;">Tax:</td>
+																										<td class="text-grey centered" style="padding: 15px 0px;color:#1d2025; font-family:'Barlow Condensed', Arial,sans-serif; font-size:14px; line-height:16px;">₹{{ order.tax }}</td>
+																									</tr>
+																									<tr>
+																										<td style="padding: 1px 0px;" colspan="2">
+																											<table width="100%" border="0" cellspacing="0" cellpadding="0">
+																												<tr>
+																													<td class="img" height="1" bgcolor="#ecebeb" style="font-size:0pt; line-height:0pt; text-align:left;">&nbsp;</td>
+																												</tr>
+																											</table>
+																										</td>
+																									</tr>
+																									<tr>
+																										<td class="text-grey centered" style="padding: 15px 0px;color:#1d2025; font-family:'Barlow Condensed', Arial,sans-serif; font-size:14px; line-height:16px;"><strong>Grand Total:</strong></td>
+																										<td class="text-grey centered" style="padding: 15px 0px;color:#1d2025; font-family:'Barlow Condensed', Arial,sans-serif; font-size:14px; line-height:16px;"><strong>₹{{ order.order_total }}</strong></td>
+																									</tr>
+																									<tr>
+																										<td style="padding: 1px 0px;" colspan="2">
+																											<table width="100%" border="0" cellspacing="0" cellpadding="0">
+																												<tr>
+																													<td class="img" height="1" bgcolor="#ecebeb" style="font-size:0pt; line-height:0pt; text-align:left;">&nbsp;</td>
+																												</tr>
+																											</table>
+																										</td>
+																									</tr>
+
+																								</table>
+																							</td>
+																						</tr>
+																					</table>
+
+																				</td>
+																			</tr>
+																		</table>
+																	</th>
+																</tr>
+															</table>
+														</td>
+													</tr>
+													
+													<!-- END Article - Image Left -->
+												</table>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<!-- END Section 2 -->
+		</layout>
+
+	 </body>
+ </html>
+
+
+ {% endautoescape %}

@@ -1,0 +1,354 @@
+{% extends 'frontend_base.html' %}
+{% load static %}
+
+{% block main_content %}
+<div class="tt-breadcrumb">
+	<div class="container">
+		<ul>
+			<li><a href="{% url 'home' %}">Home</a></li>
+			<li>Order Detail</li>
+		</ul>
+	</div>
+</div>
+<div id="tt-pageContent">
+	<div class="container-indent">
+		<div class="container container-fluid-custom-mobile-padding">
+        {% comment %} <div class="page-title-wrapper">
+          <h2 class="page-title">Invoice</h2>
+        </div><!-- /.page-titile-wrapper --> {% endcomment %}
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="panel panel-default">
+				{% comment %} <div class="panel-heading large-heading">					
+					<div class="panel-title">
+						<div class="panel-tools">
+							<span class="title">Invoice</span>
+							<div class="tools-content">
+								 <button type="button" class="btn btn-default btn-sm rounded">
+									<i class="fa fa-print m-right-5"></i> Print
+								</button> 
+								
+							</div>
+						</div><!-- /.panel-tools -->
+					</div><!-- /.panel-title -->
+				</div><!-- /.panel-heading --> {% endcomment %}
+
+				<div class="panel-body">
+					<div class="invoice-header clearfix">
+						<div class="row">
+							<div class="col-md-6 invoice-header-left">
+								<!--  <h1>Recipient Company</h1> -->
+								<address>
+									<img src="{% static '/front_assets/images/bat_design_New3_07.jpg' %}" alt="Hornbill Mart" height="70"><br>
+									<strong>Hornbill Mart</strong><br>
+									<strong>Add:</strong> B-54, Sector-1, Shatabdi Nagar<br>
+									Meerut-250103, Uttar Pradesh, India<br>
+									<strong>Mobile:</strong> +91-9259403040, +91-9557000873<br>
+
+								</address>
+							</div><!-- /.col-md-6 -->
+
+							<div class="col-md-6 invoice-header-right">
+								<!--  	<h1>INVOICE</h1> -->
+								<span class="block"><strong>Invoice N:</strong> {{ order.order_number }}</span>
+								<span class="block"><strong>Invoice Date:</strong> {{ order.created_at }}</span>
+								<!--  <span class="block">Due Date: 01/08/2016</span> -->
+
+								<div class="label rounded">
+									<strong>Total Amount:</strong> <strong class="block m-top-10">₹{{ grant_total }}</strong>
+								</div>
+							</div><!-- /.col-md-6 -->
+						</div>
+					</div><!-- /.invoice-header -->
+
+
+					<div class="invoice-header clearfix">
+						<div class="row">
+							<div class="col-md-6 invoice-header-left">
+								<em class="block m-top-5"><strong>EmaiL:</strong> info@hornbillmart.com
+								</em>
+								<em class="block m-top-5"><strong>Web:</strong> www.hornbillmart.com<br>
+								</em>
+							</div><!-- /.col-md-6 -->
+
+							<div class="col-md-6 invoice-header-right">
+								<em class="block m-top-5"><strong>GSTIN:</strong> 09AAJFH7214G1ZC</em>
+								<em class="block m-top-5"><strong>PAN:</strong> AAJFH7214G</em>
+							</div><!-- /.col-md-6 -->
+						</div><!-- /.row -->
+					</div><!-- /.invoice-header -->
+					
+					<div class="invoice-header clearfix">
+						<div class="row">
+							<div class="col-md-6 invoice-header-left">
+								<strong>Billing Address</strong>
+								
+								{% if order.first_name %}
+								<em class="block m-top-5">{{order.first_name}} {{order.last_name}}
+								</em>
+								{% endif %}
+								{% if order.email %}
+								<em class="block m-top-5">
+									{{order.email}}
+								</em>
+								{% endif %}
+								{% if  order.mobile %}
+								<em class="block m-top-5">
+									{{order.mobile}}
+								</em>
+								{% endif %}
+								{% if order.company %}
+								<em class="block m-top-5">
+									{{order.company}}
+								</em>
+								{% endif %}
+
+								{% if order.gstin  %}
+								<em class="block m-top-5">
+									{{order.gstin}}
+								</em>
+								{% endif %}
+								{% if order.pan_number  %}
+								<em class="block m-top-5">
+									{{order.pan_number}}
+								</em>
+								{% endif %}
+								<em class="block m-top-5">
+									{{order.address_line1}} {{ order.address_line2 }}, <br>{{order.city}},  {{order.zip_code}},  {{order.state }},  {{order.country}}
+								</em>
+							
+							</div><!-- /.col-md-6 -->
+
+							<div class="col-md-6 invoice-header-right">
+
+								<strong>Shipping Address</strong>
+							
+								{% if order.first_name %}
+								<em class="block m-top-5">{{order.first_name}} {{order.last_name}}
+								</em>
+								{% endif %}
+								{% if order.email %}
+								<em class="block m-top-5">
+									{{order.email}}
+								</em>
+								{% endif %}
+								{% if order.mobile %}
+								<em class="block m-top-5">
+									{{order.mobile}}
+								</em>
+								{% endif %}
+								{% if order.company %}
+								<em class="block m-top-5">
+									{{order.company}}
+								</em>
+								{% endif %}
+								{% if order.gstin  %}
+								<em class="block m-top-5">
+									{{order.gstin}}
+								</em>
+								{% endif %}
+								{% if order.pan_number  %}
+								<em class="block m-top-5">
+									{{order.pan_number}}
+								</em>
+								{% endif %}
+
+								<em class="block m-top-5">
+									{{order.address_line1}} {{ order.address_line2 }}, <br>{{order.city}},  {{order.zip_code}},  {{order.state }},  {{order.country}} 
+								</em>
+							
+							</div><!-- /.col-md-6 -->
+						</div><!-- /.row -->
+					</div><!-- /.invoice-header -->
+
+					<div class="invoice-body">
+						<!--  <div class="p-left-15 p-right-15 m-bottom-20">
+							<strong>Billing Address</strong>
+							<em class="block m-top-5">kepick_l@company.com</em>
+						</div>
+
+						<div class="p-left-15 p-right-15 m-bottom-20">
+							<strong>Shipping Address</strong>
+							<em class="block m-top-5">kepick_l@company.com</em>
+						</div> -->
+
+						<div class="table-responsive">
+							<table class="table">
+								<thead>
+									<tr>
+										
+										<td style="width: 40%;">Item</td>
+										<td style="text-align: center;">HSN</td>
+										<td style="text-align: center;">Qty</td>
+										<td style="text-align: center;">Price</td>
+										{% if order.state == 38 %}
+										<td style="text-align: center;">CGST(%)</td>
+										<td style="text-align: center;">SGST(%)</td>
+										{% else %}
+										<td style="text-align: center;">IGST(%)</td>
+										{% endif %}
+										<td style="text-align: center;">Tax Amt.</td>
+										<td style="text-align: center;">Amount</td>
+									</tr>
+								</thead>
+
+								<tfoot>
+									<tr>
+										{% if order.state == 38 %}
+										<td colspan="5">
+											{% else %}
+											<td colspan="4">
+												{% endif %}
+												<h1>Hornbill Mart</h1>							
+												<em class="block m-top-5">Authorized Signature</em>
+											</td>
+											<td colspan="3">
+												<table class="table m-left-15">
+													<tbody>
+														<tr>
+															<td style="text-align: center;">Subtotal:</td>
+															<td style="text-align: center;">₹{{ subtotal }}</td>
+														</tr>
+														<tr>
+															<td style="text-align: center;">Total Tax:</td>
+															<td style="text-align: center;">₹{{ tax }}</td>
+														</tr>
+														<tr>
+															<td style="text-align: center;"><strong>Grand Total:</strong></td>
+															<td style="text-align: center;"><strong>₹{{ grant_total }}</strong></td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+										</tr>
+									</tfoot>
+
+									<tbody>
+                  {% for item in  order_detail %}
+                    <tr>											
+											<td>
+												<strong>{{ item.product.product_name}}</strong>												
+											</td>
+											<td style="text-align: center;">{{ item.product.hsn_code}}</td>
+											<td style="text-align: center;">{{ item.quantity }}</td>
+											<td>₹{{ item.product.sale_price }}</td>
+											{% if order.state == 38 %}
+											<td style="text-align: center;"> %</td>
+											<td style="text-align: center;"> %</td>
+											{% else %}
+											<td style="text-align: center;"> %</td>
+											{% endif %}
+
+											<td style="text-align: center;">₹{{ item.totalTax }}</td>
+
+											<td style="text-align: center;">₹{{ item.grandTotal }}</td>
+										</tr>
+                  {% empty %}
+                  
+                  {% endfor %}
+									
+									</tbody>
+								</table>
+							</div>
+
+							 {% comment %} <button type="button" class="btn btn-primary btn-labeled-left pull-right m-top-25">
+								<i class="fa fa-send"></i> Send Invoice
+							</button>  {% endcomment %}
+							<div class="row">
+									<div class="col-md-12 text-right">
+										<a href="{% url 'invoice.pdf.view' order.order_number %}" target="_blank" class="btn btn-default btn-sm rounded"><i class="fa fa-download m-right-5"></i> Download</a>
+									</div>
+								</div>
+						</div><!-- /.invoice-body -->
+					</div><!-- /.panel-body -->
+				</div><!--/.panel-->
+			</div><!-- /.col-sm-12 -->
+		</div><!-- /.row -->
+	</div>
+</div>
+</div>
+{% endblock  %}
+{% block ex_css %}
+    <link rel="stylesheet" href="{% static '/front_assets/css/invoice.min.css' %}?{% now "U" %}">
+<style>
+		.page-break {
+			page-break-after: always;
+		}
+
+		.rounded{
+			border: 1px solid #d6d6d6;
+			border-radius: 4px;
+
+			margin: 35px 0px 0px 0px;
+			padding: 12px 30px;
+			font-size: 13px;
+			float: right;
+			width: 20%;
+			text-align: center;
+		}
+		table{
+			width: 100%;
+		}
+		.col-md-6 {
+			width: 50%;
+		}
+		.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+			padding: 12px 15px;
+			vertical-align: middle;
+			border-top-color: #eceded;
+		}
+		.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+			padding: 8px;
+			line-height: 1.42857143;
+			vertical-align: top;
+			/*border-top: 1px solid #ddd;*/
+		}
+		table > tbody > tr > td.tdLeft{text-align: left;width: 50%;}
+		table > tbody > tr > td.tdRight{text-align: right;width: 50%;}
+		.block{display: block;}
+		.panel-body>.invoice-header {
+			margin: -15px -15px 15px;
+			padding: 20px 15px 25px;
+			border-bottom: 1px solid #f1f2f2;
+		}
+		.row {
+			margin-right: -15px;
+			margin-left: -15px;
+		}
+		.col-sm-12 {
+			width: 100%;
+		}
+		.invoice-header-left{float: left;}
+		.panel-body>.invoice-body .table td+td {
+			text-align: right;
+		}
+
+		.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+			padding: 12px 15px;
+			vertical-align: middle;
+			border-top-color: #eceded;
+		}
+
+		.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+			padding: 12px 15px;
+			line-height: 1.42857143;
+			vertical-align: middle;
+			border-top: 1px solid #ddd;
+		}
+		table {
+			border-spacing: 0;
+			border-collapse: collapse;
+		}
+		.table>caption+thead>tr:first-child>td, .table>caption+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>th, .table>thead:first-child>tr:first-child>td, .table>thead:first-child>tr:first-child>th {
+			border-top: 0;
+			font-size: 16px;
+			font-weight: bold;
+			border-bottom: 1px solid #ddd;
+		}
+		.table>tbody:first-child>tr:first-child>td, .table>tbody:first-child>tr:first-child>th {
+			border-top: 0;
+		}
+
+	</style>
+
+{% endblock  %}

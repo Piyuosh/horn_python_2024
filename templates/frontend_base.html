@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% include 'frontend_tmps/includes/head.html'  %}
+	<link rel="stylesheet" href="{% static 'front_assets/css/style.css' %}?{% now "U" %}">
+	<link href="{% static 'front_assets/external/notification/snackbar/snackbar.min.css' %}" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="{% static 'front_assets/css/rating.css' %}">
+	{% block ex_css %}{% endblock %}
+</head>
+<body>
+{% include 'frontend_tmps/includes/loader.html'  %}
+{% include 'frontend_tmps/includes/header/header-04.html'  %}
+
+{% block main_content %}{% endblock %}
+
+<footer id="tt-footer">
+	{% include 'frontend_tmps/includes/footer/footer-01.html'  %}
+</footer>
+{% comment %} {% include 'frontend_tmps/includes/include-promofixed.html'  %} {% endcomment %}
+{% comment %} {% include 'frontend_tmps/includes/include-demoswitch.html'  %} {% endcomment %}
+{% include 'frontend_tmps/includes/include-modal.html'  %}
+{% include 'frontend_tmps/includes/include-js.html'  %}
+{% block ex_js %}{% endblock %}
+{% include 'frontend_tmps/includes/include-back_to_top.html'  %}
+</body>
+</html>

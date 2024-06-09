@@ -1,0 +1,85 @@
+<html>
+  <head onload="submitPayuForm()">
+  <script type="text/javascript">
+    var hash = "{{ hashh }}";
+    function submitPayuForm() {
+      if(hash =='') {
+        return;
+      }
+      var payuForm = document.forms.payuForm;
+      payuForm.submit();
+    }
+  </script>
+  </head>
+  <body>
+    <h2>PayU Form</h2>
+    <br/>
+    {% if error %}
+	
+      <span style="color:red">Please fill all mandatory fields.</span>
+      <br/>
+      <br/>
+      {% endif %}
+     
+      <form action={{ action }} method="post" name="payuForm">
+      {% csrf_token %}
+      <input type="hidden" name="key" value="{{ MERCHANT_KEY }}" />
+      <input type="hidden" name="hash_string" value="{{ hash_string }}" />
+      <input type="hidden" name="hash" value="{{ hashh }}"/>
+       <input type="hidden" name="posted" value="{{ posted }}"/>
+      <input type="hidden" name="txnid" value="{{ txnid }}" />
+      
+         <input name="amount" value="{{ posted.amount|default:'' }}" />
+         
+         <input name="firstname" id="firstname" value="{{ posted.firstname|default:'' }}" />
+        
+         <input name="email" id="email" value="{{ posted.email|default:'' }}" />
+         
+         <input name="phone" value="{{ posted.phone|default:'' }}" />
+          <textarea name="productinfo">{{ posted.productinfo|default:'' }}</textarea>     
+         
+          <input name="surl" value="{{ posted.surl }}" size="64" />
+       
+         
+          <input name="furl" value="{{ posted.furl }}" size="64" />
+        
+          <input type="hidden" name="service_provider" value="payu_paisa" size="64" />
+       
+         Optional Parameters
+       
+        
+         <input name="lastname" id="lastname" value="{{ posted.lastname }}" />
+         
+         <input name="curl" value="" />
+       
+         
+         <input name="address1" value="{{ posted.address1 }}" />
+         
+         <input name="address2" value="{{ posted.address2 }}" />
+       
+        
+         <input name="city" value="{{ posted.city }}" />
+       
+         <input name="state" value="{{ posted.state }}" />
+       
+         <input name="country" value="{{ posted.country }}" />
+         
+         <input name="zipcode" value="{{ posted.zipcode }}" />
+       
+        
+         <input name="udf1" value="{{ posted.udf1 }}" />
+        
+         <input name="udf2" value="{{ posted.udf2 }}" />
+       
+         
+         <input name="udf3" value="{{ posted.udf3 }}" />
+         
+         <input name="udf4" value="{{ posted.udf4 }}" />
+       
+        
+         <input name="udf5" value="{{ posted.udf5 }}" />
+       
+         <input name="pg" value="{{ posted.PG }}" />
+        
+      </form>
+
